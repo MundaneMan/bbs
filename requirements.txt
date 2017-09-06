@@ -1,0 +1,6 @@
+Pillow==4.1.1
+pymongo==3.4.0
+requests==2.14.2
+tornado==4.5.1
+bcrypt==3.1.3
+

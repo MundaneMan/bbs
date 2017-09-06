@@ -8,16 +8,12 @@ import traceback
 import tornado.web
 import tornado.netutil
 
-import config_web
-import instructions.libs.data as lib_data
 import instructions.libs.template as lib_template
 
 import instructions.helpers.member_helper as member_helper
 import instructions.models.member_model as member_model
-import instructions.models.target_model as target_model
 import instructions.models.operation_log_model as operation_log_model
 import instructions.libs.data as lib_data
-import instructions.libs.data_lib as data_lib
 
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -252,6 +248,16 @@ class SiteBaseHandler(BaseHandler):
             return False
         return self.current_user["role"] == "admin" or permission in \
             lib_data.member_permissions[self.current_user["role"]]
+
+
+class HomeBaseHandler(SiteBaseHandler):
+    def _render(self, template_name, **kwargs):
+        self.render("home/"+template_name, **kwargs)
+
+
+class AdminBaseHandler(SiteBaseHandler):
+    def _render(self, template_name, **kwargs):
+        self.render("admin/"+template_name, **kwargs)
 
 
 class JsSiteBaseHandler(SiteBaseHandler):

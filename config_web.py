@@ -22,7 +22,7 @@ settings_common = {
 
     "static_path": os.path.join(BASE_DIR, "assets"),
     "template_path": os.path.join(BASE_DIR, "instructions", "templates"),
-    "login_url": "/signin",
+    "login_url": "/login",
 
     # "xsrf_cookies": True,
     "cookie_secret": "11oETkKXQAGaYdkL5gEmGeJkFuYh7EQnp2XdTP1o/Vo=",
@@ -32,8 +32,8 @@ settings_common = {
 settings_debug = {
     "debug": True,
     "api_domain": "api-local.instructions.com",
-    "admin_domain": "admin-instructions.com",
-    "static_url": "http://s-local.instructions.com:8080/",
+    "admin_domain": "local-instructions.com",
+    "static_url": "http://local-instructions.com/",
     "static_path": "/Users/matt/Projects/backup/instructions/static/",
 }
 
