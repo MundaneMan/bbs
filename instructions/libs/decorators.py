@@ -4,8 +4,8 @@
 import functools
 import tornado.web
 
-import fupin.libs.data as lib_data
-import fupin.models.target_model as target_model
+import instructions.libs.data as lib_data
+import instructions.models.target_model as target_model
 
 
 def admin_authenticated(method):

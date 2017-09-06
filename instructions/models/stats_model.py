@@ -1,6 +1,6 @@
 import time
 
-from fupin.models import build_obj_id, filter_obj_ids, filter_obj_id
+from instructions.models import build_obj_id
 from config_web import db
 
 

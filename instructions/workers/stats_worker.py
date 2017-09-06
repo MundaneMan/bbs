@@ -1,5 +1,5 @@
-import fupin.models.target_model as target_model
-import fupin.models.stats_model as stats_model
+import instructions.models.target_model as target_model
+import instructions.models.stats_model as stats_model
 
 
 def stats_targets():

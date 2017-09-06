@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 """Skill Model Class"""
 
-__author__ = 'matt'
+
 
 import re
 
-import fupin.libs.geo as lib_geo
-import fupin.libs.data as lib_data
-import fupin.models.member_model as member_model
+import instructions.libs.geo as lib_geo
+import instructions.libs.data as lib_data
+import instructions.models.member_model as member_model
 
-from fupin.models import build_obj_id
+from instructions.models import build_obj_id
 from config_web import db
 
 

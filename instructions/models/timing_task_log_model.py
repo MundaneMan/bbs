@@ -3,7 +3,7 @@
 
 import time
 
-from fupin.models import build_obj_id, build_id_time_str
+from instructions.models import build_obj_id, build_id_time_str
 from config_web import db
 
 

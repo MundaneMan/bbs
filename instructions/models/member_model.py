@@ -4,9 +4,9 @@
 import time
 import datetime
 
-import fupin.libs.data as lib_data
+import instructions.libs.data as lib_data
 
-from fupin.models import build_obj_id, build_id_time_str
+from instructions.models import build_obj_id, build_id_time_str
 from config_web import db
 
 

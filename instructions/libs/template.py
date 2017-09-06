@@ -3,8 +3,6 @@
 
 from tornado.escape import xhtml_escape
 
-__author__ = 'matt'
-
 
 def set_checkbox_value(key, form_data=None, obj=None):
     check_text = " checked=\"checked\""
