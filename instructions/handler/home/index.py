@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import tornado.web.UIModule
+import tornado.web
 from instructions.libs.handlers import HomeBaseHandler
 
 
