@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import instructions.handler.home.index as home_index
-import instructions.handler.admin.index as admin_index
+import instructions.controllers.home.index as home_index
+import instructions.controllers.admin.index as admin_index
 
 
 URLS = list()

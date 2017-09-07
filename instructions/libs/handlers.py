@@ -270,7 +270,7 @@ class JsSiteBaseHandler(SiteBaseHandler):
         self.data = {"err_code": 1, "err_msg": "unknow_error", "result": "fail"}
 
 
-# api base handler
+# api base controllers
 class ApiBaseHandler(BaseHandler):
     @property
     def base_handler_type(self):
