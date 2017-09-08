@@ -5,7 +5,7 @@
 member_roles = ("admin", "member")
 member_roles_names = {"admin": u"管理员", "member": u"用户"}
 
-member_permissions = {
+user_permissions = {
     "admin": ("", ),
     "member": {"", }
 }

@@ -22,7 +22,7 @@ settings_common = {
 
     "static_path": os.path.join(BASE_DIR, "assets"),
     "template_path": os.path.join(BASE_DIR, "instructions", "templates"),
-    "login_url": "/login",
+    "login_url": "/user/login",
 
     # "xsrf_cookies": True,
     "cookie_secret": "11oETkKXQAGaYdkL5gEmGeJkFuYh7EQnp2XdTP1o/Vo=",
@@ -62,7 +62,7 @@ settings = settings_common
 # db
 mongo_host = os.getenv("MONGO_HOST", "mongodb")
 client = pymongo.MongoClient(mongo_host, 27017)
-db = client["web"]
+db = client["instructions"]
 
 
 # search server

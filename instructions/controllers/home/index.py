@@ -7,7 +7,7 @@ from instructions.libs.handlers import HomeBaseHandler
 
 class IndexHandler(HomeBaseHandler):
     def get(self):
-        self._render('index.html')
+        self.render('index.html')
 
 
 urls = [

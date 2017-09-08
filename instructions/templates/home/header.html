@@ -3,12 +3,14 @@
     <nav class="navbar navbar-static-top">
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          {% if not current_user %}
             <li class="dropdown messages-menu">
                 <a href="/user/login/" >登录</a>
             </li>
             <li class="dropdown messages-menu">
                 <a href="/user/register/" >注册</a>
             </li>
+          {% end %}
           <!--信封消息-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -22,7 +24,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="/images/avatar_icon.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Support Team
@@ -34,7 +36,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/images/avatar_icon.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         AdminLTE Design Team
@@ -46,7 +48,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/images/avatar_icon.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Developers
@@ -58,7 +60,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/images/avatar_icon.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Sales Department
@@ -70,7 +72,7 @@
                   <li>
                     <a href="#">
                       <div class="pull-left">
-                        <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="/images/avatar_icon.jpg" class="img-circle" alt="User Image">
                       </div>
                       <h4>
                         Reviewers
@@ -208,7 +210,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/images/meizi_small.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">Marry</span>
+              <span class="hidden-xs">aaa{% if current_user %}{{ current_user["nick_name"] }}{% end %}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->

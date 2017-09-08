@@ -20,6 +20,8 @@ class BaseHandler(tornado.web.RequestHandler):
     operation = u"未标记操作"
 
     def initialize(self):
+        super(BaseHandler, self).initialize()
+        self.data = {"err_code": 1, "err_msg": "unknow_error", "result": "fail"}
         self.prepare_remote_ip()
 
     def set_default_handlers(self):
@@ -265,9 +267,6 @@ class JsSiteBaseHandler(SiteBaseHandler):
     def base_handler_type(self):
         return "js_site_base"
 
-    def initialize(self):
-        super(SiteBaseHandler, self).initialize()
-        self.data = {"err_code": 1, "err_msg": "unknow_error", "result": "fail"}
 
 
 # api base controllers
@@ -279,7 +278,7 @@ class ApiBaseHandler(BaseHandler):
     def initialize(self):
         super(ApiBaseHandler, self).initialize()
         self.data = {
-            "result": "failure", "message": "unknow_error"
+            "result": "failed", "message": "unknow_error"
         }
 
     def _build_form_data(self):

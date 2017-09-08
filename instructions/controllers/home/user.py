@@ -38,53 +38,135 @@ class UserBaseHandler(HomeBaseHandler):
         return True
 
 
-class UserLoginHandler(HomeBaseHandler):
+class UserLoginHandler(UserBaseHandler):
+    operation = u"用户请求登录页面"
+
     def get(self):
         self.render('login.html')
 
+    def post(self):
+        form_data = self._build_form_data()
+        form_errors = self._validate_require_form_data(form_data)
+        if form_errors:
+            self._render(form_data, form_errors)
+        print form_data, '-----'
+        if not self.do_login(form_data["email"], form_data["password"]):
+            form_errors["form"] = "登录邮箱/密码不匹配"
+            self._render(form_data, form_errors)
+            return
+
+        self.redirect(self.next_url)
+
+    def _render(self, form_data=None, form_errors=None):
+        self.render(
+            "login.html", form_data=form_data, form_errors=form_errors
+        )
+
+    def _list_form_keys(self):
+        return ["email", "password"]
+
+    def _list_required_form_keys(self):
+        return ["email", "password"]
+
 
 class UserRegisterHandler(HomeBaseHandler):
+    operation = u"用户注册账号"
+
     def get(self, *args, **kwargs):
         self.render('register.html')
 
-
-class UserRegisterJsHandler(JsSiteBaseHandler):
     def post(self, *args, **kwargs):
         form_data = self._build_form_data()
-        form_errs = self._validate_register_from_data(form_data)
+        form_errs = self._validate_register_form_data(form_data)
+        print form_errs
         if form_errs:
             self.data["result"] = "failed"
-            self.data["error"] = form_errs
+            self.data["error_msg"] = form_errs
             self.write(self.data)
+            self.redirect("/")
             return
         hashed_password = bcrypt.hashpw(
             str(form_data["password"]), bcrypt.gensalt()
         )
         form_data["password"] = hashed_password
         form_data.pop("password2")
+        form_data["status"] = "un_verify"
+        form_data["role"] = "member"
         user_model.insert_user(form_data)
-        self.data["result"] = "success"
-        self.data["message"] = "register account success"
+        self.redirect("/")
 
-    def _validate_register_from_data(self, form_data):
-        form_errs = self._validate_require_form_data()
+    def _validate_register_form_data(self, form_data):
+        form_errs = self._validate_require_form_data(form_data)
         if form_errs:
             return form_errs
         if form_data["password"] != form_data["password2"]:
             form_errs["password"] = u"两次密码不一致"
+            self.data["err_msg"] = u"两次密码不一致"
             return form_errs
         if user_model.is_field_data_exist("email", form_data["email"]):
             form_errs["email"] = u"邮箱已经被注册"
+            self.data["err_msg"] = u"邮箱已经被注册"
             return form_errs
         if user_model.is_field_data_exist("nick_name", form_data["nick_name"]):
-            form_data["nick_name"] = u"昵称已经存在"
+            form_errs["nick_name"] = u"昵称已经存在"
+            self.data["err_msg"] = u"昵称已经存在"
             return form_errs
 
     def _list_required_form_keys(self):
-        return ["username", "email", "password", "password2"]
+        return ["nick_name", "email", "password", "password2"]
+
+    def _list_form_keys(self):
+        return ["nick_name", "email", "password", "password2"]
+
+
+class UserVerifyJsHandler(JsSiteBaseHandler):
+    def post(self, *args, **kwargs):
+        type = self.get_argument("type", "")
+        if type == "email":
+            self._verify_user_email()
+        elif type == "nick_name":
+            self._verify_user_nick_name()
+
+    def _verify_user_email(self):
+        email = self.get_argument("email", "")
+        if email:
+            if user_model.is_field_data_exist("email", email):
+                self.data["result"] = "failed"
+                self.data["message"] = u"该邮箱已经注册过"
+                self.write(self.data)
+                return
+            else:
+                self.data["result"] = "success"
+                self.data["message"] = u"邮箱可用"
+                self.write(self.data)
+                return
+        self.data["result"] = "failed"
+        self.data["message"] = u"邮箱不能为空"
+        self.write(self.data)
+        return
+
+    def _verify_user_nick_name(self):
+        nick_name = self.get_argument("nick_name", "")
+        if nick_name:
+            if user_model.is_field_data_exist("nick_name", nick_name):
+                self.data["result"] = "failed"
+                self.data["message"] = u"昵称已存在"
+                self.write(self.data)
+                return
+            else:
+                self.data["result"] = "success"
+                self.data["message"] = u"昵称可用"
+                self.write(self.data)
+                return
+        self.data["result"] = "failed"
+        self.data["message"] = u"昵称不能为空"
+        self.write(self.data)
+        return
+
 
 
 urls = [
     (r"/user/login/?", UserLoginHandler),
-    (r"/user/register/?", UserRegisterJsHandler),
+    (r"/user/register/?", UserRegisterHandler),
+    (r"/js/user/verify/?", UserVerifyJsHandler),
     ]
