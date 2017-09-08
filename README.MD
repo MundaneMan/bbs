@@ -5,7 +5,9 @@ cms管理系统
 
 服务器配置
 1.环境搭建
-  未安装pip的首先安装pip,sudo apt-get install pyothon-pip
+
+  未安装pip的首先安装pip,
+  sudo apt-get install pyothon-pip
 
   sudo pip install -r requirements.txt
 
