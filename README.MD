@@ -25,7 +25,7 @@ cms管理系统
    
    根据实际情况修改root路径
    
-   重启nginx   sudo service nginx restart
+   重启nginx        sudo service nginx restart
 
 
 5.启动服务器
