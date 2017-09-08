@@ -68,7 +68,7 @@ class UserLoginHandler(UserBaseHandler):
         return ["email", "password"]
 
 
-class UserRegisterHandler(HomeBaseHandler):
+class UserRegisterHandler(UserBaseHandler):
     operation = u"用户注册账号"
 
     def get(self, *args, **kwargs):
@@ -84,6 +84,7 @@ class UserRegisterHandler(HomeBaseHandler):
             self.write(self.data)
             self.redirect("/")
             return
+        password = form_data["password"]
         hashed_password = bcrypt.hashpw(
             str(form_data["password"]), bcrypt.gensalt()
         )
@@ -92,6 +93,7 @@ class UserRegisterHandler(HomeBaseHandler):
         form_data["status"] = "un_verify"
         form_data["role"] = "member"
         user_model.insert_user(form_data)
+        self.do_login(form_data["email"], password)
         self.redirect("/")
 
     def _validate_register_form_data(self, form_data):
