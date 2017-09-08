@@ -7,7 +7,7 @@ import re
 
 import instructions.libs.geo as lib_geo
 import instructions.libs.data as lib_data
-import instructions.models.member_model as member_model
+import instructions.models.user_model as member_model
 
 from instructions.models import build_obj_id
 from config_web import db

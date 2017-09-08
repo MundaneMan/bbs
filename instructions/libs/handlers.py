@@ -10,10 +10,10 @@ import tornado.netutil
 
 import instructions.libs.template as lib_template
 
-import instructions.helpers.member_helper as member_helper
-import instructions.models.member_model as member_model
+import instructions.helpers.user_helper as user_helper
+import instructions.models.user_model as user_model
 import instructions.models.operation_log_model as operation_log_model
-import instructions.libs.data as lib_data
+import instructions.libs.data as const_data
 
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -61,7 +61,7 @@ class BaseHandler(tornado.web.RequestHandler):
     def _list_required_form_keys(self):
         return list()
 
-    def _validate_form_data(self, form_data):
+    def _validate_require_form_data(self, form_data):
         form_errors = dict()
         for key in self._list_form_keys():
             if key in self._list_required_form_keys() and not form_data[key]:
@@ -78,7 +78,7 @@ class BaseHandler(tornado.web.RequestHandler):
             return "".join(["/images/", "pic_none_", pic_type, ".png"])
 
     def build_icon_url(self, icon_id, pic_type="icon"):
-        return member_helper.build_avatar_url(icon_id, pic_type=pic_type)
+        return user_helper.build_avatar_url(icon_id, pic_type=pic_type)
 
     @property
     def base_handler_type(self):
@@ -100,7 +100,7 @@ class BaseHandler(tornado.web.RequestHandler):
         }
 
     def _operation_log_finish(self):
-        member = self.current_user
+        user = self.current_user
         request = self.request
 
         # 没登录, 登录不成功的操作不记录
@@ -109,7 +109,7 @@ class BaseHandler(tornado.web.RequestHandler):
             if request.uri == "/signin" and request.method == "POST" and \
                     self.get_status() == 302:
                 email = self.get_argument("email", None)
-                member = member_model.load_member_by_email(email)
+                user = user_model.load_user_by_email(email)
             else:
                 return
 
@@ -179,8 +179,8 @@ class BaseHandler(tornado.web.RequestHandler):
         operation = self.operation
 
         self.operation_data["result"] = result
-        self.operation_data["member_id"] = str(member["_id"])
-        self.operation_data["member_name"] = member["nickname"]
+        self.operation_data["user_id"] = str(user["_id"])
+        self.operation_data["user_name"] = user["nickname"]
         self.operation_data["handler_type"] = self.base_handler_type
         self.operation_data["method"] = request.method
         self.operation_data["request_files"] = files_dict
@@ -227,18 +227,18 @@ class SiteBaseHandler(BaseHandler):
             return None
 
         try:
-            member_id, session_id = cookie_data.split(":")
+            user_id, session_id = cookie_data.split(":")
         except:
             return None
 
-        member = member_model.load_member_by_id(member_id)
-        if not member.has_key("sessions") or \
-                not isinstance(member["sessions"], list):
+        user = user_model.load_user_by_id(user_id)
+        if not user.has_key("sessions") or \
+                not isinstance(user["sessions"], list):
             return None
 
-        for session in member["sessions"]:
+        for session in user["sessions"]:
             if session["id"] == session_id:
-                return member
+                return user
 
         self.clear_cookie(self.settings["cookie_key_sess"])
         return None
@@ -247,17 +247,17 @@ class SiteBaseHandler(BaseHandler):
         if not (self.current_user and 'role' in self.current_user):
             return False
         return self.current_user["role"] == "admin" or permission in \
-            lib_data.member_permissions[self.current_user["role"]]
+            const_data.user_permissions[self.current_user["role"]]
 
 
 class HomeBaseHandler(SiteBaseHandler):
-    def _render(self, template_name, **kwargs):
-        self.render("home/"+template_name, **kwargs)
+    def render(self, template_name, **kwargs):
+        super(HomeBaseHandler, self).render("home/"+template_name, **kwargs)
 
 
 class AdminBaseHandler(SiteBaseHandler):
-    def _render(self, template_name, **kwargs):
-        self.render("admin/"+template_name, **kwargs)
+    def render(self, template_name, **kwargs):
+        super(AdminBaseHandler, self).render("admin/" + template_name, **kwargs)
 
 
 class JsSiteBaseHandler(SiteBaseHandler):
@@ -296,15 +296,15 @@ class ApiBaseHandler(BaseHandler):
         token_keys = auth_token.split(":")
         if not len(token_keys) == 2:
             return None
-        member_id = token_keys[0]
+        user_id = token_keys[0]
         session_id = token_keys[1]
 
-        member = member_model.load_member_by_id(member_id)
-        if not member or not "sessions" in member or \
-                not isinstance(member["sessions"], list):
+        user = user_model.load_user_by_id(user_id)
+        if not user or not "sessions" in user or \
+                not isinstance(user["sessions"], list):
             return None
 
-        for session in member["sessions"]:
+        for session in user["sessions"]:
             if session["id"] == session_id:
-                return member
+                return user
 

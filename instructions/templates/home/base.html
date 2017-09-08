@@ -7,14 +7,15 @@
   <link rel="stylesheet" href="/css/ionicons.min.css">
   <link rel="stylesheet" href="/css/AdminLTE.min.css">
   <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
-  <title>{% block tittle %}{% end %}</title>
+  {% block head %}{% end %}
+
 </head>
 <body>
 {% include "header.html" %}
 
 {% block body %}{% end %}
 
-{% block footer %}{% end %}
+{% include "footer.html" %}
 
 <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>

@@ -1,21 +1,26 @@
 {% extends "base.html" %}
-{% block head %}<title>登录</title>{% end %}
+{% block head %}<title>注册</title>{% end %}
 {% block body %}
 <div style="text-align: center; height: 700px">
     <form method="post">
         <table style="margin: auto">
             <tr>
-            <td>用户名</td><td><input type="text" name="username"></td>
+            <td>邮箱</td><td><input name="email"></td>
             </tr>
-
+            <tr>
+            <td>用户名</td><td><input  name="username"></td>
+            </tr>
             <tr>
                 <td>密码</td><td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>重复密码</td><td><input type="password" name="password2"></td>
             </tr>
             <tr>
                 <td>验证码</td><td><input  name="verify_code"></td><td><img src="/images/verify-code.png"></td>
             </tr>
             <tr>
-            <td>&nbsp;&nbsp;</td><td><input type="submit" value="登录"></td>
+            <td>&nbsp;&nbsp;</td><td><input type="submit" value="注册"></td>
             </tr>
         </table>
     </form>
