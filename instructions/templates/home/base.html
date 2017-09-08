@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/ionicons.min.css">
+  <link rel="stylesheet" href="/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="/css/skins/_all-skins.min.css">
+  <title>{% block tittle %}{% end %}</title>
+</head>
+<body>
+{% include "header.html" %}
+
+{% block body %}{% end %}
+
+{% block footer %}{% end %}
+
+<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/app.min.js?v=1.0.1"></script>
+<script type="text/javascript" src="/js/admin.js?v=1.0.1"></script>
+{% block footer_script %}{% end %}
+</body>
+</html>

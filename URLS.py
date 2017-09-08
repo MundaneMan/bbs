@@ -3,11 +3,13 @@
 
 import instructions.controllers.home.index as home_index
 import instructions.controllers.admin.index as admin_index
+import instructions.controllers.home.user as user_controller
 
 
 URLS = list()
 URLS.extend(home_index.urls)
 URLS.extend(admin_index.urls)
+URLS.extend(user_controller.urls)
 
 
 API_URLS = list()
