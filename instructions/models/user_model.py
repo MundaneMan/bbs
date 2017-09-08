@@ -15,7 +15,7 @@ def load_user_by_id(user_id):
 
 
 def load_user_by_obj_id(user_obj_id):
-    return db.userss.find_one({"_id": user_obj_id, "status": "normal"})
+    return db.users.find_one({"_id": user_obj_id, "status": "normal"})
 
 
 def load_user_by_mobile_phone(mobile_phone, country_code, status="normal"):
@@ -26,6 +26,7 @@ def load_user_by_mobile_phone(mobile_phone, country_code, status="normal"):
 
 
 def load_user_by_email(email):
+    print email
     return db.users.find_one({"email": email})
 
 
@@ -46,7 +47,7 @@ def insert_user(user_data):
     if "status" in user_data:
         user_data["status"] = "normal"
     user_data["created_at"] = int(time.time())
-    result = db.userss.insert_one(user_data)
+    result = db.users.insert_one(user_data)
     return result.inserted_id
 
 
@@ -64,7 +65,7 @@ def update_user_by_obj_id(obj_id, user_data):
 def is_field_data_exist(field, data):
     cond = {field: data}
     print cond
-    count = db.userss.find(cond).count()
+    count = db.users.find(cond).count()
     print count, '--------'
     if count > 0:
         print count,'--------'

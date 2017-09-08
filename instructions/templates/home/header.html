@@ -209,8 +209,8 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="/images/meizi_small.png" class="user-image" alt="User Image">
-              <span class="hidden-xs">aaa{% if current_user %}{{ current_user["nick_name"] }}{% end %}</span>
+              <img src={% if current_user %} "/images/meizi_small.png" {% end %} class="user-image" alt="User Image">
+              <span class="hidden-xs">{% if current_user %}{{ current_user["nick_name"] }}{% end %}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -243,7 +243,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/user/logout/" class="btn btn-default btn-flat">退出登录</a>
                 </div>
               </li>
             </ul>

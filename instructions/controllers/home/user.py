@@ -12,10 +12,10 @@ class UserBaseHandler(HomeBaseHandler):
     def do_login(self, email, password):
         """do login stuff"""
         user = user_model.load_user_by_email(email)
-        if not user or user["hashed_password"] != \
-                bcrypt.hashpw(str(password), str(user["hashed_password"])):
+        print user
+        if not user or user["password"] != \
+                bcrypt.hashpw(str(password), str(user["password"])):
             return False
-
         # insert session
         sessions = user["sessions"] if "sessions" in user \
                                        and isinstance(user["sessions"], list) else list()
@@ -42,20 +42,19 @@ class UserLoginHandler(UserBaseHandler):
     operation = u"用户请求登录页面"
 
     def get(self):
-        self.render('login.html')
+        self.render('login.html', form_errors=None)
 
     def post(self):
         form_data = self._build_form_data()
         form_errors = self._validate_require_form_data(form_data)
         if form_errors:
             self._render(form_data, form_errors)
-        print form_data, '-----'
         if not self.do_login(form_data["email"], form_data["password"]):
             form_errors["form"] = "登录邮箱/密码不匹配"
             self._render(form_data, form_errors)
             return
 
-        self.redirect(self.next_url)
+        self.redirect('/')
 
     def _render(self, form_data=None, form_errors=None):
         self.render(
@@ -164,9 +163,14 @@ class UserVerifyJsHandler(JsSiteBaseHandler):
         return
 
 
+class UserLogoutHandler(HomeBaseHandler):
+    def get(self, *args, **kwargs):
+        self.clear_cookie(self.settings["cookie_key_sess"])
+        self.redirect("/")
 
 urls = [
     (r"/user/login/?", UserLoginHandler),
+    (r"/user/logout/?", UserLogoutHandler),
     (r"/user/register/?", UserRegisterHandler),
     (r"/js/user/verify/?", UserVerifyJsHandler),
     ]

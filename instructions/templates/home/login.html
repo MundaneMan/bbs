@@ -4,6 +4,7 @@
 <div style="text-align: center; height: 700px">
     <form method="post">
         <table style="margin: auto">
+            <tr>{% if form_errors %} {{ form_errors["form"] }} {% end %}</tr>
             <tr>
             <td>用户名</td><td><input type="text" name="f_email"></td>
             </tr>
@@ -19,9 +20,7 @@
             </tr>
         </table>
     </form>
-   {% if form_errors %}
-    {{ form_errors["form"] }}
-   {% end %}
+
 </div>
 
 {% end %}
