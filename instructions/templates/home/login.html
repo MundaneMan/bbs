@@ -6,14 +6,17 @@
         <table style="margin: auto">
             <tr>{% if form_errors %} {{ form_errors["form"] }} {% end %}</tr>
             <tr>
-            <td>用户名</td><td><input type="text" name="f_email"></td>
+            <td>邮箱</td><td><input type="text" name="f_email"></td>
+                <td><span>{% if form_errors and "email" in form_errors %} {{ form_errors["email"] }} {% end %}</span></td>
             </tr>
 
             <tr>
                 <td>密码</td><td><input type="password" name="f_password"></td>
+                <td><span>{% if form_errors and "password" in form_errors %} {{ form_errors["password"] }} {% end %}</span></td>
             </tr>
             <tr>
                 <td>验证码</td><td><input  name="f_verify_code"></td><td><img src="/images/verify-code.png"></td>
+                <td><span>{% if form_errors and "verify_code" in form_errors %} {{ form_errors["verify_code"] }} {% end %}</span></td>
             </tr>
             <tr>
             <td>&nbsp;&nbsp;</td><td><input type="submit" value="登录"></td>

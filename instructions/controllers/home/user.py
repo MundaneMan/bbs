@@ -42,7 +42,7 @@ class UserLoginHandler(UserBaseHandler):
     operation = u"用户请求登录页面"
 
     def get(self):
-        self.render('login.html', form_errors=None)
+        self._render()
 
     def post(self):
         form_data = self._build_form_data()
@@ -72,17 +72,13 @@ class UserRegisterHandler(UserBaseHandler):
     operation = u"用户注册账号"
 
     def get(self, *args, **kwargs):
-        self.render('register.html')
+        self._render()
 
     def post(self, *args, **kwargs):
         form_data = self._build_form_data()
-        form_errs = self._validate_register_form_data(form_data)
-        print form_errs
-        if form_errs:
-            self.data["result"] = "failed"
-            self.data["error_msg"] = form_errs
-            self.write(self.data)
-            self.redirect("/")
+        form_errors = self._validate_register_form_data(form_data)
+        if form_errors:
+            self._render(form_data, form_errors)
             return
         password = form_data["password"]
         hashed_password = bcrypt.hashpw(
@@ -102,16 +98,18 @@ class UserRegisterHandler(UserBaseHandler):
             return form_errs
         if form_data["password"] != form_data["password2"]:
             form_errs["password"] = u"两次密码不一致"
-            self.data["err_msg"] = u"两次密码不一致"
             return form_errs
         if user_model.is_field_data_exist("email", form_data["email"]):
             form_errs["email"] = u"邮箱已经被注册"
-            self.data["err_msg"] = u"邮箱已经被注册"
             return form_errs
         if user_model.is_field_data_exist("nick_name", form_data["nick_name"]):
             form_errs["nick_name"] = u"昵称已经存在"
-            self.data["err_msg"] = u"昵称已经存在"
             return form_errs
+
+    def _render(self, form_data=None, form_errors=None):
+        self.render(
+            "register.html", form_data=form_data, form_errors=form_errors
+        )
 
     def _list_required_form_keys(self):
         return ["nick_name", "email", "password", "password2"]
@@ -170,9 +168,26 @@ class UserLogoutHandler(HomeBaseHandler):
         self.clear_cookie(self.settings["cookie_key_sess"])
         self.redirect("/")
 
+
+class UserChangePwdHandler(UserBaseHandler):
+    operation = u"用户修改密码"
+
+    def get(self):
+        self._render()
+
+    def post(self, *args, **kwargs):
+        pass
+
+    def _render(self, form_data=None, form_errors=None):
+        self.render(
+            "change_pwd.html", form_data=form_data, form_errors=form_errors
+        )
+
+
 urls = [
     (r"/user/login/?", UserLoginHandler),
     (r"/user/logout/?", UserLogoutHandler),
     (r"/user/register/?", UserRegisterHandler),
     (r"/js/user/verify/?", UserVerifyJsHandler),
+    (r"/user/change_pwd/?", UserChangePwdHandler),
     ]

@@ -7,12 +7,16 @@
             <tr>
                 <td>邮箱</td>
                 <td><input name="f_email" required></td>
-                <td><span id="test_email" style="color: red;"></span></td>
+                <td><span id="test_email" style="color: red;">
+                    {% if form_errors and "email" in form_errors %} {{ form_errors["email"] }} {% end %}
+                </span></td>
             </tr>
             <tr>
                 <td>昵称</td>
                 <td><input  name="f_nick_name" required></td>
-                <td><span id="test_nick_name" style="color: red;" required></span></td>
+                <td><span id="test_nick_name" style="color: red;" >
+                    {% if form_errors and "nick_name" in form_errors %} {{ form_errors["nick_name"] }} {% end %}
+                </span></td>
             </tr>
             <tr>
                 <td>密码</td>
@@ -21,10 +25,15 @@
             <tr>
                 <td>重复密码</td>
                 <td><input type="password" name="f_password2"  required></td>
-                <td><span id="test_password" style="color: red;"></span></td>
+                <td><span id="test_password" style="color: red;">
+                    {% if form_errors and "password" in form_errors %} {{ form_errors["password"] }} {% end %}
+                </span></td>
             </tr>
             <tr>
                 <td>验证码</td><td><input  name="f_verify_code" required></td><td><img src="/images/verify-code.png"></td>
+                <td><span id="test_verify_code" style="color: red;">
+                    {% if form_errors and "verify_code" in form_errors %} {{ form_errors["verify_code"] }} {% end %}
+                </span></td>
             </tr>
             <tr>
                 <td>&nbsp;&nbsp;</td><td><input id="btn_register" type="submit"  value="注册"></td>

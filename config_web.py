@@ -6,7 +6,7 @@ import os
 import pymongo
 
 
-SITE_NAME = "企业说明书管理系统"
+SITE_NAME = "客户服务系统"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
