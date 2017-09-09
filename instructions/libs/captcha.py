@@ -26,9 +26,8 @@ class Captcha:
 
     @staticmethod
     def check(input, request):
-        print input, ':::', request.session.get(Captcha._session_name_)
-        if input.upper() == request.session.get(Captcha._session_name_):
-            request.session.delete(Captcha._session_name_)
+        if str(input).upper() == request.get_session(Captcha._session_name_):
+            request.clear_session(Captcha._session_name_)
             return True
         else:
             return False

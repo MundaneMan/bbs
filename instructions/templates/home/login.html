@@ -15,7 +15,10 @@
                 <td><span>{% if form_errors and "password" in form_errors %} {{ form_errors["password"] }} {% end %}</span></td>
             </tr>
             <tr>
-                <td>验证码</td><td><input  name="f_verify_code"></td><td><img id="verify_img" src="/verify_code.png"></td>
+                <td>&nbsp;&nbsp;</td>
+                <td><img id="verify_img" style="width: 170px;height: 40px" src="/verify_code.png"></td></tr>
+            <tr>
+                <td>验证码</td><td><input  name="f_verify_code"></td>
                 <td><span>{% if form_errors and "verify_code" in form_errors %} {{ form_errors["verify_code"] }} {% end %}</span></td>
             </tr>
             <tr>

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from instructions.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
+from instructions.libs.captcha import Captcha
 import instructions.models.user_model as user_model
 import bcrypt
 import random
@@ -12,7 +13,6 @@ class UserBaseHandler(HomeBaseHandler):
     def do_login(self, email, password):
         """do login stuff"""
         user = user_model.load_user_by_email(email)
-        print user
         if not user or user["password"] != \
                 bcrypt.hashpw(str(password), str(user["password"])):
             return False
@@ -49,6 +49,11 @@ class UserLoginHandler(UserBaseHandler):
         form_errors = self._validate_require_form_data(form_data)
         if form_errors:
             self._render(form_data, form_errors)
+            return
+        if not Captcha.check(form_data["verify_code"], self):
+            form_errors["verify_code"] = u"验证码错误"
+            self._render(form_data, form_errors)
+            return False
         if not self.do_login(form_data["email"], form_data["password"]):
             form_errors["form"] = "登录邮箱/密码不匹配"
             self._render(form_data, form_errors)
@@ -62,10 +67,10 @@ class UserLoginHandler(UserBaseHandler):
         )
 
     def _list_form_keys(self):
-        return ["email", "password"]
+        return ["email", "password", "verify_code"]
 
     def _list_required_form_keys(self):
-        return ["email", "password"]
+        return ["email", "password", "verify_code"]
 
 
 class UserRegisterHandler(UserBaseHandler):
