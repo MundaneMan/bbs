@@ -9,6 +9,7 @@ import random
 import time
 import string
 
+
 class UserBaseHandler(HomeBaseHandler):
     def do_login(self, email, password):
         """do login stuff"""
@@ -36,6 +37,9 @@ class UserBaseHandler(HomeBaseHandler):
         self.set_cookie(self.settings["cookie_key_sess"], cookie_val)
 
         return True
+
+    def render(self, template_name, **kwargs):
+        super(UserBaseHandler, self).render("user/"+template_name,**kwargs)
 
 
 class UserLoginHandler(UserBaseHandler):
@@ -168,7 +172,7 @@ class UserVerifyJsHandler(JsSiteBaseHandler):
         return
 
 
-class UserLogoutHandler(HomeBaseHandler):
+class UserLogoutHandler(UserBaseHandler):
     def get(self, *args, **kwargs):
         self.clear_cookie(self.settings["cookie_key_sess"])
         self.redirect("/")

@@ -66,9 +66,7 @@ def is_field_data_exist(field, data):
     cond = {field: data}
     print cond
     count = db.users.find(cond).count()
-    print count, '--------'
     if count > 0:
-        print count,'--------'
         return True
     return False
 
@@ -80,7 +78,7 @@ def format_user(user_obj, ftype=""):
     if ftype == "admin_normal":
         user_obj["created_at"] = build_id_time_str(user_obj["_id"])
 
-    for key in ("_id", "hashed_password", 'coordinates', "favorite_shops", "sessions"):
+    for key in ("_id", "password", 'coordinates', "favorite_shops", "sessions"):
         user_obj.pop(key, None)
 
     return user_obj

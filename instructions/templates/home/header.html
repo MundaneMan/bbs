@@ -1,5 +1,4 @@
   <header class="main-header">
-    <nav class=""></nav>
     <nav class="navbar navbar-static-top">
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -10,6 +9,7 @@
             <li class="dropdown messages-menu">
                 <a href="/user/register/" >注册</a>
             </li>
+          {% else %}
           {% end %}
           <!--信封消息-->
           <li class="dropdown messages-menu">
@@ -254,7 +254,14 @@
           </li>
         </ul>
       </div>
-
     </nav>
+      <div style="line-height: 40px; background-color: #cd7dff ;height: 40px;margin: 40px">
+          <strong style="font-size: 20px;" ><a href="/"  target="_self">首页</a>
+          &nbsp; <span >&nbsp;&nbsp;</span>
+          &nbsp; <a href="/article/edit/" class="dark" target="_self">发布文章</a>
+          &nbsp; <span >&nbsp;&nbsp;</span>
+          &nbsp; <a href="#"  target="_self">test</a>
+          </strong>
+      </div>
   </header>
   <!--<hr>-->
