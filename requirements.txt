@@ -14,3 +14,4 @@ simplegeneric==0.8.1
 singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.5.1
+redis==2.8.0

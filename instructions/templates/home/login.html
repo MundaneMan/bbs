@@ -15,7 +15,7 @@
                 <td><span>{% if form_errors and "password" in form_errors %} {{ form_errors["password"] }} {% end %}</span></td>
             </tr>
             <tr>
-                <td>验证码</td><td><input  name="f_verify_code"></td><td><img src="/images/verify-code.png"></td>
+                <td>验证码</td><td><input  name="f_verify_code"></td><td><img id="verify_img" src="/verify_code.png"></td>
                 <td><span>{% if form_errors and "verify_code" in form_errors %} {{ form_errors["verify_code"] }} {% end %}</span></td>
             </tr>
             <tr>
@@ -25,5 +25,19 @@
     </form>
 
 </div>
+{% end %}
+
+{% block footer_script %}
+<script type="text/javascript">
+$(function () {
+   var captcha = document.getElementById("verify_img");
+    if(captcha) captcha.style.cursor = "pointer";
+    $("#verify_img").on("click", function(){
+        this.src = "/verify_code.png?" + Math.random();
+    });
+
+})
+
+</script>
 
 {% end %}

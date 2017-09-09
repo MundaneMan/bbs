@@ -6,14 +6,16 @@
         <table style="margin: auto">
             <tr>
                 <td>邮箱</td>
-                <td><input name="f_email" required></td>
+                <td><input name="f_email" value={% if form_data and "email" in form_data %}"{{ form["email"] }}"{% end %}required></td>
                 <td><span id="test_email" style="color: red;">
                     {% if form_errors and "email" in form_errors %} {{ form_errors["email"] }} {% end %}
                 </span></td>
             </tr>
             <tr>
                 <td>昵称</td>
-                <td><input  name="f_nick_name" required></td>
+                <td><input  name="f_nick_name" value={% if form_errors and "nick_name" in form_errors %}"
+                                                {{ form["nick_name"] }}"
+                                                {% end %} required></td>
                 <td><span id="test_nick_name" style="color: red;" >
                     {% if form_errors and "nick_name" in form_errors %} {{ form_errors["nick_name"] }} {% end %}
                 </span></td>

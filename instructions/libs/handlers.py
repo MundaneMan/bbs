@@ -8,20 +8,20 @@ import traceback
 import tornado.web
 import tornado.netutil
 
+
 import instructions.libs.template as lib_template
 
 import instructions.helpers.user_helper as user_helper
 import instructions.models.user_model as user_model
 import instructions.models.operation_log_model as operation_log_model
 import instructions.libs.data as const_data
+from instructions.libs.session import RedisSessionHandler
 
 
-class BaseHandler(tornado.web.RequestHandler):
+class BaseHandler(RedisSessionHandler):
     operation = u"未标记操作"
 
     def initialize(self):
-        super(BaseHandler, self).initialize()
-        self.data = {"err_code": 1, "err_msg": "unknow_error", "result": "fail"}
         self.prepare_remote_ip()
 
     def set_default_handlers(self):
@@ -267,6 +267,9 @@ class JsSiteBaseHandler(SiteBaseHandler):
     def base_handler_type(self):
         return "js_site_base"
 
+    def initialize(self):
+        super(JsSiteBaseHandler, self).initialize()
+        self.data = {"err_code": 1, "err_msg": "unknow_error", "result": "fail"}
 
 
 # api base controllers

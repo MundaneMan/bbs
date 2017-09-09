@@ -6,7 +6,7 @@ import os
 import pymongo
 
 
-SITE_NAME = "客户服务系统"
+SITE_NAME = u"客户服务系统"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -27,6 +27,8 @@ settings_common = {
     # "xsrf_cookies": True,
     "cookie_secret": "11oETkKXQAGaYdkL5gEmGeJkFuYh7EQnp2XdTP1o/Vo=",
     "gzip": True,
+    "redis": {"db": 1, "host": "localhost", "port": 6379}
+
 }
 
 settings_debug = {
