@@ -32,7 +32,7 @@ def list_articles_by_cond(m_cond, sort=None, start=0, limit=30, is_count=False):
 
 
 def insert_article(article_data):
-    if "status" in article_data:
+    if "status" not in article_data:
         article_data["status"] = "normal"
     article_data["created_at"] = int(time.time())
     result = db.articles.insert_one(article_data)

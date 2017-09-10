@@ -19,15 +19,17 @@ class ArticlePublishHandler(ArticleBaseHandler):
 
     def post(self, *args, **kwargs):
         form_data = self._build_form_data()
+        print form_data
         form_errors = self._validate_require_form_data(form_data)
         if form_errors:
-            self._render(form_data,form_errors)
+            self._render(form_data, form_errors)
             return
-        article_model.insert_article(form_data)
+        article_id = article_model.insert_article(form_data)
+        self.redirect("/article/view/{}/".format(str(article_id)))
 
-    def _render(self,form_data=None, form_errors=None):
+    def _render(self, form_data=None, form_errors=None):
         self.render(
-            "edit_article.html", form_data=form_data, form_errors=form_errors
+            "article_edit.html", form_data=form_data, form_errors=form_errors
         )
 
     def _list_form_keys(self):
@@ -36,6 +38,19 @@ class ArticlePublishHandler(ArticleBaseHandler):
     def _list_required_form_keys(self):
         return ["title", "content"]
 
+
+class ArticleViewHandler(ArticleBaseHandler):
+    def get(self, article_id):
+        print article_id
+        article = article_model.load_article_by_id(article_id)
+        print article
+        if article:
+            self.render("article_view.html", article=article)
+        else:
+            self.redirect("/")
+
+
 urls = [
     (r"/article/edit/?", ArticlePublishHandler),
+    (r"/article/view/(\w+)/?", ArticleViewHandler),
     ]
