@@ -10,7 +10,8 @@
   {% block head %}{% end %}
 
 </head>
-<body>
+<body class="hold-transition skin-blue-light">
+<div class="wrapper">
 {% include "header.html" %}
 
 {% block body %}{% end %}
@@ -20,6 +21,7 @@
 <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/app.min.js?v=1.0.1"></script>
-{% block footer_script %}{% end %}
+</div>
 </body>
+{% block footer_script %}{% end %}
 </html>
