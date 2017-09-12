@@ -10,12 +10,18 @@
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
        <!--Sidebar toggle button-->
-      <!--<a href="#" class="sidebar-toggle" role="button">-->
-        <!--<span class="sr-only">Toggle navigation</span>-->
-      <!--</a>-->
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+            <li style="float: left"><h4 style="font-size: 20px; color: white; float: left" href="#">哈哈,中国第一大互联网品牌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </h4></li>
+            <li style="width:450px">&nbsp;</li>
+            {% if not current_user %}
+            <li ><a href="/user/login">登录</a>
+            </li>
+            <li ><a href='/user/register'>注册</a>
+            </li>
+            {% end %}
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -250,7 +256,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/user/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
