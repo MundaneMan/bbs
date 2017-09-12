@@ -1,0 +1,15 @@
+1.PC端安装vmware以及vmware-tools
+2.PC端安装python 和pycharm
+3.在PC端某个文件夹(例如d:code)下克隆工程 git clone https://github.com/libinghope/instructions.git
+4.在虚拟机中安装ubuntu-server(最好设置国内的源)
+5.设置vmware和主机的共享目录，为刚才的代码路径(d:code)
+6.ubuntu安装pip,命令sudo pip install python-pip
+7.ubuntu进入cd  /mnt/hgfs/code/instructions目录下
+8.执行命令: sudo pip install -r requirements.txt安装依赖文件
+9.配置ubuntu hosts文件  加入，127.0.0.1  mongo
+10.安装nginx  sudo apt-get install nginx
+11.拷贝工程目录下的config文件夹下的vhost_instructinos.cof到/etc/nginx/sites-enabled/
+12.重启nginx,sudo service nginx restart
+13.pc端配置hosts文件，(ubuntu_ip)   www-local.instructions.com
+14.在ubuntu工程目录下启动服务,sudo python main.py
+14.pc浏览器访问 www-local.instructions.com,可以访问到，就说明配置好了
