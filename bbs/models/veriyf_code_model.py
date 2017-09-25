@@ -4,7 +4,7 @@
 Common module
 """
 
-from instructions.models import build_obj_id, filter_obj_id
+from bbs.models import build_obj_id, filter_obj_id
 from config_web import db
 
 

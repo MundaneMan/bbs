@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import instructions.models.stats_model as stats_model
+import bbs.models.stats_model as stats_model
 
 
 def stats_targets():

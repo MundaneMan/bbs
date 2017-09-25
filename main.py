@@ -10,7 +10,7 @@ import config_web
 from URLS import ui_modules, URLS
 
 from tornado.options import define, options
-import instructions.helpers.handler_helper as handler_helper
+import bbs.helpers.handler_helper as handler_helper
 
 
 define("port", default=8001)

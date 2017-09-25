@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import tornado.web
-from instructions.libs.handlers import HomeBaseHandler
+from bbs.libs.handlers import HomeBaseHandler
 
 
 class IndexHandler(HomeBaseHandler):

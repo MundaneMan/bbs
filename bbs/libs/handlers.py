@@ -9,13 +9,13 @@ import tornado.web
 import tornado.netutil
 
 
-import instructions.libs.template as lib_template
+import bbs.libs.template as lib_template
 
-import instructions.helpers.user_helper as user_helper
-import instructions.models.user_model as user_model
-import instructions.models.operation_log_model as operation_log_model
-import instructions.libs.data as const_data
-from instructions.libs.session import RedisSessionHandler
+import bbs.helpers.user_helper as user_helper
+import bbs.models.user_model as user_model
+import bbs.models.operation_log_model as operation_log_model
+import bbs.libs.data as const_data
+from bbs.libs.session import RedisSessionHandler
 
 
 class BaseHandler(RedisSessionHandler):

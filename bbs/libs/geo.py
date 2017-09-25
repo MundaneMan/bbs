@@ -5,7 +5,7 @@ import math
 import json
 import requests
 
-from instructions.libs.shapes import Point, Rect
+from bbs.libs.shapes import Point, Rect
 
 
 def calc_distance(lon1, lat1, lon2, lat2):

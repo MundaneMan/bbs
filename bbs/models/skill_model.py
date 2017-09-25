@@ -6,10 +6,10 @@
 
 import re
 
-import instructions.libs.geo as lib_geo
-import instructions.models.user_model as member_model
+import bbs.libs.geo as lib_geo
+import bbs.models.user_model as member_model
 
-from instructions.models import build_obj_id
+from bbs.models import build_obj_id
 from config_web import db
 
 

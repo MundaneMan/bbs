@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from instructions.libs.captcha import Captcha
-from instructions.libs.handlers import BaseHandler
+from bbs.libs.captcha import Captcha
+from bbs.libs.handlers import BaseHandler
 from cStringIO import StringIO
 
 

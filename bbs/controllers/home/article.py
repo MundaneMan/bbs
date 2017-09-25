@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from instructions.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
-from instructions.libs.captcha import Captcha
-import instructions.models.article_model as article_model
+from bbs.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
+from bbs.libs.captcha import Captcha
+import bbs.models.article_model as article_model
 import time
 import string
 

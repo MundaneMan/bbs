@@ -21,7 +21,7 @@ settings_common = {
     "cookie_key_sess": "fpc1",
 
     "static_path": os.path.join(BASE_DIR, "assets"),
-    "template_path": os.path.join(BASE_DIR, "instructions", "templates"),
+    "template_path": os.path.join(BASE_DIR, "bbs", "templates"),
     "login_url": "/user/login",
 
     # "xsrf_cookies": True,
@@ -33,17 +33,17 @@ settings_common = {
 
 settings_debug = {
     "debug": True,
-    "api_domain": "api-local.instructions.com",
-    "admin_domain": "local-instructions.com",
-    "static_url": "http://local-instructions.com/",
-    "static_path": "/Users/matt/Projects/backup/instructions/static/",
+    "api_domain": "api-local.bbs.com",
+    "admin_domain": "local-bbs.com",
+    "static_url": "http://local-bbs.com/",
+    "static_path": "/Users/matt/Projects/backup/bbs/static/",
 }
 
 settings_production = {
-    "api_domain": "api-local.instructions.com",
-    "admin_domain": "admin-instructions.com",
-    "static_url": "http://s-local.instructions.com:8080/",
-    "static_path": "/Users/matt/Projects/backup/instructions/static/",
+    "api_domain": "api-local.bbs.com",
+    "admin_domain": "admin-bbs.com",
+    "static_url": "http://s-local.bbs.com:8080/",
+    "static_path": "/Users/matt/Projects/backup/bbs/static/",
 }
 
 settings_testing = {
@@ -64,7 +64,7 @@ settings = settings_common
 # db
 mongo_host = os.getenv("MONGO_HOST", "mongodb")
 client = pymongo.MongoClient(mongo_host, 27017)
-db = client["instructions"]
+db = client["bbs"]
 
 
 # search server
@@ -73,6 +73,6 @@ search_url = "http://localhost:8000/SEARCH_RPC"
 
 # icon url
 icon_url_debug = "http://s-local.isntructions.com/icons/"
-icon_url_production = "http://s.instructions.com/icons/"
+icon_url_production = "http://s.bbs.com/icons/"
 
 

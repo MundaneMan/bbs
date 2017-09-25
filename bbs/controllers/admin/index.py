@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from instructions.libs.handlers import AdminBaseHandler
+from bbs.libs.handlers import AdminBaseHandler
 import tornado
 
 

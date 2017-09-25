@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import time
 
-from instructions.models import build_obj_id
+from bbs.models import build_obj_id
 from config_web import db
 
 
