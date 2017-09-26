@@ -13,7 +13,7 @@ from tornado.options import define, options
 import bbs.helpers.handler_helper as handler_helper
 
 
-define("port", default=8001)
+define("port", default=8008)
 define("debug", default=True)
 
 

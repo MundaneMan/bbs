@@ -29,7 +29,7 @@ class ArticlePublishHandler(ArticleBaseHandler):
 
     def _render(self, form_data=None, form_errors=None):
         self.render(
-            "article_edit.html", form_data=form_data, form_errors=form_errors
+            "edit.html", form_data=form_data, form_errors=form_errors
         )
 
     def _list_form_keys(self):
@@ -40,14 +40,16 @@ class ArticlePublishHandler(ArticleBaseHandler):
 
 
 class ArticleViewHandler(ArticleBaseHandler):
+    operation = u"查看一篇文章内容"
+
     def get(self, article_id):
         print article_id
         article = article_model.load_article_by_id(article_id)
         print article
         if article:
-            self.render("article_view.html", article=article)
+            self.render("view.html", article=article)
         else:
-            self.redirect("/")
+            self.render("view.html")
 
 
 urls = [

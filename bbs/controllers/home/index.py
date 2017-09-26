@@ -10,9 +10,15 @@ class IndexHandler(HomeBaseHandler):
         self.render('index.html')
 
 
+class ContactHandler(HomeBaseHandler):
+    def get(self):
+        self.render('contact.html')
+
+
 urls = [
-    (r"/?", IndexHandler),
+    (r"/", IndexHandler),
     (r"/index/?", IndexHandler),
+    (r"/contact/?", ContactHandler),
     ]
 
 
