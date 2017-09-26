@@ -18,5 +18,5 @@ class VerifyCodeHandler(BaseHandler):
 
 
 urls = [
-    (r"/verify_code\.png/?", VerifyCodeHandler),
+    (r"/verify_code.png/?", VerifyCodeHandler),
     ]

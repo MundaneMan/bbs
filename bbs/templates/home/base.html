@@ -56,8 +56,8 @@
                 <div class="menu-top-menu-container">
                     <ul id="menu-top-menu" class="clearfix">
                         {% if not handler.current_user %}
-                        <li ><a href="/login/">登录</a></li>
-                        <li ><a href="/register/">注册</a></li>
+                        <li ><a href="/user/login/">登录</a></li>
+                        <li ><a href="/user/register/">注册</a></li>
                         {% else %}
                             {% if handler.current_user["role"] == "admin" %}
                               <li ><a href="/admin/">管理</a></li>

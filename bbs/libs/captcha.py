@@ -37,7 +37,7 @@ class Captcha:
         captcha_image = captcha(drawings=[
             background(),
             text(fonts=[
-                path.join(Captcha._fontsDir,'captcha.ttf')],
+                path.join(Captcha._fontsDir, 'captcha.ttf')],
                 drawings=[
                     warp(),
                     rotate(),
