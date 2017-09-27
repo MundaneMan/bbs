@@ -33,17 +33,17 @@ settings_common = {
 
 settings_debug = {
     "debug": True,
-    "api_domain": "api-local.bbs.com",
-    "admin_domain": "local-bbs.com",
-    "static_url": "http://local-bbs.com/",
-    "static_path": "/Users/matt/Projects/backup/bbs/static/",
+    "api_domain": "www-local.bbs.com",
+    "admin_domain": "www-local.bbs.com",
+    "static_url": "www-local.bbs.com/static/",
+    "static_path": "/Users/data/website/bbs/static/",
 }
 
 settings_production = {
-    "api_domain": "api-local.bbs.com",
-    "admin_domain": "admin-bbs.com",
-    "static_url": "http://s-local.bbs.com:8080/",
-    "static_path": "/Users/matt/Projects/backup/bbs/static/",
+    "api_domain": "www-local.bbs.com",
+    "admin_domain": "www-local.bbs.com",
+    "static_url": "www-local.bbs.com/static/",
+    "static_path": "/Users/data/website/bbs/static/",
 }
 
 settings_testing = {

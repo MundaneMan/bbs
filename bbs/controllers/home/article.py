@@ -52,7 +52,32 @@ class ArticleViewHandler(ArticleBaseHandler):
             self.render("view.html")
 
 
+class ArticleUploadImgHandler(ArticleBaseHandler):
+    operation = u"保存文章中的图片"
+
+    def post(self):
+        if self.request.files and "upload" not in self.request.files.keys():
+            self.data["success"] = False
+            self.data["msg"] = u"没有找到文件 !"
+            self.write(self.data)
+            return
+        photo = self.request.files["upload"][0]
+        photo_file_name = photo["filename"]
+        if not (photo_file_name.endswith(".jpg") or photo_file_name.endswith(".png")):
+            self.data["result"] = "failed"
+            self.data["message"] = "Photo format error ,must be jpg or png images !"
+            self.write(self.data)
+            return
+        photo_info_dict = photo_tools.save_upload_photo(photo["body"], self.settings["static_path"])
+        file_name = self.build_photo_url(photo_info_dict["id"])
+        self.write({
+            "success": True,
+            "msg": u"上传成功",
+            "file_path": file_name})
+
+
 urls = [
     (r"/article/edit/?", ArticlePublishHandler),
     (r"/article/view/(\w+)/?", ArticleViewHandler),
-    ]
+
+]

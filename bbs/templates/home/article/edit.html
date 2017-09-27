@@ -2,9 +2,17 @@
 {% block title %}UMEDITOR 完整demo{% end %}
 
 {% block head %}
+<script type="text/javascript" src="/home/js/ckeditor/ckeditor.js"></script>
+{% end %}
 
+{% block search %}
 {% end %}
 
 {% block content %}
-
+<div style="width: 1240px;margin: auto">
+<form>
+    <h2>标题<input></h2>
+    <textarea name="ckeditor" class="ckeditor"></textarea>
+</form>
+</div>
 {% end %}
