@@ -4,6 +4,7 @@
 from bbs.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
 from bbs.libs.captcha import Captcha
 import bbs.models.article_model as article_model
+import bbs.libs.photo as photo_tools
 import time
 import string
 
@@ -61,6 +62,7 @@ class ArticleUploadImgHandler(ArticleBaseHandler):
             self.data["msg"] = u"没有找到文件 !"
             self.write(self.data)
             return
+        callback = self.get_argument("CKEditorFuncNum")
         photo = self.request.files["upload"][0]
         photo_file_name = photo["filename"]
         if not (photo_file_name.endswith(".jpg") or photo_file_name.endswith(".png")):
@@ -70,14 +72,20 @@ class ArticleUploadImgHandler(ArticleBaseHandler):
             return
         photo_info_dict = photo_tools.save_upload_photo(photo["body"], self.settings["static_path"])
         file_name = self.build_photo_url(photo_info_dict["id"])
-        self.write({
-            "success": True,
-            "msg": u"上传成功",
-            "file_path": file_name})
+
+        # self.write({
+        #     "success": True,
+        #     "msg": u"上传成功",
+        #     "file_path": file_name})
+        # self.write(file_name)
+        res_txt = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction("\
+                  + callback + ",'" + file_name + "'," + ");</script>"
+        print res_txt
+        self.write(res_txt)
 
 
 urls = [
     (r"/article/edit/?", ArticlePublishHandler),
     (r"/article/view/(\w+)/?", ArticleViewHandler),
-
+    (r"/article/upload_img/?", ArticleUploadImgHandler)
 ]

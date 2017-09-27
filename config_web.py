@@ -35,14 +35,14 @@ settings_debug = {
     "debug": True,
     "api_domain": "www-local.bbs.com",
     "admin_domain": "www-local.bbs.com",
-    "static_url": "www-local.bbs.com/static/",
+    "static_url": "http://www-local.bbs.com/static/",
     "static_path": "/Users/data/website/bbs/static/",
 }
 
 settings_production = {
     "api_domain": "www-local.bbs.com",
     "admin_domain": "www-local.bbs.com",
-    "static_url": "www-local.bbs.com/static/",
+    "static_url": "http://www-local.bbs.com/static/",
     "static_path": "/Users/data/website/bbs/static/",
 }
 
