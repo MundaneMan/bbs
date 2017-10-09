@@ -3,13 +3,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="小米帐号能使用小米手机，MIUI，小米云，多看阅读，米聊，小米社区等小米服务。">
-    <meta name="keywords" content="小米帐号，小米账号，小米注册，注册，Mi Account，Sign in，小米，帐号，账号，小米帐户，登录，登陆，安全令牌，动态口令，小米注册，找回密码">
+    <meta name="description" content="AI头条账号。">
+    <meta name="keywords" content="AI头条账号，人工智能，AI，tensorflow, python">
 
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <title>小米帐号 - 登录</title>
+    <link rel="SHORTCUT ICON" href="aa.ico"/>
+    <title>AI头条帐号 - 登录</title>
 </head>
 <body class="zh_CN">
 <div class="wrapper">
@@ -22,8 +23,8 @@
     </div>
     <!--bg_banner_start-->
     <div class="bgiframe">
-        <iframe name="ifr" style="height:100%" width="100%" height="686" src="./小米帐号 - 登录_files/saved_resource.html"
-                id="bgiframe" frameborder="0" scrolling="no"></iframe>
+        {#        <iframe name="ifr" style="height:100%" width="100%" height="686" src="./小米帐号 - 登录_files/saved_resource.html"#}
+        {#                id="bgiframe" frameborder="0" scrolling="no"></iframe>#}
     </div>
     <!--bg_banner_end-->
     <div class="wrap">
@@ -50,7 +51,7 @@
                                     <rect x="18.75" y="22.5" width="5" height="12.5" style="fill:#FFFFFF"></rect>
                                 </svg>
                             </em>
-                            <h4 class="header_tit_txt" id="login-title">小米帐号登录</h4>
+                            <h4 class="header_tit_txt" id="login-title">AI头条帐号登录</h4>
                             <div class="site_info"></div>
                         </div>
                     </div>
@@ -68,8 +69,7 @@
                     <div class="tabs-con tabs_con now" data-con="pwd">
                         <div>
                             <div class="login_area">
-                                <form action="https://account.xiaomi.com/pass/serviceLoginAuth2" method="POST"
-                                      id="login-main-form">
+                                <form method="POST" id="login-main-form">
                                     <div class="loginbox c_b">
                                         <!-- 输入框 -->
                                         <div class="lgn_inputbg c_b login-panel pwdLogin">
@@ -94,7 +94,7 @@
                                                     </div>
                                                 </div>
                                                 <input class="item_account" autocomplete="off" type="text" name="user"
-                                                       id="username" placeholder="邮箱/手机号码/小米ID">
+                                                       id="username" placeholder="AI头条账号">
                                             </label>
                                             <div class="country-container" id="countrycode_container"
                                                  style="display: none;">
@@ -119,11 +119,6 @@
                                                     <a href="javascript:;" id="getSMSCode">获取验证码</a>
                                                 </div>
                                             </label>
-                                        </div>
-                                        <div class="security_Controller" style="display: none;">
-                                            <label class="checkbox_area"><input type="checkbox"
-                                                                                id="trustSecurityController"
-                                                                                class="checkbox">使用安全控件</label>
                                         </div>
                                         <!-- 错误信息 -->
                                         <div id="captcha"></div>

@@ -1,160 +1,308 @@
-{% extends "base.html" %}
+{% extends base.html %}
 
-{% block title %}首页{% end %}
-
+{% block title %}AI头条论坛{% end %}
 
 {% block content %}
-<!-- Start of Page Container -->
-<div class="page-container">
-    <div class="container">
-        <div class="row">
+{#    侧边栏#}
+    <div class='contner_wrap wrap_990 clearfix'>
+        <div class='contn_left fr'>
+            <div class='left_wrap'>
+                <div class="sidebarplate" onclick="_hmt.push(['_trackEvent','bbs首页','侧边栏', '版块推荐']);">
 
-            <!-- start of page content -->
-            <div class="span8 page-content">
+                    <div class="sidebarplate_tab">
+                        <div class="tab">
+                            <span class="on">版块推荐</span>
+                            <span>百宝箱</span>
+                        </div>
+                    </div>
+                    <div>
+                        <ul class='on'>
+                            <li><a href="http://bbs.xiaomi.cn/f-487" target="_blank"><span
+                                    style="color:#ff0000;">AI6</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-385" target="_blank"><span style="color:#ff0000;">AINote 2</a>
+                            </li>
+                            <li><a href="http://bbs.xiaomi.cn/f-451" target="_blank">AI5/5c/5s/Plus</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-458" target="_blank">AIMax</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-450" target="_blank">AI笔记本</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-9" target="_blank">AI电视</span></a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-358" target="_blank">AI平板</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-364" target="_blank">AI盒子</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-475" target="_blank">AIMIX</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-354" target="_blank">AI路由器 3</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-360" target="_blank">红米Note 4/4X</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-361" target="_blank">红米4/4X/4A</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-362" target="_blank">AI手环</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-439" target="_blank">九号平衡车</span></a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-10" target="_blank">AI空气净化器</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-459" target="_blank">AIVR</a></li>
 
-                <!-- Basic Home Page Template -->
-                <div class="row separator">
-                    <section class="span4 articles-list">
-                        <h3>特别推荐</h3>
-                        <ul class="articles">
-                            <li class="article-entry standard">
-                                <h4><a href="/article/view/abcd132/">Integrating WordPress with Your Website</a></h4>
-                                <span class="article-meta">25 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
-                                <span class="like-count">66</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">WordPress Site Maintenance</a></h4>
-                                <span class="article-meta">24 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Website Dev">Website Dev</a></span>
-                                <span class="like-count">15</span>
-                            </li>
-                            <li class="article-entry video">
-                                <h4><a href="single.html">Meta Tags in WordPress</a></h4>
-                                <span class="article-meta">23 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Website Dev">Website Dev</a></span>
-                                <span class="like-count">8</span>
-                            </li>
-                            <li class="article-entry image">
-                                <h4><a href="single.html">WordPress in Your Language</a></h4>
-                                <span class="article-meta">22 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Advanced Techniques">Advanced Techniques</a></span>
-                                <span class="like-count">6</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">Know Your Sources</a></h4>
-                                <span class="article-meta">22 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Website Dev">Website Dev</a></span>
-                                <span class="like-count">2</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">Validating a Website</a></h4>
-                                <span class="article-meta">21 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Website Dev">Website Dev</a></span>
-                                <span class="like-count">3</span>
-                            </li>
                         </ul>
-                    </section>
 
 
-                    <section class="span4 articles-list">
-                        <h3>最新文章</h3>
-                        <ul class="articles">
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">Integrating WordPress with Your Website</a></h4>
-                                <span class="article-meta">25 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Server &amp; Database">Server &amp; Database</a></span>
-                                <span class="like-count">66</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">Using Javascript</a></h4>
-                                <span class="article-meta">25 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Advanced Techniques">Advanced Techniques</a></span>
-                                <span class="like-count">18</span>
-                            </li>
-                            <li class="article-entry image">
-                                <h4><a href="single.html">Using Images</a></h4>
-                                <span class="article-meta">25 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Designing in WordPress">Designing in WordPress</a></span>
-                                <span class="like-count">7</span>
-                            </li>
-                            <li class="article-entry video">
-                                <h4><a href="single.html">Using Video</a></h4>
-                                <span class="article-meta">24 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in WordPress Plugins">WordPress Plugins</a></span>
-                                <span class="like-count">7</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">WordPress Site Maintenance</a></h4>
-                                <span class="article-meta">24 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Website Dev">Website Dev</a></span>
-                                <span class="like-count">15</span>
-                            </li>
-                            <li class="article-entry standard">
-                                <h4><a href="single.html">WordPress CSS Information and Techniques</a></h4>
-                                <span class="article-meta">24 Feb, 2013 in <a href="#"
-                                                                              title="View all posts in Theme Development">Theme Development</a></span>
-                                <span class="like-count">1</span>
-                            </li>
+                        <ul>
+
+                            <li><a href="http://bbs.xiaomi.cn/task/list" target="_blank">论坛任务</a></li>
+                            <li><a href="http://so.bbs.xiaomi.cn" target="_blank">搜索</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/message/private" target="_blank">我的消息</a></li>
+                            <li><a href="http://rom.xiaomi.cn/" target="_blank">ROM下载</a></li>
+                            <li><a href="http://uvip.xiaomi.cn/" target="_blank">VIP认证</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-400" target="_blank">申请特殊组</a></li>
+                            <li><a href="http://down.xiaomi.cn/" target="_blank">应用中心</a></li>
+                            <li><a href="http://order.mi.com/misc/checkitem" target="_blank">防伪查询</a></li>
+                            <li><a href="http://www.xiaomi.cn/html/special/zhuanti/" target="_blank">专题汇总</a></li>
+                            <li><a href="http://mipop.xiaomi.cn/" target="_blank">AI爆米花</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-17" target="_blank">办事大厅</a></li>
+                            <li><a href="http://bbs.xiaomi.cn/f-394" target="_blank">热门软件</a></li>
+                            <li><a href="http://www.xiaomi.cn/html/special/wangzhandaohang/?pc_hash=YaB1OV"
+                                   target="_blank">网站导航</a></li>
+                            <li><a href="http://old.bbs.xiaomi.cn/portal.php?mod=topic&topicid=38"
+                                   target="_blank">AI大事记</a></li>
+                            <li><a href="http://www.mi.com/" target="_blank">AI网</a></li>
+                            <li><a href="http://xiaomi.tmall.com/" target="_blank">天猫旗舰店</a></li>
+
                         </ul>
-                    </section>
+                    </div>
                 </div>
             </div>
-            <!-- end of page content -->
-
-
-            <!-- start of sidebar -->
-            <aside class="span4 page-sidebar">
-
-                <section class="widget">
-                    <div class="support-widget">
-                        <h3 class="title">支持</h3>
-                        <p class="intro">
-                            <a href="/contact/">需要更多帮助吗? 如果你找不到所需的内容,可以联系我们解决！</a></p>
+{#            签到栏   #}
+            <div id="mibbs_sign" onclick="_hmt.push(['_trackEvent','bbs首页','侧边栏', '签到']);">
+                <div class="mibbs_con" style="margin-bottom:10px;"><a class="mibbs_signpanel JD_sign " id="JD_sign">
+                    <div class="font">签到</div>
+                    <span class="nums">连续0天</span>
+                    <div class="fblock">
+                        <div class="all">0人</div>
+                        <div class="line"><span style="font-size:12px;">签到看排名</span></div>
                     </div>
-                </section>
-
-                <section class="widget">
-                    <div class="quick-links-widget">
-                        <h3 class="title">Quick Links</h3>
-                        <ul id="menu-quick-links" class="menu clearfix">
-                            <li><a href="index-2.html">Home</a></li>
-                            <li><a href="articles-list.html">Articles List</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                </a>
+                    <div id="JD_win" class="mibbs_win JD_win"><img
+                            src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2015/1127/20151127045012395.png">
+                        <div><h5>扫码下载App</h5><span>一键签到 升级加速</span></div>
+                        <div class="angleA"></div>
+                        <div class="angleB"></div>
                     </div>
-                </section>
-
-                <section class="widget">
-                    <h3 class="title">Tags</h3>
-                    <div class="tagcloud">
-                        <a href="#" class="btn btn-mini">basic</a>
-                        <a href="#" class="btn btn-mini">beginner</a>
-                        <a href="#" class="btn btn-mini">blogging</a>
-                        <a href="#" class="btn btn-mini">colour</a>
-                        <a href="#" class="btn btn-mini">css</a>
-                        <a href="#" class="btn btn-mini">date</a>
-                        <a href="#" class="btn btn-mini">design</a>
-                        <a href="#" class="btn btn-mini">files</a>
-                        <a href="#" class="btn btn-mini">format</a>
-                        <a href="#" class="btn btn-mini">header</a>
-                        <a href="#" class="btn btn-mini">images</a>
-                        <a href="#" class="btn btn-mini">plugins</a>
-                        <a href="#" class="btn btn-mini">setting</a>
-                        <a href="#" class="btn btn-mini">templates</a>
-                        <a href="#" class="btn btn-mini">theme</a>
-                        <a href="#" class="btn btn-mini">time</a>
-                        <a href="#" class="btn btn-mini">videos</a>
-                        <a href="#" class="btn btn-mini">website</a>
-                        <a href="#" class="btn btn-mini">wordpress</a>
+                </div>
+            </div>
+            {#            签到栏结束   #}
+            <script>
+                //快速签到
+                var packIdName = "mibbs_sign";
+                var pageFlag = "2";
+                (function () {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';
+                    ds.async = true;
+                    ds.src = 'http://s1.bbs.xiaomi.cn/statics/js/base/sign.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                        || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <div class='left_wrap'>
+                <div class='con'>
+                    <div class='hotspot'>
+                        <h3>热点动态</h3>
                     </div>
-                </section>
+                    <div class='shareActive'>
+                        <a href="http://wan.xiaomi.cn/activity/detl/activity_id/119" target="_blank"
+                           class='shareActive_img'><img
+                                src='http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2017/0928/20170928121605663.jpg'/></a>
+                        <span class='shareActive_txt'>月立儿童电动理发器众测开启</span>
+                    </div>
 
-            </aside>
-            <!-- end of sidebar -->
+
+                    <div class='shareActive'>
+                        <a href="http://bbs.xiaomi.cn/t-13697933" class='shareActive_img'><img
+                                src='http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2017/0909/20170909063610843.jpg'/></a>
+                        <span class='shareActive_txt'>最燃开学季！黑科技百校行开启</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class='left_wrap'>
+                <div class='con'>
+                    <div class='hotspot'><h3>ROM下载<a href="http://rom.xiaomi.cn" class='more'>更多></a></h3>
+                        <div class="romdl">
+
+                            <a href="http://rom.xiaomi.cn" target="_blank" class="romdl_center"> <span
+                                    class='num'><strong>90.72</strong>%</span> <span class='txt'>本周推荐度<br/><span
+                                    class='title'>MIUI 7.9.22</span></span> </a>
+
+
+                            <span class='slide_btn slide_btn_left'></span> <span
+                                class='slide_btn slide_btn_right'></span></div>
+                        <a href="http://bbs.xiaomi.cn/t-13740873" class='btn'>升级公告</a>
+                        <p class='about'><a href="http://bbs.xiaomi.cn/thread-254260-1-1.html">关于开发版和稳定版的说明</a><br/>
+
+                            <a href="http://bbs.xiaomi.cn/thread-11158516-1-1.html"> AI助手 </a>
+
+                            <a href="http://bbs.xiaomi.cn/t-13316450" class='linetool'> 刷机教程 </a>
+
+                            <a href="http://rom.xiaomi.cn" class='all'> 全部ROM </a></p></div>
+                </div>
+            </div>
+            <div class="left_wrap">
+                <div class="con">
+                    <div class="hotspot"><h3>AI社区APP下载</h3>
+                        <a href="http://bbs.xiaomi.cn/app/download" target="_blank" class='shareActive_img'><img
+                                src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2015/1127/20151127045012395.png"
+                                class="two_dimension_code"></div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class='contn_right fl clearfix '>
+
+{#   热门板块开始  #}
+            <div class='hostplate'>
+                <span class='name'>热门版块:</span>
+                <ul class="hostplate_con clearfix">
+                    <li class='list_item'>
+                        <a href="http://bbs.xiaomi.cn/f-385"
+                           class='list_item_con' onclick="_hmt.push(['_trackEvent', 'bbs首页', '热门版块', '']);">
+                            <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/forum/icon/5810160ba8264.png?_v=1477449227"/>
+                            <span class='txt'>AINote 2</span>
+                        </a>
+                    </li>
+                    <li class='list_item'>
+                        <a href="http://bbs.xiaomi.cn/f-390"
+                           class='list_item_con' onclick="_hmt.push(['_trackEvent', 'bbs首页', '热门版块', '']);">
+                            <img src="http://img07.mifile.cn/v1/MI_1031495CC30DA4/T1SJJgBgbT1R4cSCrK.png"/>
+                            <span class='txt'>MIUI功能与讨论</span>
+                        </a>
+                    </li>
+                    <li class='list_item'>
+                        <a href="http://bbs.xiaomi.cn/f-451"
+                           class='list_item_con' onclick="_hmt.push(['_trackEvent', 'bbs首页', '热门版块', '']);">
+                            <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/forum/icon/57ea56a18c3c1.jpg?_v=1474975393"/>
+                            <span class='txt'>AI5/5s/5s Plus</span>
+                        </a>
+                    </li>
+                    <li class='list_item'>
+                        <a href="http://bbs.xiaomi.cn/f-475"
+                           class='list_item_con' onclick="_hmt.push(['_trackEvent', 'bbs首页', '热门版块', '']);">
+                            <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/forum/icon/58101629cb677.png?_v=1477449257"/>
+                            <span class='txt'>AIMIX</span>
+                        </a>
+                    </li>
+                    <li class='list_item'>
+                        <a href="http://bbs.xiaomi.cn/f-487"
+                           class='list_item_con' onclick="_hmt.push(['_trackEvent', 'bbs首页', '热门版块', '']);">
+                            <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/forum/icon/5915502dea48f.jpg?_v=1494569006"/>
+                            <span class='txt'>AI6</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {#   热门板块结束  #}
+            <div class='theme'>
+                <div class='theme_con'>
+                    <div class='theme_nav'>
+                        <a href="http://bbs.xiaomi.cn/" class='theme_nav_list current'
+                           onclick="_hmt.push(['_trackEvent', 'bbs首页', '内容区', '推荐button']);_msq.push(['trackEvent', 'tj','','mibbis_c']);">
+                            推荐
+                        </a>
+                        <a href="http://bbs.xiaomi.cn/l" class='theme_nav_list'
+                           onclick="_hmt.push(['_trackEvent', 'bbs首页', '最新主题button', '']);_msq.push(['trackEvent', 'new','','mibbis_c']);">
+                            最新主题
+                        </a>
+                        <a href="http://bbs.xiaomi.cn/thread/add" class='btn theme_nav_btn'
+                           onclick="_hmt.push(['_trackEvent', 'bbs首页', '内容区', '发表新主题']);">发表新主题</a>
+                    </div>
+
+{#              帖子主题列表开始             #}
+                    <ul>
+                        <li class='theme_list clearfix' u-id="182659002">
+                            <div class='theme_list_img'>
+                                <a href="http://bbs.xiaomi.cn/u-detl-182659002"
+                                   class='headportrt'
+                                   target="_blank" rel="noopener noreferrer">
+                                    <img
+                                            class="user_head"
+                                            src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif'
+                                            data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/182659002/avatar.jpg?&width=50&height=50"/>
+                                </a>
+                            </div>
+                            <div class='theme_list_con'>
+
+                                <div class='title'>
+                                    <a href="http://bbs.xiaomi.cn/t-13745378"
+                                       class='title_name ' style="color:#444444" target="_blank"
+                                       rel="noopener noreferrer"
+                                       onclick="_msq.push(['trackEvent', 'tj-1-1', 'http://bbs.xiami.cn/t-13745378', 'mibbis_c']);">
+                                        「带上AI去旅行」主题摄影大赛，赢AINote 3 </a>
+                                    <img class='stamp'
+                                         src='http://img08.mifile.cn/v1/MI_1031495CC30DA4/T1LSCvBKE_1R4cSCrK.png'/>
+                                </div>
+                                <div class='auth_msg clearfix'>
+                                    <a href="http://bbs.xiaomi.cn/u-detl-182659002"
+                                       class='user_name'
+                                       target="_blank" rel="noopener noreferrer">小白糖罐</a>
+                                    <i class="vip_icon 				vip_icon_s3										"></i>
+                                    <span class="vipnum vipnum_1"></span>
+                                    <span class='time txt'>
+										22分钟前									</span>
+                                    <a href="http://bbs.xiaomi.cn/f-393"
+                                       class="time txt">AI摄影馆</a>
+                                    <span
+                                            class='comefrom txt'>·来自PC</span>
+                                    <span class='stick txt'>·置顶</span>
+                                    <span
+                                            class='status txt'></span>
+                                    <p class='see'>
+                                        <span class='numb msg'><i></i>385</span>
+                                        <span class='numb view'><i></i>39665</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+{#          分页开始          #}
+                    <div class="base_widget_paging">
+                        <div class="paging_widget_2">
+                            <ul>
+                                <li class="page selected "><a
+                                        onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">1</a></li>
+                                <li class="page"><a href="/d-2"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">2</a>
+                                </li>
+                                <li class="page"><a href="/d-3"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">3</a>
+                                </li>
+                                <li class="page"><a href="/d-4"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">4</a>
+                                </li>
+                                <li class="page"><a href="/d-5"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">5</a>
+                                </li>
+                                <li class="page"><a href="/d-6"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">6</a>
+                                </li>
+                                <li class="page"><a href="/d-7"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">7</a>
+                                </li>
+                                <li class="page"><a href="/d-8"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">8</a>
+                                </li>
+                                <li class="page"><a href="/d-9"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">9</a>
+                                </li>
+                                <li class="page"><a href="/d-10"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">10</a>
+                                </li>
+                                <li class="next"><a href="/d-2"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">&gt</a>
+                                </li>
+                                <li class="last"><a href="/d-634"
+                                                    onclick="_hmt.push(['_trackEvent','bbs首页','帖子列表', '翻页']);">末页>></a>
+                                </
+                                </li>                </ul>
+                        </div>
+                    </div>
+                    {#          分页结束          #}
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<!-- End of Page Container -->
-{% end %}
+    {% end %}
