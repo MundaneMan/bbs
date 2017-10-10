@@ -8,9 +8,6 @@
     <meta name="description" content="AI头条官方论坛是Ai爱好者的大本营，在这里交流AI学习心得，了解AI最新动态，参与活动互动，为AI粉打造一个良好的互动交流平台。"/>
     <meta name="keywords" content="AI论坛,AI社区,AI头条官方论坛"/>
     <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
-    <link rel="stylesheet" type="text/css" href='http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css?v=1496318117'>
-    <link rel="stylesheet" type="text/css" href='http://s1.bbs.xiaomi.cn/statics/css/zh-cn/homepage.css?v=1496318117'>
-
     <!--[if lt IE 9]>
 			<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
 		<![endif]-->
@@ -47,7 +44,7 @@
             display: inline-block;
             position: absolute;
             left: 0;
-            background: url("//s1.bbs.xiaomi.cn/statics/images/logo_cn.png") 0 center no-repeat
+            background: url('/home/images/nav_logo_ai.png') 0 center no-repeat
         }
 
         .xmcomm_header .mobile_qr {
@@ -64,7 +61,7 @@
             display: block;
             line-height: 50px;
             padding-left: 14px;
-            background: url("//s1.bbs.xiaomi.cn/statics/images/header_mobile.png") 0 center no-repeat;
+            background: url("/home/images/header_mobile.png") 0 center no-repeat;
             color: #ff7e3e
         }
 
@@ -79,7 +76,7 @@
         .xmcomm_header .mobile_qr .qr span {
             display: block;
             height: 151px;
-            background: url("//s1.bbs.xiaomi.cn/statics/images/header_qr.png") center no-repeat
+            background: url("/home/images/header_qr.png") center no-repeat
         }
 
         .xmcomm_header .mobile_qr .qr strong {
@@ -485,41 +482,27 @@
                         </dl>
                     </div>
                 </li>
-                <li><a href="http://wan.xiaomi.cn/" target="_blank" onclick="_hmt.push(['_trackEvent','bbs导航','酷玩帮']);">酷玩帮</a>
-                </li>
-                <li><a href="http://p.xiaomi.cn/" target="_blank" onclick="_hmt.push(['_trackEvent','bbs导航','随手拍']);">摄影馆</a>
-                </li>
-                <li><a href="http://hd.xiaomi.cn/mipop/2016hz/" target="_blank"
-                       onclick="_hmt.push(['_trackEvent','bbs导航','爆米花']);">爆米花</a></li>
-                <li><a href="http://city.xiaomi.cn/" target="_blank"
-                       onclick="_hmt.push(['_trackEvent','bbs导航','同城会']);">同城会</a></li>
-                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"
-                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>
-                <li class="hidden"><a href="http://rom.xiaomi.cn/" target="_blank"
-                                      onclick="_hmt.push(['_trackEvent','bbs导航','ROM']);">ROM</a></li>
-                <li><a href="http://www.mi.com" target="_blank"
-                       onclick="_hmt.push(['_trackEvent','bbs导航','商城']);">AI商城</a></li>
+
+                <li><a href="http://hd.xiaomi.cn/mipop/2016hz/" target="_blank">AI教程</a></li>
+{#                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"#}
+{#                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>#}
                 <li>
                     <span>更多<i class="header_icon"></i></span>
                     <div class="header_more_list">
                         <ul>
                             <li class="hide"><a href="http://bbs.xiaomi.cn/f-410" target="_blank">校园俱乐部</a></li>
                             <li class="hide"><a href="http://bbs.xiaomi.cn/task/list" target="_blank">任务</a></li>
-                            <li class="hide"><a href="http://rom.xiaomi.cn/" target="_blank">ROM</a></li>
-                            <li><a href="http://so.bbs.xiaomi.cn" target="_blank"
-                                   onclick="_hmt.push(['_trackEvent','bbs导航','搜索']);">搜索</a></li>
+                            <li><a href="http://so.bbs.xiaomi.cn" target="_blank">搜索</a></li>
                             <li><a href="http://www.xiaomi.cn/html/special/zhuanti/" target="_blank">精彩活动</a></li>
                             <li><a href="http://uvip.xiaomi.cn/" target="_blank">VIP认证</a></li>
                             <li><a href="http://xue.xiaomi.cn/" target="_blank">学院</a></li>
-                            <li><a href="http://www.xiaomi.cn/list-19-1.html" target="_blank">刷机频道</a></li>
                             <li><a href="http://www.xiaomi.cn/html/special/wangzhandaohang/?pc_hash=YaB1OV"
                                    target="_blank">网站导航</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="http://so.bbs.xiaomi.cn/" target="_blank" class="hidden header_icon header_search"
-                       onclick="_hmt.push(['_trackEvent','bbs导航','搜索']);">搜索</a>
+                    <a href="http://so.bbs.xiaomi.cn/" target="_blank" class="hidden header_icon header_search">搜索</a>
                     <a href="http://bbs.xiaomi.cn/thread/add" target="_blank" class="header_icon header_revise">发帖</a>
                 </li>
             </ul>
@@ -530,7 +513,7 @@
         <div class="header wrap_990">
             <div class='user_wrap'>
                 <div class="topbar-info J_userInfo " id='login'>
-                    <a class='loginbtn' href="http://bbs.xiaomi.cn/site/login">登录</a>
+                    <a class='loginbtn' href="/user/login/">登录</a>
                     <a href="http://account.xiaomi.com/pass/register" class='registerbtn'>注册</a>
                 </div>
             </div>
