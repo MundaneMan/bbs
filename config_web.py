@@ -6,7 +6,7 @@ import os
 import pymongo
 
 
-SITE_NAME = u"客户服务系统"
+SITE_NAME = u"AI头条网"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
