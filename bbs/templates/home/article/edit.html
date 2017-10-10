@@ -41,7 +41,7 @@
                     </ul>
                 </div>
             </div>
-            <textarea class='invitationcon' id="editor" IsUploadAttach='1' style="height: 320px;"></textarea>
+            <textarea name="ckeditor" class="ckeditor" id="editor" IsUploadAttach='1' style="height: 320px;"></textarea>
             <div class='session2 clearfix'>
                 <ul class='title clearfix'>
                     <li>附加选项</li>
@@ -62,20 +62,13 @@
             <div class='session3'>
                 <span class='btn J_sendInvitation'>发表帖子</span>
                 <span class='btn btn-light J_savedraft'>存为草稿</span>
-                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>
-                    <ul class='selectlist' type="forum">
-                        <li value='1'>普通</li>
-                    </ul>
-                </div>
+{#                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>#}
+{#                    <ul class='selectlist' type="forum">#}
+{#                        <li value='1'>普通</li>#}
+{#                    </ul>#}
+{#                </div>#}
             </div>
         </div>
     </div>
-</div>
-<div style="width: 1240px;margin: auto">
-
-    <form>
-        <h2>标题<input></h2>
-        <textarea name="ckeditor" class="ckeditor"></textarea>
-    </form>
 </div>
 {% end %}
