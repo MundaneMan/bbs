@@ -1,9 +1,8 @@
 {% extends base.html %}
 
 {% block head %}
-<link rel="stylesheet" type="text/css" href='/home/css/index.css?v=1496318117'>
 <link rel="stylesheet" type="text/css" href='/home/css/homepage.css?v=1496318117'>
-
+<script type="text/javascript" src='/home/js/jquery.lazyload.js'></script>
 {% end %}
 
 {% block title %}AI头条论坛 首页{% end %}
@@ -73,6 +72,7 @@
                 </div>
             </div>
 {#            签到栏   #}
+            {% block bbs_sign %}
             <div id="mibbs_sign">
                 <div class="mibbs_con" style="margin-bottom:10px;"><a class="mibbs_signpanel JD_sign " id="JD_sign">
                     <div class="font">签到</div>
@@ -90,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            {#            签到栏结束   #}
+
             <script>
                 //快速签到
                 var packIdName = "mibbs_sign";
@@ -99,12 +99,15 @@
                     var ds = document.createElement('script');
                     ds.type = 'text/javascript';
                     ds.async = true;
-                    ds.src = 'http://s1.bbs.xiaomi.cn/statics/js/base/sign.js';
+                    var js_src = 'http://' + document.domain+'/home/js/sign.js';
+                    ds.src = js_src;
                     ds.charset = 'UTF-8';
                     (document.getElementsByTagName('head')[0]
                         || document.getElementsByTagName('body')[0]).appendChild(ds);
                 })();
             </script>
+            {% end %}
+            {#            签到栏结束   #}
             <div class='left_wrap'>
                 <div class='con'>
                     <div class='hotspot'>
@@ -216,8 +219,7 @@
                            onclick="_hmt.push(['_trackEvent', 'bbs首页', '最新主题button', '']);_msq.push(['trackEvent', 'new','','mibbis_c']);">
                             最新主题
                         </a>
-                        <a href="http://bbs.xiaomi.cn/thread/add" class='btn theme_nav_btn'
-                           onclick="_hmt.push(['_trackEvent', 'bbs首页', '内容区', '发表新主题']);">发表新主题</a>
+                        <a href="/article/edit/" class='btn theme_nav_btn'>发表新主题</a>
                     </div>
 
 {#              帖子主题列表开始             #}

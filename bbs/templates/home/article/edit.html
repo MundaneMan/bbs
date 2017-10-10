@@ -1,18 +1,81 @@
 {% extends "../base.html" %}
-{% block title %}UMEDITOR 完整demo{% end %}
+{% block title %}发布帖子{% end %}
 
 {% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/post/postadvanced.css?v=1496318117'>
 <script type="text/javascript" src="/home/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/home/js/post/postadvanced.js"></script>
+<script type="text/javascript" src="/home/js/post/postthread.js"></script>
 {% end %}
 
 {% block search %}
 {% end %}
 
 {% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='postwrap'>
+        <div class='postcon'>
+            <div class='title clearfix'>
+                <span>发表新主题</span>
+            </div>
+            <div class='importtopic clearfix'>
+                <span class='label'>还可输入 90 个字符</span>
+                <input type='text' placeholder='标题'/>
+                <div class="selectPlate dropdown_text_middle">
+
+                    <span value='0'>选择版块</span><i></i>
+
+                </div>
+                <div class='selectPlatelist'>
+                    <ul class='clearfix'>
+                        <li value='487'>AI学习</li>
+                        <li value='475'>AI前沿</li>
+                        <li value='385'>AI笔记</li>
+                        <li value='451'>AI新闻</li>
+                        <li value='382'>AI技术</li>
+                    </ul>
+                </div>
+                <div class="dropdown_text_middle selectclassify">
+                    <span value='0'>选择主题分类</span><i></i>
+                    <ul class='selectlist'>
+                    </ul>
+                </div>
+            </div>
+            <textarea class='invitationcon' id="editor" IsUploadAttach='1' style="height: 320px;"></textarea>
+            <div class='session2 clearfix'>
+                <ul class='title clearfix'>
+                    <li>附加选项</li>
+                </ul>
+                <ul class='title_select'>
+                    <li class='current'>
+                        <dl class='clearfix'>
+                            <dt>基本属性:</dt>
+                            <dd>
+                                <div><input type="checkbox" name="onlyauthvislibily"/><span
+                                        class="check_wrap"><i></i></span>回帖仅作者可见
+                                </div>
+                            </dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class='session3'>
+                <span class='btn J_sendInvitation'>发表帖子</span>
+                <span class='btn btn-light J_savedraft'>存为草稿</span>
+                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>
+                    <ul class='selectlist' type="forum">
+                        <li value='1'>普通</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div style="width: 1240px;margin: auto">
-<form>
-    <h2>标题<input></h2>
-    <textarea name="ckeditor" class="ckeditor"></textarea>
-</form>
+
+    <form>
+        <h2>标题<input></h2>
+        <textarea name="ckeditor" class="ckeditor"></textarea>
+    </form>
 </div>
 {% end %}
