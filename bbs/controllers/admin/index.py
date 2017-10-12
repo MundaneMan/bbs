@@ -10,9 +10,15 @@ class IndexHandler(AdminBaseHandler):
         self.render('index.html')
 
 
+class DataTableHandler(AdminBaseHandler):
+    def get(self):
+        self.render('datatable.html')
+
+
 urls = [
     (r"/admin/?", IndexHandler),
     (r"/admin/index/?", IndexHandler),
+    (r"/admin/datatable/?", DataTableHandler)
     ]
 
 
