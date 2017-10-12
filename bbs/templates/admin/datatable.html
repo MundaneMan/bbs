@@ -1,11 +1,8 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>网站后台管理系统HTML模板--模板之家 www.cssmoban.com</title>
-<link href="../../../assets/admin/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../../../assets/admin/js/jquery.js"></script>
+{% extends 'base.html' %}
 
+{% block title %}{% end %}
+
+{% block head %}
 <script type="text/javascript">
 $(document).ready(function(){
   $(".click").click(function(){
@@ -26,12 +23,10 @@ $(document).ready(function(){
 
 });
 </script>
+{% end %}
 
-
-</head>
-
-
-<body>
+{% block content %}
+<div style="float: left">
 
 	<div class="place">
     <span>位置：</span>
@@ -219,5 +214,5 @@ $(document).ready(function(){
     <script type="text/javascript">
 	$('.tablelist tbody tr:odd').addClass('odd');
 	</script>
-</body>
-</html>
+</div>
+{% end %}

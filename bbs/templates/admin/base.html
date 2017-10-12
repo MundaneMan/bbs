@@ -3,9 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>无标题文档</title>
+    <title>{% block title %}{% end %}</title>
     <link href="/admin/css/style.css" rel="stylesheet" type="text/css"/>
     <script language="JavaScript" src="/admin/js/jquery.js"></script>
+    {% block head %}{% end %}
     <script type="text/javascript">
         $(function () {
             //顶部导航切换
@@ -31,10 +32,9 @@
         })
     </script>
 
-
 </head>
 <body>
-<div id="top" style="background:url(/admin/images/topbg.gif) repeat-x; height: 90px">
+<div id="top" style="background:url(/admin/images/topbg.gif) repeat-x; height: 88px">
 
     <div class="topleft">
         <a href="main.html" target="_parent"><img src="/admin/images/logo.png" title="系统首页"/></a>
@@ -74,7 +74,7 @@
 
     </div>
 </div>
-<div id="left" style="background:#f0f9fd;width: 187px">
+<div id="left" style="background:#f0f9fd;width: 187px;float: left">
 	<div class="lefttop"><span></span>通讯录</div>
 
     <dl class="leftmenu">
@@ -84,8 +84,8 @@
     <span><img src="/admin/images/leftico01.png" /></span>管理信息
     </div>
     	<ul class="menuson">
-        <li><cite></cite><a href="index.html" target="rightFrame">首页模版</a><i></i></li>
-        <li class="active"><cite></cite><a href="right.html" target="rightFrame">数据列表</a><i></i></li>
+        <li><cite></cite><a href="/admin/index" target="rightFrame">首页模版</a><i></i></li>
+        <li class="active"><cite></cite><a href="datatable.html" target="rightFrame">数据列表</a><i></i></li>
         <li><cite></cite><a href="imgtable.html" target="rightFrame">图片数据表</a><i></i></li>
         <li><cite></cite><a href="form.html" target="rightFrame">添加编辑</a><i></i></li>
         <li><cite></cite><a href="imglist.html" target="rightFrame">图片列表</a><i></i></li>
@@ -132,5 +132,7 @@
 
     </dl>
 </div>
+{% block content %}
+{% end %}
 </body>
 </html>
