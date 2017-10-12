@@ -71,41 +71,7 @@
                     </div>
                 </div>
             </div>
-{#            签到栏   #}
             {% block bbs_sign %}
-            <div id="mibbs_sign">
-                <div class="mibbs_con" style="margin-bottom:10px;"><a class="mibbs_signpanel JD_sign " id="JD_sign">
-                    <div class="font">签到</div>
-                    <span class="nums">连续0天</span>
-                    <div class="fblock">
-                        <div class="all">0人</div>
-                        <div class="line"><span style="font-size:12px;">签到看排名</span></div>
-                    </div>
-                </a>
-                    <div id="JD_win" class="mibbs_win JD_win">
-                        <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2015/1127/20151127045012395.png">
-                        <div><h5>扫码下载App</h5><span>一键签到 升级加速</span></div>
-                        <div class="angleA"></div>
-                        <div class="angleB"></div>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                //快速签到
-                var packIdName = "mibbs_sign";
-                var pageFlag = "2";
-                (function () {
-                    var ds = document.createElement('script');
-                    ds.type = 'text/javascript';
-                    ds.async = true;
-                    var js_src = 'http://' + document.domain+'/home/js/sign.js';
-                    ds.src = js_src;
-                    ds.charset = 'UTF-8';
-                    (document.getElementsByTagName('head')[0]
-                        || document.getElementsByTagName('body')[0]).appendChild(ds);
-                })();
-            </script>
             {% end %}
             {#            签到栏结束   #}
             <div class='left_wrap'>

@@ -12,59 +12,56 @@
     <link rel="bookmark" href="/favicon.ico"/>
     <style type="text/css">
 
-    .zh_CN .n_links_area, .zh_TW .n_links_area, .en .n_links_area {
-        float: right
-    }
-    .wrapper {
-        width: 100%;
-        min-height: 100%;
-        height: auto;
-        display: -webkit-box;
-        display: -moz-box;
-        -webkit-box-align: center;
-        -moz-box-align: center;
-        -webkit-box-pack: center;
-        -moz-box-pack: center
-    }
-    .wrap {
-        padding-bottom: 80px;
-        padding-top: 100px \9
-    }
-    .layout {
-        background-color: #fff;
-        width: 854px;
-        margin: 0 auto 20px;
-        position: relative;
-        min-height: 620px
-    }
-    .mainbox {
-        padding-bottom: 30px
-    }
-    .ercode {
-        background: url(/home/images/sprite_login.gif) no-repeat
-    }
-    .header_tit {
-        padding: 50px 0 22px
-    }
-    .t_c {
-        text-align: center
-    }
-    .milogo {
-        width: 49px;
-        height: 48px;
-        margin: 0 auto;
-        display: block
-    }
+        .zh_CN .n_links_area, .zh_TW .n_links_area, .en .n_links_area {
+            float: right
+        }
 
-    .header_tit_txt {
+        .wrapper {
+            width: 100%;
+            min-height: 100%;
+            height: auto;
+            display: -webkit-box;
+            display: -moz-box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            -webkit-box-pack: center;
+            -moz-box-pack: center
+        }
+
+        .wrap {
+            padding-bottom: 80px;
+            padding-top: 100px \9
+        }
+
+        .layout {
+            background-color: #fff;
+            width: 854px;
+            margin: 0 auto 20px;
+            position: relative;
+            min-height: 620px
+        }
+
+        .mainbox {
+            padding-bottom: 30px
+        }
+
+        .milogo {
+            width: 49px;
+            height: 48px;
+            margin: 0 auto;
+            display: block
+        }
+
+       .header_tit_txt {
         font-size: 30px;
         color: #424242;
         font-weight: normal;
-        padding-top: 22px
+        padding-top: 22px;
+        text-align: center
     }
 
     </style>
-    <title>AI头条帐号 - 登录</title>
+    <title>AI头条帐号 - 注册</title>
 </head>
 <body class="zh_CN">
 <div class="wrapper">
@@ -73,81 +70,82 @@
             <div class="layout" id="layout">
                 <!--表单输入登录-->
                 <div class="mainbox" id="login-main" style="display: block;">
-                    <div id="custom_display_2"><a class="ercode" id="qrcode-trigger" href="javascript:void(0)"></a>
-                    </div>
-                    <!-- header s -->
                     <div>
-                       <div class="header_tit t_c">
-                            <em class="milogo">
-                                <img src="/home/images/ai-login.png">
-                            </em>
-                            <h4 class="header_tit_txt" id="login-title">AI头条帐号登录</h4>
-                        </div>
+                        <em class="milogo">
+                            <img src="/home/images/ai-login.png">
+                        </em>
+                        <div style="height:  45px"></div>
+                        <h2 class="header_tit_txt" >注册账号</h2>
                     </div>
-                    <div style="height: 20px"></div>
-                    <div class="tabs-con tabs_con now" data-con="pwd">
-                            <div class="login_area">
-                                <form method="POST" id="login-main-form">
-                                    <div class="loginbox c_b">
-                                        <!-- 输入框 -->
-                                        <div class="lgn_inputbg c_b login-panel pwdLogin">
-                                            <!--验证用户名-->
-                                            <label id="region-code" class="labelbox login_user c_b" for="">
-                                                <input class="item_account" autocomplete="off" type="text" name="user"
-                                                       id="username" placeholder="AI头条账号">
-                                            </label>
-                                            <label class="labelbox pwd_panel c_b">
-                                                <input type="password" placeholder="密码" autocomplete="off" name="pwd"
-                                                       id="pwd">
-                                            </label>
-                                        </div>
 
-                                        <div class="btns_bg">
-                                            <input class="btnadpt btn_orange" id="login-button" type="submit"
-                                                   value="登录">
-                                        </div>
-                                        <div class="other_panel clearfix">
-                                            <div class="reverse">
-                                                <div class="n_links_area" id="custom_display_64">
-                                                    <a class="outer-link"
-                                                       href="#">立即注册</a><span>|</span>
-                                                    <a class="outer-link"
-                                                       href="#">忘记密码？</a>
-                                                </div>
-                                                <!-- 其他登录方式 s -->
-                                                <div style="display: block;"
-                                                     class="other_login_type sns-login-container"
-                                                     id="custom_display_16">
-                                                    <fieldset class="oth_type_tit">
-                                                        <legend align="center" class="oth_type_txt">其他方式登录</legend>
-                                                    </fieldset>
-                                                    <div class="oth_type_links">
-                                                        <a class="icon_type btn_qq sns-login-link" data-type="qq"
-                                                           href="https://account.xiaomi.com/pass/sns/login/auth?appid=100284651&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
-                                                           title="QQ登录" target="_blank"><i
-                                                                class="btn_sns_icontype icon_default_qq"></i></a>
-                                                        <a class="icon_type btn_weibo sns-login-link" data-type="weibo"
-                                                           href="https://account.xiaomi.com/pass/sns/login/auth?appid=2996826273&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
-                                                           title="微博登录" target="_blank"><i
-                                                                class="btn_sns_icontype icon_default_weibo"></i></a>
-                                                        <a class="icon_type btn_alipay sns-login-link"
-                                                           data-type="alipay"
-                                                           href="https://account.xiaomi.com/pass/sns/login/auth?appid=2088011127562160&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
-                                                           title="支付宝登录" target="_blank"><i
-                                                                class="btn_sns_icontype icon_default_alipay"></i></a>
-                                                        <a class="icon_type btn_weixin sns-login-link"
-                                                           data-type="weixin"
-                                                           href="https://account.xiaomi.com/pass/sns/login/auth?appid=wxxmzh&amp;scope=snsapi_login&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
-                                                           title="微信登录" target="_blank"><i
-                                                                class="btn_sns_icontype icon_default_weixin"></i></a>
-                                                    </div>
-                                                </div>
-                                                <!-- 其他登录方式 e -->
+                    <div style="height: 45px"></div>
+                    <div class="tabs-con tabs_con now" data-con="pwd">
+                        <div class="login_area">
+                            <form method="POST" id="login-main-form">
+                                <div class="loginbox c_b">
+                                    <!-- 输入框 -->
+                                    <div class="lgn_inputbg c_b login-panel pwdLogin">
+                                        <!--验证用户名-->
+                                        <label id="region-code" class="labelbox login_user c_b" for="">
+                                            <input class="item_account" autocomplete="off" type="text" name="user"
+                                                   id="username" placeholder="AI头条账号">
+                                        </label>
+                                        <label class="labelbox pwd_panel c_b">
+                                            <input type="password" placeholder="密码" autocomplete="off" name="pwd"
+                                                   id="pwd">
+                                        </label>
+                                        <label class="labelbox pwd_panel c_b">
+                                            <input type="password" placeholder="重复密码" autocomplete="off" name="pwd2"
+                                                   id="pwd">
+                                        </label>
+                                    </div>
+
+                                    <div class="btns_bg">
+                                        <input class="btnadpt btn_orange" id="login-button" type="submit"
+                                               value="注册">
+                                    </div>
+                                    <div class="other_panel clearfix">
+                                        <div class="reverse">
+                                            <div class="n_links_area" id="custom_display_64">
+                                                <a class="outer-link"
+                                                   href="#">立即注册</a><span>|</span>
+                                                <a class="outer-link"
+                                                   href="#">忘记密码？</a>
                                             </div>
+                                            <!-- 其他登录方式 s -->
+                                            <div style="display: block;"
+                                                 class="other_login_type sns-login-container"
+                                                 id="custom_display_16">
+                                                <fieldset class="oth_type_tit">
+                                                    <legend align="center" class="oth_type_txt">其他方式登录</legend>
+                                                </fieldset>
+                                                <div class="oth_type_links">
+                                                    <a class="icon_type btn_qq sns-login-link" data-type="qq"
+                                                       href="https://account.xiaomi.com/pass/sns/login/auth?appid=100284651&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
+                                                       title="QQ登录" target="_blank"><i
+                                                            class="btn_sns_icontype icon_default_qq"></i></a>
+                                                    <a class="icon_type btn_weibo sns-login-link" data-type="weibo"
+                                                       href="https://account.xiaomi.com/pass/sns/login/auth?appid=2996826273&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
+                                                       title="微博登录" target="_blank"><i
+                                                            class="btn_sns_icontype icon_default_weibo"></i></a>
+                                                    <a class="icon_type btn_alipay sns-login-link"
+                                                       data-type="alipay"
+                                                       href="https://account.xiaomi.com/pass/sns/login/auth?appid=2088011127562160&amp;&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
+                                                       title="支付宝登录" target="_blank"><i
+                                                            class="btn_sns_icontype icon_default_alipay"></i></a>
+                                                    <a class="icon_type btn_weixin sns-login-link"
+                                                       data-type="weixin"
+                                                       href="https://account.xiaomi.com/pass/sns/login/auth?appid=wxxmzh&amp;scope=snsapi_login&amp;callback=http%3A%2F%2Fbbs.xiaomi.cn%2Flogin%2Fcallback%3Ffollowup%3Dhttp%253A%252F%252Fbbs.xiaomi.cn%252F%26sign%3DM2E4MTg3MzE3MGJmZGFiMTc0MTE5NmNjZTAyYWNmMDZhNTEwOTU2NQ%2C%2C&amp;sid=new_bbs_xiaomi_cn"
+                                                       title="微信登录" target="_blank"><i
+                                                            class="btn_sns_icontype icon_default_weixin"></i></a>
+                                                </div>
+                                            </div>
+                                            <!-- 其他登录方式 e -->
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
 
@@ -173,7 +171,7 @@
         </ul>
     </div>
     <p class="nf-intro">亿启俫公司版权所有-京ICP备xxx-<a class="beian-record-link" target="_blank"
-                                                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134">
+                                              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134">
         <span><img src=""></span>京公网安备11010802020134号</a>-京ICP证110507号</p>
 </div>
 
@@ -392,7 +390,6 @@
         filter: alpha(opacity=100)
     }
 
-
     .lgn_inputbg {
         position: relative
     }
@@ -599,7 +596,6 @@
         padding-left: 5px
     }
 
-
     .country-code .record span {
         height: 39px;
         overflow: hidden
@@ -728,7 +724,6 @@
     .security_controller_panel p {
         color: #333
     }
-
 
     .tabs_con {
         display: none
