@@ -7,7 +7,7 @@ import tornado
 
 class IndexHandler(AdminBaseHandler):
     def get(self):
-        self._render('index.html')
+        self.render('base.html')
 
 
 urls = [
