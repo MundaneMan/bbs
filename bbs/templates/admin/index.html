@@ -1,12 +1,16 @@
 {% extends 'base.html' %}
 
+{% block left %}
+{% module AdminMenuModule() %}
+{% end %}
+
 {% block content %}
 <div class="right_content">
 
     <div class="place">
         <span>位置：</span>
         <ul class="placeul">
-            <li><a href="#">首页</a></li>
+            <li><a href="#">后台首页</a></li>
         </ul>
     </div>
 

@@ -22,16 +22,10 @@ urls = [
     ]
 
 
-class AdminNavModule(tornado.web.UIModule):
-    def render(self, tpl="admin/a_m_nav.html"):
-        return self.render_string(tpl)
-
-
-class AdminPageModule(tornado.web.UIModule):
-    def render(self, baseurl, start, count, perpage, tpl="admin/a_m_page.html"):
+class HomePageModule(tornado.web.UIModule):
+    def render(self, baseurl, start, count, perpage, tpl="admin/paged.html"):
         return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
 
 ui_modules = {
-    "AdminNavModule": AdminNavModule,
-    "AdminPageModule": AdminPageModule,
+    "HomePageModule": HomePageModule
 }
