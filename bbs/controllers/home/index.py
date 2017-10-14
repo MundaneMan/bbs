@@ -8,7 +8,7 @@ import bbs.models.article_model as article_model
 
 class IndexHandler(HomeBaseHandler):
     def get(self):
-        articles = article_model.list_articles_by_cond({"status": "normal"})
+        articles = article_model.list_articles_by_cond({"status": "normal"}, limit=10)
         self.render('index.html', articles=articles)
 
 
