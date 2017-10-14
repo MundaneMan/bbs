@@ -27,7 +27,7 @@ def load_user_by_mobile_phone(mobile_phone, country_code, status="normal"):
 
 def load_user_by_email(email):
     print email
-    return db.users.find_one({"email": email})
+    return db.users.find_one({"username": email})
 
 
 def list_user_by_obj_ids(obj_ids):

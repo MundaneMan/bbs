@@ -1143,7 +1143,7 @@ body {
     width: 16px;
     vertical-align: middle;
     text-indent: -9999px;
-    background: url("../../images/header_icon.png") no-repeat
+    background: url("/home/images/header_icon.png") no-repeat
 }
 
 .header .headerbtn.header_msg {
@@ -1216,7 +1216,7 @@ body {
 
 .xmbbs_mobile .xmcomm_header .logo {
     z-index: 20;
-    background: url("../../images/logo_cn_hd.png") no-repeat;
+    background: url("/home/images/logo_cn.png") no-repeat;
     background-size: 100% 100%
 }
 
@@ -1398,7 +1398,7 @@ body {
     width: 40px;
     height: 40px;
     float: left;
-    background: url('../../images/milogo.png') no-repeat
+    background: url('/home/images/milogo.png') no-repeat
 }
 
 .footer .link, .footer span {

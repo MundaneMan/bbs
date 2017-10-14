@@ -6,7 +6,7 @@ import os
 import pymongo
 
 
-SITE_NAME = u"AI头条网"
+SITE_NAME = u"AI之心网"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -25,7 +25,7 @@ settings_common = {
     "login_url": "/user/login",
 
     # "xsrf_cookies": True,
-    "cookie_secret": "11oETkKXQAGaYdkL5gEmGeJkFuYh7EQnp2XdTP1o/Vo=",
+    "cookie_secret": "11oETktredsGaYdkL5gEmGeJkFuYh7EQnp2XdTP1o/Vo=",
     "gzip": True,
     "redis": {"db": 1, "host": "localhost", "port": 6379}
 

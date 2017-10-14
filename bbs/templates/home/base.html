@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
     <title>{% block title %}{% end %}</title>
-    <meta name="description" content="AI头条官方论坛是Ai爱好者的大本营，在这里交流AI学习心得，了解AI最新动态，参与活动互动，为AI粉打造一个良好的互动交流平台。"/>
-    <meta name="keywords" content="AI论坛,AI社区,AI头条官方论坛"/>
+    <meta name="description" content="AI之心官方论坛是Ai爱好者的大本营，在这里交流AI学习心得，了解AI最新动态，参与活动互动，为AI粉打造一个良好的互动交流平台。"/>
+    <meta name="keywords" content="AI论坛,AI社区,AI之心官方论坛"/>
     <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
     <!--[if lt IE 9]>
 			<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
@@ -96,7 +96,7 @@
             vertical-align: middle;
             text-indent: -9999px;
             display: inline-block;
-            background: url("//s1.bbs.xiaomi.cn/statics/images/header_icon.png") no-repeat
+            background: url("/home/images/header_icon.png") no-repeat
         }
 
         .xmcomm_header .header_icon.header_revise {
@@ -485,8 +485,8 @@
                 </li>
 
                 <li><a href="http://hd.xiaomi.cn/mipop/2016hz/" target="_blank">AI教程</a></li>
-{#                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"#}
-{#                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>#}
+                {#                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"#}
+                {#                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>#}
                 <li>
                     <span>更多<i class="header_icon"></i></span>
                     <div class="header_more_list">
@@ -509,24 +509,48 @@
             </ul>
         </div>
     </div>
-{#    登录注册   #}
+    {#    登录注册   #}
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class='user_wrap'>
                 <div class="topbar-info J_userInfo " id='login'>
+                    {% if not handler.current_user %}
                     <a class='loginbtn' href="/user/login/">登录</a>
                     <a href="/user/register/" class='registerbtn'>注册</a>
+                    {% else %}
+                    <a href="http://bbs.xiaomi.cn/message/private" class='header_msg_wrap clearfix'>
+                        <span class="headerbtn header_msg">消息</span>
+                        <span class='msgnum'></span>
+                    </a>
+                    <a href="/" class='user clearfix'>
+                        <img src="?&_t=1507642640"
+                             onerror="javascript:this.src='/home/images/noavatar_small.gif';"/>
+                        <span class='user_name'>libing</span>
+                    </a>
+                    <div class='user_con'>
+                        <p>
+                            积分：212</br>
+                            用户组：<span class='uname'>高级手机控</span></p>
+                        <div>
+                            <a href='/user/edit'>设置</a>
+                            <a href="/message/private">消息</a>
+                            <a href='/friend/list'>好友</a>
+                            <a href='/task/list'>任务</a>
+                            <!-- <a href='http://bbs.xiaomi.cn/qiandao/'>签到</a> -->
+                            <a href='/medal/list'>勋章</a>
+                            <a href='/favorites/list'>收藏</a>
+                            <a href='/user/logout/'>退出</a>
+                        </div>
+                    </div>
+                    {% end %}
                 </div>
             </div>
         </div>
     </div>
-{#   登录注册结束   #}
-{% block content %}
-{% end %}
-{#    <div class="bannerBottom">#}
-{#        <a href="http://bbs.xiaomi.cn/app/download" target="_blank" rel="noopener noreferrer" class="download_m"><img#}
-{#                src="http://s1.bbs.xiaomi.cn/statics/images/banner_bottom_m.png"></a>#}
-{#    </div>#}
+    {#   登录注册结束   #}
+    {% block content %}
+    {% end %}
+
 </div>
 <div class='footer'>
     <div class="mobile_switch">

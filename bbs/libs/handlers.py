@@ -182,7 +182,7 @@ class BaseHandler(RedisSessionHandler):
 
         self.operation_data["result"] = result
         self.operation_data["user_id"] = str(user["_id"])
-        self.operation_data["user_name"] = user["nick_name"]
+        self.operation_data["username"] = user["username"]
         self.operation_data["handler_type"] = self.base_handler_type
         self.operation_data["method"] = request.method
         self.operation_data["request_files"] = files_dict
@@ -234,6 +234,8 @@ class SiteBaseHandler(BaseHandler):
             return None
 
         user = user_model.load_user_by_id(user_id)
+        if not user:
+            return None
         if not user.has_key("sessions") or \
                 not isinstance(user["sessions"], list):
             return None

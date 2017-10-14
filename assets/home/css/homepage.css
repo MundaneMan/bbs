@@ -693,7 +693,7 @@ button.btn, input.btn {
     margin-top: -16px;
     z-index: 11;
     cursor: pointer;
-    background: url("../../images/slide_arrow.png") no-repeat
+    background: url("/home/images/slide_arrow.png") no-repeat
 }
 
 .hotspot .romdl .slide_btn_left {
@@ -773,7 +773,7 @@ button.btn, input.btn {
     width: 20px;
     height: 12px;
     margin: 17px 5px 0 0;
-    background: url("../../images/icon.png") no-repeat
+    background: url("/home/images/icon.png") no-repeat
 }
 
 .nav .children_list .icon {
@@ -1159,7 +1159,7 @@ button.btn, input.btn {
     display: inline-block;
     margin: 3px 5px 0;
     *margin: 4px 5px 0;
-    background: url("../../images/invitation_pic.png") 0 0 no-repeat;
+    background: url("/home/images/invitation_pic.png") 0 0 no-repeat;
     vertical-align: middle
 }
 

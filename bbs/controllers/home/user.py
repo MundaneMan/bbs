@@ -54,11 +54,11 @@ class UserLoginHandler(UserBaseHandler):
         if form_errors:
             self._render(form_data, form_errors)
             return
-        if not Captcha.check(form_data["verify_code"], self):
-            form_errors["verify_code"] = u"验证码错误"
-            self._render(form_data, form_errors)
-            return False
-        if not self.do_login(form_data["email"], form_data["password"]):
+        # if not Captcha.check(form_data["verify_code"], self):
+        #     form_errors["verify_code"] = u"验证码错误"
+        #     self._render(form_data, form_errors)
+        #     return False
+        if not self.do_login(form_data["username"], form_data["password"]):
             form_errors["form"] = "登录邮箱/密码不匹配"
             self._render(form_data, form_errors)
             return
@@ -71,10 +71,10 @@ class UserLoginHandler(UserBaseHandler):
         )
 
     def _list_form_keys(self):
-        return ["email", "password", "verify_code"]
+        return ["username", "password"]
 
     def _list_required_form_keys(self):
-        return ["email", "password", "verify_code"]
+        return ["username", "password"]
 
 
 class UserRegisterHandler(UserBaseHandler):
@@ -87,6 +87,8 @@ class UserRegisterHandler(UserBaseHandler):
         form_data = self._build_form_data()
         form_errors = self._validate_register_form_data(form_data)
         if form_errors:
+            print '-------------'
+            print form_data["username"],form_data["password"],form_data["password2"]
             self._render(form_data, form_errors)
             return
         password = form_data["password"]
@@ -97,8 +99,9 @@ class UserRegisterHandler(UserBaseHandler):
         form_data.pop("password2")
         form_data["status"] = "un_verify"
         form_data["role"] = "member"
+        print form_data
         user_model.insert_user(form_data)
-        self.do_login(form_data["email"], password)
+        self.do_login(form_data["username"], password)
         self.redirect("/")
 
     def _validate_register_form_data(self, form_data):
@@ -108,12 +111,12 @@ class UserRegisterHandler(UserBaseHandler):
         if form_data["password"] != form_data["password2"]:
             form_errs["password"] = u"两次密码不一致"
             return form_errs
-        if user_model.is_field_data_exist("email", form_data["email"]):
-            form_errs["email"] = u"邮箱已经被注册"
+        if user_model.is_field_data_exist("username", form_data["username"]):
+            form_errs["email"] = u"用户名已经被注册"
             return form_errs
-        if user_model.is_field_data_exist("nick_name", form_data["nick_name"]):
-            form_errs["nick_name"] = u"昵称已经存在"
-            return form_errs
+        # if user_model.is_field_data_exist("nick_name", form_data["nick_name"]):
+        #     form_errs["nick_name"] = u"昵称已经存在"
+        #     return form_errs
 
     def _render(self, form_data=None, form_errors=None):
         self.render(
@@ -121,10 +124,10 @@ class UserRegisterHandler(UserBaseHandler):
         )
 
     def _list_required_form_keys(self):
-        return ["nick_name", "email", "password", "password2"]
+        return ["username", "password", "password2"]
 
     def _list_form_keys(self):
-        return ["nick_name", "email", "password", "password2"]
+        return ["username", "password", "password2"]
 
 
 class UserVerifyJsHandler(JsSiteBaseHandler):

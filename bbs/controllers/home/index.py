@@ -15,10 +15,16 @@ class ContactHandler(HomeBaseHandler):
         self.render('contact.html')
 
 
+class Error404Handler(HomeBaseHandler):
+    def get(self):
+        self.render('error_404.html')
+
+
 urls = [
     (r"/", IndexHandler),
     (r"/index/?", IndexHandler),
     (r"/contact/?", ContactHandler),
+    (r"/error/404/?", Error404Handler),
     ]
 
 

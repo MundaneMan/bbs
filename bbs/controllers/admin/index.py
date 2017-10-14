@@ -15,10 +15,16 @@ class DataTableHandler(AdminBaseHandler):
         self.render('datatable.html')
 
 
+class ErrorPageHandler(AdminBaseHandler):
+    def get(self):
+        self.render('error.html')
+
+
 urls = [
     (r"/admin/?", IndexHandler),
     (r"/admin/index/?", IndexHandler),
-    (r"/admin/datatable/?", DataTableHandler)
+    (r"/admin/datatable/?", DataTableHandler),
+    (r"/admin/error_page/?", ErrorPageHandler)
     ]
 
 
