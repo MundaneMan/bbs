@@ -24,11 +24,11 @@ def list_article_by_obj_ids(obj_ids):
     return articles
 
 
-def list_articles_by_cond(m_cond, sort=None, start=0, limit=30, is_count=False):
+def list_articles_by_cond(m_cond, sort=[('create_at', -1)], start=0, limit=30, is_count=False):
     if is_count:
         return db.articles.count(m_cond)
 
-    return db.articles.find(m_cond, sort=sort, skip=start, limit=limit)
+    return list(db.articles.find(m_cond, sort=sort, skip=start, limit=limit))
 
 
 def insert_article(article_data):

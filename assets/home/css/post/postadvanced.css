@@ -305,7 +305,7 @@ button.btn, input.btn {
     right: 20px;
     text-align: center;
     cursor: pointer;
-    background: url("../../images/flotationclose.png") 0 0 no-repeat
+    background: url("/home/images/flotationclose.png") 0 0 no-repeat
 }
 
 .modal-header {
@@ -939,7 +939,7 @@ button.btn, input.btn {
     right: 20px;
     text-align: center;
     cursor: pointer;
-    background: url("../../images/flotationclose.png") 0 0 no-repeat
+    background: url("/home/images/flotationclose.png") 0 0 no-repeat
 }
 
 .modal-header {
@@ -1573,7 +1573,7 @@ button.btn, input.btn {
     right: 20px;
     text-align: center;
     cursor: pointer;
-    background: url("../../images/flotationclose.png") 0 0 no-repeat
+    background: url("/home/images/flotationclose.png") 0 0 no-repeat
 }
 
 .modal-header {
@@ -1857,11 +1857,11 @@ body {
     display: block;
     width: 14px;
     height: 14px;
-    background: #fff url("../../images/check_center.png") 0 0 no-repeat
+    background: #fff url("/home/images/check_center.png") 0 0 no-repeat
 }
 
 .postwrap .check_wrap .check_center.ro {
-    background-image: url("../../images/check_center_ro.png")
+    background-image: url("/home/images/check_center_ro.png")
 }
 
 .postwrap .postcon {

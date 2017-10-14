@@ -189,7 +189,9 @@
                     </div>
 
 {#              帖子主题列表开始             #}
+                    {% if articles and len(articles)>0 %}
                     <ul>
+                        {% for article in articles %}
                         <li class='theme_list clearfix' u-id="182659002">
                             <div class='theme_list_img'>
                                 <a href="http://bbs.xiaomi.cn/u-detl-182659002"
@@ -208,7 +210,7 @@
                                        class='title_name ' style="color:#444444" target="_blank"
                                        rel="noopener noreferrer"
                                        onclick="_msq.push(['trackEvent', 'tj-1-1', 'http://bbs.xiami.cn/t-13745378', 'mibbis_c']);">
-                                        「带上妹子去旅行」主题摄影大赛，赢AINote 3 </a>
+                                        {{ article['title'] }} </a>
                                     <img class='stamp'
                                          src='http://img08.mifile.cn/v1/MI_1031495CC30DA4/T1LSCvBKE_1R4cSCrK.png'/>
                                 </div>
@@ -234,8 +236,9 @@
                                 </div>
                             </div>
                         </li>
-
+                        {% end %}
                     </ul>
+                    {% end %}
 {#          分页开始          #}
                     <div class="base_widget_paging">
                         <div class="paging_widget_2">

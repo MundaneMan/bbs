@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href='/home/css/post/postadvanced.css?v=1496318117'>
 <script type="text/javascript" src="/home/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="/home/js/post/postadvanced.js"></script>
-<script type="text/javascript" src="/home/js/post/postthread.js"></script>
+{#<script type="text/javascript" src="/home/js/post/postthread.js"></script>#}
 {% end %}
 
 {% block search %}
@@ -18,30 +18,45 @@
             <div class='title clearfix'>
                 <span>发表新主题</span>
             </div>
+            <form method="post" id="form_publish">
             <div class='importtopic clearfix'>
                 <span class='label'>还可输入 90 个字符</span>
-                <input type='text' placeholder='标题'/>
+                <input type='text' name="f_title" placeholder='标题'/>
                 <div class="selectPlate dropdown_text_middle">
-
-                    <span value='0'>选择版块</span><i></i>
+                        <select id="module" name="f_module" >
+                            <option value="">选择板块</option>
+                            <option value="1">AI学习</option>
+                            <option value="2">AI前沿</option>
+                            <option value="3">AI笔记</option>
+                            <option value="4">AI新闻</option>
+                        </select>
+{#                    <span value='0'>选择版块</span><i></i>#}
 
                 </div>
-                <div class='selectPlatelist'>
-                    <ul class='clearfix'>
-                        <li value='487'>AI学习</li>
-                        <li value='475'>AI前沿</li>
-                        <li value='385'>AI笔记</li>
-                        <li value='451'>AI新闻</li>
-                        <li value='382'>AI技术</li>
-                    </ul>
-                </div>
+{#                <div class='selectPlatelist'>#}
+{#                    <ul class='clearfix'>#}
+{#                        <li value='487'>AI学习</li>#}
+{#                        <li value='475'>AI前沿</li>#}
+{#                        <li value='385'>AI笔记</li>#}
+{#                        <li value='451'>AI新闻</li>#}
+{#                        <li value='382'>AI技术</li>#}
+{#                    </ul>#}
+{#                </div>#}
                 <div class="dropdown_text_middle selectclassify">
-                    <span value='0'>选择主题分类</span><i></i>
-                    <ul class='selectlist'>
-                    </ul>
+{#                    <span value='0'>选择主题分类</span><i></i>#}
+{#                    <ul class='selectlist'>#}
+{#                    </ul>#}
+                    <select id="module" name="f_subject">
+                        <option value="">选择主题</option>
+                        <option value="1">tensor</option>
+                        <option value="2">python</option>
+                        <option value="3">ai前沿</option>
+                        <option value="4">AI历史</option>
+                    </select>
                 </div>
             </div>
-            <textarea name="ckeditor" class="ckeditor" id="editor" IsUploadAttach='1' style="height: 320px;"></textarea>
+
+            <textarea name="f_content" class="ckeditor" id="editor" IsUploadAttach='1' style="height: 520px;"></textarea>
             <div class='session2 clearfix'>
                 <ul class='title clearfix'>
                     <li>附加选项</li>
@@ -60,7 +75,7 @@
                 </ul>
             </div>
             <div class='session3'>
-                <span class='btn J_sendInvitation'>发表帖子</span>
+                <span id="btn_publish" class='btn J_sendInvitation'>发表帖子</span>
                 <span class='btn btn-light J_savedraft'>存为草稿</span>
 {#                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>#}
 {#                    <ul class='selectlist' type="forum">#}
@@ -68,7 +83,17 @@
 {#                    </ul>#}
 {#                </div>#}
             </div>
+            </form>
         </div>
     </div>
 </div>
+{% end %}
+
+{% block footer %}
+<script type="text/javascript">
+   $("#btn_publish").click(function () {
+       $("#form_publish").submit();
+   }) ;
+</script>
+
 {% end %}

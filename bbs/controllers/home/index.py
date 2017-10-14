@@ -3,11 +3,13 @@
 
 import tornado.web
 from bbs.libs.handlers import HomeBaseHandler
+import bbs.models.article_model as article_model
 
 
 class IndexHandler(HomeBaseHandler):
     def get(self):
-        self.render('index.html')
+        articles = article_model.list_articles_by_cond({"status": "normal"})
+        self.render('index.html', articles=articles)
 
 
 class ContactHandler(HomeBaseHandler):

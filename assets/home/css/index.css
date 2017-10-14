@@ -553,7 +553,7 @@ button.btn, input.btn {
     right: 20px;
     text-align: center;
     cursor: pointer;
-    background: url("../../images/flotationclose.png") 0 0 no-repeat
+    background: url("/home/images/flotationclose.png") 0 0 no-repeat
 }
 
 .modal-header {
@@ -1030,7 +1030,7 @@ body {
     margin-left: 494px;
     position: fixed;
     text-indent: -9999px;
-    background: url("../../images/returnTop_btn.png") 0 0 no-repeat
+    background: url("/home/images/returnTop_btn.png") 0 0 no-repeat
 }
 
 .return:hover {
