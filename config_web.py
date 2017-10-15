@@ -6,7 +6,7 @@ import os
 import pymongo
 
 
-SITE_NAME = u"AI之心网"
+SITE_NAME = u"AI爱好者网"
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -36,14 +36,14 @@ settings_debug = {
     "api_domain": "www-local.bbs.com",
     "admin_domain": "www-local.bbs.com",
     "static_url": "http://www-local.bbs.com/static/",
-    "static_path": "/Users/data/website/bbs/static/",
+    "static_path": "/Users/Projects/temp/bbs/static/",
 }
 
 settings_production = {
     "api_domain": "www-local.bbs.com",
     "admin_domain": "www-local.bbs.com",
     "static_url": "http://www-local.bbs.com/static/",
-    "static_path": "/Users/data/website/bbs/static/",
+    "static_path": "/Users/Projects/temp/bbs/static/",
 }
 
 settings_testing = {
