@@ -425,8 +425,11 @@
                     <span class='time'> 03-01 10:45:29</span>
                     <span class='comefrom'>&nbsp;来自PC</span>
                     <span id="copy_btn">复制链接</span>
-                    <span class="watchmobileThread"><span class="infor">手机看帖</span><span
-                            class="watchmobileThread_picwrap"><img src="/thread/qr/tid/13384800"><span>扫一扫！手机看帖更爽</span></span></span>
+{#                    <span class="watchmobileThread"><span class="infor">手机看帖</span>#}
+{#                    <span class="watchmobileThread_picwrap">#}
+{#                        <img src="/thread/qr/tid/13384800">#}
+{#                        <span>扫一扫！手机看帖更爽</span>#}
+{#                    </span></span>#}
                     <span class='f_r'><i class='msg'></i>154</span>
                     <span class='f_r'><i class='see'></i>42729</span>
                 </p>
@@ -434,8 +437,9 @@
                     {% raw article["content"] %}
                 </div>
                 <div class="watchThreadBymobile">
-                    <img src="/thread/qr/tid/13384800">
-                    <span>扫描二维码，手机查看本帖</span>
+                    <br><br><br><br>
+{#                    <img src="/thread/qr/tid/13384800">#}
+{#                    <span>扫描二维码，手机查看本帖</span>#}
                 </div>
             </div>
             <!-- <div class="recommend_item" id="recommendItem" isRecommend="2">
@@ -1158,7 +1162,7 @@
             <div class='reply_area_con clearfix'>
                 <a href="http://bbs.xiaomi.cn/user/detail/miid/" target="_blank" rel="noopener noreferrer"><img
                         class="user_head" src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"
-                        onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';"/>
+                        onerror="javascript:this.src='/home/images/noavatar_small.gif';"/>
                 </a>
                 <div class='area_con'>
                     <textarea id="editor" IsUploadAttach='1' style="height: 100px;"></textarea>
@@ -1177,20 +1181,6 @@
             var favorites_token = '7aea8fba45ee9f7b431540c17e557620';
             var forum_token = '09c657009281ac866c756f9238635e11';
         </script>
-        <script type="text/javascript"
-                src='http://s1.bbs.xiaomi.cn/statics/js/lib/jquery.lazyload.js?v=1496318117'></script>
-        <script type="text/javascript"
-                src='http://s1.bbs.xiaomi.cn/statics/js/lib/jquery.datePicker-min.js?v=1496318117'></script>
-        <script type="text/javascript"
-                src='http://s1.bbs.xiaomi.cn/statics/js/lib/xmdatepicker.js?v=1496318116'></script>
-        <script type="text/javascript"
-                src='http://s1.bbs.xiaomi.cn/statics/js/lib/ZeroClipboard.min.js?v=1496318117'></script>
-        <script type="text/javascript" src="http://s1.bbs.xiaomi.cn/statics/js/lib/jquery.upload.js"></script>
-        <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/model.js?v=1496318117'></script>
-        <script type="text/javascript"
-                src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/normal_invitation.js?v=1496318117'></script>
-        <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/graderemark.js'></script>
-        <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/talk.js?v=1496318117'></script>
 
         <!--<script type="text/javascript" src="http://s1.bbs.xiaomi.cn/statics/js/lib/jquery.datePicker-min.js"></script>
         <script type="text/javascript" src="http://s1.bbs.xiaomi.cn/statics/js/lib/xmdatepicker.js"></script>
@@ -1200,10 +1190,6 @@
         <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/graderemark.js'></script>
         <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/talk.js'></script>-->
         <!--活动需要的js-->
-
-        <script type="text/javascript" src='/statics/ueditor/ueditor.config.js'></script>
-        <script type="text/javascript" src='/statics/ueditor/ueditor.all.js'></script>
-        <script type="text/javascript" src="/statics/ueditor/lang/zh-cn/zh-cn.js"></script>
 
     </div>
 </div>
