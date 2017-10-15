@@ -520,7 +520,7 @@
                     {% else %}
                     <a href="http://bbs.xiaomi.cn/message/private" class='header_msg_wrap clearfix'>
                         <span class="headerbtn header_msg">消息</span>
-                        <span class='msgnum'></span>
+                        <span class='msgnum'>(3)</span>
                     </a>
                     <a href="/" class='user clearfix'>
                         <img src="?&_t=1507642640"
@@ -533,7 +533,7 @@
                             用户组：<span class='uname'>高级手机控</span></p>
                         <div>
                             <a href='/user/edit'>设置</a>
-                            <a href="/message/private">消息</a>
+                            <a style="color:red;" href="/message/private">消息(3)</a>
                             <a href='/friend/list'>好友</a>
                             <a href='/task/list'>任务</a>
                             <!-- <a href='http://bbs.xiaomi.cn/qiandao/'>签到</a> -->
@@ -591,7 +591,7 @@
     <div class='footerdown'>
         <div class='wrap_990'>
             <a href="http://bbs.xiaomi.cn" class='milogo'>AI</a>
-            <a href="http://bbs.xiaomi.cn" class='link'>{{ handler.settings['admin_domain'] }}</a>
+            <a href="http://{{ handler.settings['admin_domain'] }}" class='link'>{{ handler.settings['admin_domain'] }}</a>
             <span>京ICP证110507号 京ICP备10046444号 <a target="_blank" rel="noopener noreferrer"
                                                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"
                                                  style="cursor:pointer;color: white;">京公网安备11010802020134号</a></span>

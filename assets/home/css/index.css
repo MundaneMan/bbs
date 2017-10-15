@@ -1179,7 +1179,8 @@ body {
 
 .header .header_msg_wrap .msgnum {
     display: inline-block;
-    vertical-align: middle
+    vertical-align: middle;
+    color: red;
 }
 
 @media screen and (max-width: 1500px) {
@@ -1398,7 +1399,7 @@ body {
     width: 40px;
     height: 40px;
     float: left;
-    background: url('/home/images/ai-login.png') -6px -5px no-repeat
+    background: url('/home/images/ai-login.png') -7px -5px no-repeat
 }
 
 .footer .link, .footer span {
