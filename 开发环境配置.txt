@@ -4,7 +4,7 @@
 4.在虚拟机中安装ubuntu-server(最好设置国内的源)
 5.设置vmware和主机的共享目录，为刚才的代码路径(d:code)
 6.ubuntu安装pip,命令sudo pip install python-pip
-7.ubuntu进入目录 cd  /mnt/hgfs/code/ 下，应该可以看到过程代码bbs
+7.ubuntu进入目录 cd  /mnt/hgfs/code/ 下，应该可以看到工程代码bbs
 8.此时执行命令: sudo pip install -r requirements.txt安装依赖文件
 9.配置ubuntu hosts文件  加入，127.0.0.1  mongo
 10.ubuntu安装nginx,mongodb,redis. apt-get install nginx,apt-get install mongo,apt-get install redis
