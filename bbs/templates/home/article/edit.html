@@ -56,7 +56,7 @@
                 </div>
             </div>
 
-            <textarea name="f_content" class="ckeditor" id="editor"></textarea>
+            <textarea name="f_content" id="editor"></textarea>
             <div class='session2 clearfix'>
                 <ul class='title clearfix'>
                     <li>附加选项</li>
@@ -76,7 +76,7 @@
             </div>
             <div class='session3'>
                 <span id="btn_publish" class='btn J_sendInvitation'>发表帖子</span>
-                <span class='btn btn-light J_savedraft'>存为草稿</span>
+                <span class='btn btn-light' id="save">临时保存</span>
 {#                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>#}
 {#                    <ul class='selectlist' type="forum">#}
 {#                        <li value='1'>普通</li>#}
@@ -94,6 +94,27 @@
    $("#btn_publish").click(function () {
        $("#form_publish").submit();
    }) ;
+   var editor = CKEDITOR.replace('editor');
+   $(function () {
+       if(window.localStorage){
+        storage_name = "article_tmp";
+        $("#save").click(function(){
+            var text = editor.getData();
+            window.localStorage.setItem(storage_name, text);
+        });
+        var text = window.localStorage.getItem(storage_name);
+        if(text){
+            editor.setData(text);
+        }
+        setInterval(function(){
+            $("#save").click();
+        }, 10000);
+    }else{
+        $("#save").click(function(){
+            alert("你的浏览器不支持临时存储");
+        });
+    }
+   });
 </script>
 
 {% end %}
