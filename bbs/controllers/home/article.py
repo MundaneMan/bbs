@@ -44,9 +44,8 @@ class ArticleViewHandler(ArticleBaseHandler):
     operation = u"查看一篇文章内容"
 
     def get(self, article_id):
-        print article_id
+        # print article_id
         article = article_model.load_article_by_id(article_id)
-        print article
         if article:
             self.render("view.html", article=article)
         else:

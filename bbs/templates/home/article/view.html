@@ -5,6 +5,7 @@
 {% block head %}
 <link rel="stylesheet" type="text/css" href='/home/css/post/invitation.css?v=1'>
 <script type="text/javascript" src="/home/js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/home/js/view_article.js"></script>
 {% end %}
 
 {% block content %}
@@ -345,7 +346,7 @@
         </div>
 
         <div class='left_wrap'>
-            <div class="sidebarplate" onclick="_hmt.push(['_trackEvent','bbs首页','侧边栏', '版块推荐']);">
+            <div class="sidebarplate">
 
                 <div class="sidebarplate_tab">
                     <div class="tab">
@@ -426,13 +427,18 @@
                     <span class='time'> 03-01 10:45:29</span>
                     <span class='comefrom'>&nbsp;来自PC</span>
                     <span id="copy_btn">复制链接</span>
-                    {#                    <span class="watchmobileThread"><span class="infor">手机看帖</span>#}
-                    {#                    <span class="watchmobileThread_picwrap">#}
-                    {#                        <img src="/thread/qr/tid/13384800">#}
-                    {#                        <span>扫一扫！手机看帖更爽</span>#}
-                    {#                    </span></span>#}
-                    <span class='f_r'><i class='msg'></i>154</span>
-                    <span class='f_r'><i class='see'></i>42729</span>
+                    <span class="watchmobileThread">
+                        <span class="infor">手机看帖</span>
+                        <span class="watchmobileThread_picwrap">
+                            <img src="/home/images/tmp/13797260.png">
+                            <span>扫一扫！手机看帖更爽</span>
+                        </span>
+                    </span>
+                    <span class='f_r'><i class='msg'></i>1</span>
+                    <span class='f_r'><i class='see'></i>79</span>
+                    {% if 'author_id' in article and article['author_id'] == handler.current_user['_id'] %}
+                    <a href='/thread/edit/tid/13797260/type/forum'>编辑</a>
+                    {% end %}
                 </p>
                 <div class='invitation_content'>
                     {% raw article["content"] %}
@@ -514,30 +520,154 @@
                 {#                评论开始                  #}
                 <ul class='reply_list'>
                     <!-- top post list-->
-                    <li class='clearfix' post-id="442325376" id="154" float-id="154" u-id="172131527">
+                    <li class='clearfix' post-id="442374804" id="5" float-id="5" u-id="136642566">
                         <div class='reply_list_img'>
-                            <a href="http://bbs.xiaomi.cn/u-detail-172131527" class='headportrait' target="_blank"
+                            <a href="http://bbs.xiaomi.cn/u-detail-136642566" class='headportrait' target="_blank"
                                rel="noopener noreferrer">
                                 <img class="user_head"
-                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/172131527/avatar.jpg?&width=50&height=50"
+                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/136642566/avatar.jpg?&width=50&height=50"
                                      src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"/>
                             </a>
                         </div>
                         <div class='reply_list_con'>
                             <div class='auth_msg clearfix'>
-                                <a href="http://bbs.xiaomi.cn/u-detail-172131527" class='auth_name' target="_blank"
-                                   rel="noopener noreferrer">TYGG12</a>
-                                <i class="vip_icon 											   vip_icon_m										   "></i>
-                                <span class='time'>&nbsp;&nbsp;发烧级手机控</span>
+                                <a href="http://bbs.xiaomi.cn/u-detail-136642566" class='auth_name' target="_blank"
+                                   rel="noopener noreferrer">顾拜蛋蛋</a>
+                                <i class="vip_icon 											   vip_icon_m3										   "></i>
+                                <span class='time'>&nbsp;&nbsp;</span>
                                 <span class="at"> 发表于</span>
-                                <span class='time'>10-13 22:03:46</span>
-                                <span class='comefrom'>·来自PC</span>
-                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13384800-u172131527#comment_top">只看该作者</a>
-                                <span class='reply_list_float'>154#</span>
+                                <span class='time'>10-17 15:22:35</span>
+                                <span class='comefrom'>·来自小米Note</span>
+                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13803416-u136642566#comment_top">只看该作者</a>
+                                <span class='reply_list_float'>5#</span>
                             </div>
-                            <div class='reply_txt'>下拉栏增加屏幕录制按钮</div>
+                            <div class='reply_txt'><p>放中间隔屁股</p></div>
                             <p class='replay_bu'>
-                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13384800/post_id/442325376"
+                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13803416/post_id/442374804"
+                                   class='replay_btn'>回复</a>
+
+                                <span class='replay_btn J_report'>举报</span>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li class='clearfix' post-id="442374258" id="4" float-id="4" u-id="21204579">
+                        <div class='reply_list_img'>
+                            <a href="http://bbs.xiaomi.cn/u-detail-21204579" class='headportrait' target="_blank"
+                               rel="noopener noreferrer">
+                                <img class="user_head"
+                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/21204579/avatar.jpg?&width=50&height=50"
+                                     src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"/>
+                            </a>
+                        </div>
+                        <div class='reply_list_con'>
+                            <div class='auth_msg clearfix'>
+                                <a href="http://bbs.xiaomi.cn/u-detail-21204579" class='auth_name' target="_blank"
+                                   rel="noopener noreferrer">凌峰2011</a>
+                                <i class="vip_icon 											   vip_icon_m2										   "></i>
+                                <span class='time'>&nbsp;&nbsp;神仙级手机控</span>
+                                <span class="at"> 发表于</span>
+                                <span class='time'>10-17 14:44:12</span>
+                                <span class='comefrom'>·来自PC</span>
+                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13803416-u21204579#comment_top">只看该作者</a>
+                                <span class='reply_list_float'>4#</span>
+                            </div>
+                            <div class='reply_txt'><p>知道了。</p></div>
+                            <p class='replay_bu'>
+                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13803416/post_id/442374258"
+                                   class='replay_btn'>回复</a>
+
+                                <span class='replay_btn J_report'>举报</span>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li class='clearfix' post-id="442373196" id="3" float-id="3" u-id="188313120">
+                        <div class='reply_list_img'>
+                            <a href="http://bbs.xiaomi.cn/u-detail-188313120" class='headportrait' target="_blank"
+                               rel="noopener noreferrer">
+                                <img class="user_head"
+                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/188313120/avatar.jpg?&width=50&height=50"
+                                     src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"/>
+                            </a>
+                        </div>
+                        <div class='reply_list_con'>
+                            <div class='auth_msg clearfix'>
+                                <a href="http://bbs.xiaomi.cn/u-detail-188313120" class='auth_name' target="_blank"
+                                   rel="noopener noreferrer">lljlljllj</a>
+                                <i class="vip_icon 											   vip_icon_m0										   "></i>
+                                <span class='time'>&nbsp;&nbsp;骨灰级手机控</span>
+                                <span class="at"> 发表于</span>
+                                <span class='time'>10-17 13:16:51</span>
+                                <span class='comefrom'>·来自PC</span>
+                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13803416-u188313120#comment_top">只看该作者</a>
+                                <span class='reply_list_float diban'>地板</span>
+                            </div>
+                            <div class='reply_txt'>安全，</div>
+                            <p class='replay_bu'>
+                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13803416/post_id/442373196"
+                                   class='replay_btn'>回复</a>
+
+                                <span class='replay_btn J_report'>举报</span>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li class='clearfix' post-id="442373088" id="2" float-id="2" u-id="78024109">
+                        <div class='reply_list_img'>
+                            <a href="http://bbs.xiaomi.cn/u-detail-78024109" class='headportrait' target="_blank"
+                               rel="noopener noreferrer">
+                                <img class="user_head"
+                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/78024109/avatar.jpg?&width=50&height=50"
+                                     src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"/>
+                            </a>
+                        </div>
+                        <div class='reply_list_con'>
+                            <div class='auth_msg clearfix'>
+                                <a href="http://bbs.xiaomi.cn/u-detail-78024109" class='auth_name' target="_blank"
+                                   rel="noopener noreferrer">一种思绪丶</a>
+                                <i class="vip_icon 											   vip_icon_m4										   "></i>
+                                <span class='time'>&nbsp;&nbsp;社区版主</span>
+                                <span class="at"> 发表于</span>
+                                <span class='time'>10-17 13:08:01</span>
+                                <span class='comefrom'>·来自PC</span>
+                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13803416-u78024109#comment_top">只看该作者</a>
+                                <span class='reply_list_float bandeng'>板凳</span>
+                            </div>
+                            <div class='reply_txt'><p>安全驾驶~</p></div>
+                            <p class='replay_bu'>
+                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13803416/post_id/442373088"
+                                   class='replay_btn'>回复</a>
+
+                                <span class='replay_btn J_report'>举报</span>
+
+                            </p>
+                        </div>
+                    </li>
+                    <li class='clearfix' post-id="442372433" id="1" float-id="1" u-id="280173175">
+                        <div class='reply_list_img'>
+                            <a href="http://bbs.xiaomi.cn/u-detail-280173175" class='headportrait' target="_blank"
+                               rel="noopener noreferrer">
+                                <img class="user_head"
+                                     data-original="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/280173175/avatar.jpg?&width=50&height=50"
+                                     src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif"/>
+                            </a>
+                        </div>
+                        <div class='reply_list_con'>
+                            <div class='auth_msg clearfix'>
+                                <a href="http://bbs.xiaomi.cn/u-detail-280173175" class='auth_name' target="_blank"
+                                   rel="noopener noreferrer">AudiRS</a>
+                                <i class="vip_icon 											   vip_icon_m2										   "></i>
+                                <span class='time'>&nbsp;&nbsp;神仙级手机控</span>
+                                <span class="at"> 发表于</span>
+                                <span class='time'>10-17 12:10:11</span>
+                                <span class='comefrom'>·来自</span>
+                                <a class="only_read_auth" href="http://bbs.xiaomi.cn/t-13803416-u280173175#comment_top">只看该作者</a>
+                                <span class='reply_list_float shafa'>沙发</span>
+                            </div>
+                            <div class='reply_txt'><p>左右各两个？那就五个了，谁写的帖子，开玩笑吧你</p></div>
+                            <p class='replay_bu'>
+                                <a href="http://bbs.xiaomi.cn/post/reply/thread_id/13803416/post_id/442372433"
                                    class='replay_btn'>回复</a>
 
                                 <span class='replay_btn J_report'>举报</span>
@@ -581,7 +711,7 @@
 
         <div class="sidebar">
             <a href="#J_fastpublish" class='sidebar_btn sidebar_msg'>回复</a>
-            <a href="http://bbs.xiaomi.cn/thread/add/fid/390/type/forum" class='sidebar_btn sidebar_postmsg'>发贴</a>
+            <a href="/article/edit" class='sidebar_btn sidebar_postmsg'>发贴</a>
         </div>
 
     </div>
@@ -600,9 +730,9 @@
             height: 180,
             toolbar:
                 [
-                    [ 'Bold','Italic','Underline','Strike'],
-                    [ 'Font','FontSize' ],
-                    [ 'TextColor','BGColor','-','Image','Smiley' ]
+                    ['Bold', 'Italic', 'Underline', 'Strike'],
+                    ['Font', 'FontSize'],
+                    ['TextColor', 'BGColor', '-', 'Image', 'Smiley']
                 ]
         });
 </script>
