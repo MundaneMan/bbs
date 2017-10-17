@@ -18,12 +18,12 @@ cms管理系统
 
 3.配置本地访问域名
 
-  windows hosts 配置 192.168.195.139(服务器地址)       www-local.instructions.com
+  windows hosts 配置 192.168.195.139(服务器地址)       www-local.bbs.com
   
   ubuntu hosts  配置  127.0.0.1    mongodb
 
 4.nginx配置
-   拷贝工程目录config 下的 vhost_instructions.conf 到 /etc/nginx/sites-enabled/下
+   拷贝工程目录config 下的 vhost_bbs.conf 到 /etc/nginx/sites-enabled/下
    
    根据实际情况修改root路径
    
