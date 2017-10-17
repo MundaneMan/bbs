@@ -196,10 +196,33 @@ class UserChangePwdHandler(UserBaseHandler):
         )
 
 
+class UserInfoHandler(UserBaseHandler):
+    operation = u"用户修改资料"
+
+    def get(self, *args, **kwargs):
+        self.render("info.html")
+
+
+class UserUploadAvatarHandler(UserBaseHandler):
+    operation = u"用户修改资料"
+
+    def get(self, *args, **kwargs):
+        self.render("avatar.html")
+
+
+class UserRealInfoVerifyHandler(UserBaseHandler):
+    operation = u"用户修改资料"
+
+    def get(self, *args, **kwargs):
+        self.render("real_info_verify.html")
+
 urls = [
     (r"/user/login/?", UserLoginHandler),
     (r"/user/logout/?", UserLogoutHandler),
     (r"/user/register/?", UserRegisterHandler),
     (r"/js/user/verify/?", UserVerifyJsHandler),
     (r"/user/change_pwd/?", UserChangePwdHandler),
+    (r"/user/info/?", UserInfoHandler),
+    (r"/user/upload_avatar/?", UserUploadAvatarHandler),
+    (r"/real_info/verify/?", UserRealInfoVerifyHandler),
     ]

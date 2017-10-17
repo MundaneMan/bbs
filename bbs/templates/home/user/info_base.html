@@ -1,0 +1,27 @@
+{% extends "../base.html" %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/user_info.css?v=7'>
+<script type="text/javascript" src='/home/js/user/msgnav.js'></script>
+{% end %}
+{% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='person_wrap'>
+        <div class='contain_left'>
+            <div class='left_wrap'>
+                <div class="nav_menu">
+                    <h4>设置</h4>
+                    <div class="nav_label"><span></span></div>
+                    <ul class="menu">
+                        <li class="menu_item current"><a href="/user/info">个人资料</a></li>
+                        <li class="menu_item"><a href="/user/upload_avatar">上传头像</a></li>
+                        <li class="menu_item"><a href="/real_info/verify">真人认证</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block user_info_right %}
+        {% end %}
+    </div>
+</div>
+{% end %}
