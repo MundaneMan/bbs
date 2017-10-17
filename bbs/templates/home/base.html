@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width"/>
     <title>{% block title %}{% end %}</title>
     <meta name="description" content="AI爱好者官方论坛是Ai爱好者的大本营，在这里交流AI学习心得，了解AI最新动态，参与活动互动，为AI粉打造一个良好的互动交流平台。"/>
-    <meta name="keywords" content="AI论坛,AI社区,AI爱好者官方论坛"/>
+    <meta name="keywords" content="AI论坛,AI爱好者社区,AI爱好者官方论坛"/>
     <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
     <!--[if lt IE 9]>
 			<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
@@ -41,11 +41,15 @@
             width: 150px;
             height: 50px;
             margin-left: 5px;
-            text-indent: -99999px;
+            text-indent: 60px;
+            line-height: 50px;
+{#            text-align: right;#}
             display: inline-block;
             position: absolute;
             left: 0;
-            background: url('/home/images/nav_logo_ai.png') 0 center no-repeat
+            font-size: 17px;
+{#            background: url('/home/images/nav_logo_ai.png') 0 center no-repeat；#}
+            background: url('/home/images/ai-login.png') 0 center no-repeat
         }
 
         .xmcomm_header .mobile_qr {
@@ -352,12 +356,12 @@
     </style>
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
-            <a href="http://www.xiaomi.cn/index.html" class="logo">AI社区</a>
+            <a href="/" style="color: white" class="logo">AI爱好者</a>
             <div class="mobile_qr">
                 <a href="#" target="_blank" class="mobile">客户端</a>
                 <div class="qr">
                     <span></span>
-                    <strong>扫码下载AI社区APP</strong>
+                    <strong>扫码下载AI爱好者社区APP</strong>
                 </div>
             </div>
             <ul class="header_menu">
