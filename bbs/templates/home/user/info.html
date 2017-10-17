@@ -1,0 +1,112 @@
+{% extends "../base.html" %}
+
+{% block title %}修改个人资料 - AI爱好者官方论坛{% end %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/user_info.css?v=7'>
+{% end %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/user_info.css?v=7'>
+<script type="text/javascript" src='/home/js/user/msgnav.js'></script>
+{% end %}
+{% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='person_wrap'>
+        <div class='contain_left'>
+            <div class='left_wrap'>
+                <div class="nav_menu">
+                    <h4>设置</h4>
+                    <div class="nav_label"><span></span></div>
+                    <ul class="menu">
+                        <li class="menu_item current"><a href="/user/info">个人资料</a>
+                        </li>
+                        <li class="menu_item"><a href="/user/upload_avatar">上传头像</a>
+                        </li>
+                        <li class="menu_item"><a href="/real_info/verify">真人认证</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='contain_right'>
+            <div class='session'>
+                <div class='wrap selfmsg'>
+                    <h2>个人信息</h2>
+
+                    <form method="post" action="/user/edit" onsubmit="return xmbbs.messagecheck()">
+                        <dl>
+                            <dd><span>用户名</span><em>&nbsp;</em>libing</dd>
+                            <dd><span>真实姓名</span><em>*</em><input type='text' class='name' value=""/></dd>
+                            <dd><span>手机</span><em>*</em><input type='text' class='telphone' value=""/></dd>
+                            <dd class='residence'><span>邮寄地址</span><em>*</em>
+                                <div class="selectchose">
+                                    <i></i>
+                                    <select class="J_province" value='0'></select>
+                                </div>
+                                <div class="selectchose">
+                                    <i></i>
+                                    <select class="J_city" value='0'></select>
+                                </div>
+                                <div class="selectchose">
+                                    <i></i>
+                                    <select class="J_district" value='0'></select>
+                                </div>
+                            </dd>
+                            <dd><span>&nbsp;</span><em>*</em><input type='text' class='postaddress'
+                                                                    placeholder="详细街道地址" value=""/></dd>
+                            <dd><span>邮编</span><em>&nbsp;</em><input type='text' class='zipcode' maxlength="6"
+                                                                     value="" placeholder="邮政编码将根据填写的地址自动生成"></dd>
+                            <dd><span>QQ</span><em>*</em><input type='text' class='qq' value=""></dd>
+                            <dd><span>邮箱</span><em>*</em><input type='text' class='email'
+                                                                value="libingjy@gmail.com"></dd>
+                            <dd><span>性别</span><em>&nbsp;</em>
+                                <div class="dropdown_text_middle">
+                                    <span id='sex' date-val='0'>保密</span>
+                                    <i></i>
+                                    <ul class='selectlist'>
+                                        <li date-val='0'>保密</li>
+                                        <li date-val='1'>男</li>
+                                        <li date-val='2'>女</li>
+                                    </ul>
+                                </div>
+                            </dd>
+                            <dd><span>生日</span><em>&nbsp;</em>
+                                <div class="dropdown_text_middle">
+                                    <span id='year'>1900</span>
+                                    <i></i>
+                                    <ul class='selectlist' id="sel_year"></ul>
+                                </div>
+                                <div class="dropdown_text_middle">
+                                    <span id='month'>1</span>
+                                    <i></i>
+                                    <ul class='selectlist' id="sel_month">
+                                    </ul>
+                                </div>
+                                <div class="dropdown_text_middle">
+                                    <span id='day'>1</span>
+                                    <i></i>
+                                    <ul class='selectlist' id="sel_day"></ul>
+                                </div>
+                            </dd>
+                            <dd><span>身份证号</span><em>&nbsp;</em><input type='text' class='identitycard' value="">
+                            </dd>
+                            <dd><span>个人主页</span><em>&nbsp;</em><input type='text' class='personhomepage' value="">
+                            </dd>
+                            <dd class='signature'><span>个人签名</span><em>&nbsp;</em><textarea
+                                    class='personsignature'></textarea>
+                            </dd>
+                            <dd><span class="btn submit">保存</span></dd>
+                        </dl>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {# 以下的js暂时留着，以后也许用得到 #}
+        <script type="text/javascript" src="/home/js/user/address_all.js"></script>
+        <script type="text/javascript" src='/home/js/user/user_info.js'></script>
+
+    </div>
+</div>
+{% end %}
+

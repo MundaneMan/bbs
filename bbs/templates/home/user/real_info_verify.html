@@ -1,0 +1,37 @@
+{% extends "../base.html" %}
+
+{% block title %}修改个人资料 - AI爱好者官方论坛{% end %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/user_info.css?v=7'>
+{% end %}
+
+{% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='person_wrap'>
+        <div class='contain_left'>
+            <div class='left_wrap'>
+                <div class="nav_menu">
+                    <h4>设置</h4>
+                    <div class="nav_label"><span></span></div>
+                    <ul class="menu">
+                        <li class="menu_item"><a href="/user/info">个人资料</a>
+                        </li>
+                        <li class="menu_item"><a href="/user/upload_avatar">上传头像</a>
+                        </li>
+                        <li class="menu_item current"><a href="/real_info/verify">真人认证</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='contain_right'>
+            <div style="height: 200px;"></div>
+            <div style="text-align: center"><h1>此功能尚未开放,敬请期待！</h1></div>
+            <div style="height: 400px;"></div>
+        </div>
+    <script type="text/javascript" src='/home/js/user/msgnav.js'></script>
+    </div>
+</div>
+{% end %}
+

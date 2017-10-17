@@ -1,0 +1,81 @@
+{% extends "../base.html" %}
+
+{% block title %}上传头像 - AI爱好者官方论坛{% end %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/user_info.css?v=7'>
+{% end %}
+{% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='person_wrap'>
+        <div class='contain_left'>
+            <div class='left_wrap'>
+                <div class="nav_menu">
+                    <h4>设置</h4>
+                    <div class="nav_label"><span></span></div>
+                    <ul class="menu">
+                        <li class="menu_item"><a href="/user/info">个人资料</a>
+                        </li>
+                        <li class="menu_item current"><a href="/user/upload_avatar">上传头像</a>
+                        </li>
+                        <li class="menu_item"><a href="/real_info/verify">真人认证</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='contain_right'>
+            <div class='session headupload'>
+                <h2>当前我的头像</h2>
+                <P>如果您还没有设置自己的头像，系统会显示为默认头像，您需要自己上传一张新照片来作为自己的个人头像</P>
+                <div class='headportrait'>
+                    <ul>
+                        <li>
+                            <div><img
+                                    src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/88205570/avatar.jpg?_v=1508069745?&_t=1508242816"
+                                    onerror="javascript:this.src='/home/images/noavatar_big.gif';"/>
+                            </div>
+                            <span>150×150</span>
+                        </li>
+                        <li>
+                            <div><img
+                                    src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/88205570/avatar.jpg?_v=1508069745?&_t=1508242816"
+                                    onerror="javascript:this.src='/home/images/noavatar_small.gif';"/>
+                            </div>
+                            <span>50×50</span>
+                        </li>
+                    </ul>
+                </div>
+                <h2>设置我的新头像</h2>
+                <P>请选择一个新照片进行上传编辑。<br>头像保存后，您可能需要刷新一下本页面(按F5键)，才能查看最新的头像效果</P>
+                <div>
+                    <form action="/user/avatar" id='img_submit_form' target="hidden_frame" enctype="multipart/form-data"
+                          method="post">
+                        <input type='hidden' name='position_x1' value="0"/>
+                        <input type='hidden' name='position_x2' value="0"/>
+                        <input type='hidden' name='position_y1' value="0"/>
+                        <input type='hidden' name='position_y2' value="0"/>
+                        <input type='hidden' name='size_height' value="0"/>
+                        <input type='hidden' name='size_width' value="0"/>
+                        <input type="file" id="Member_headimg" name="AidImg"/>
+                    </form>
+                    <iframe style="display:none" name='hidden_frame' id="hidden_frame"></iframe>
+                    <div id="localImag">
+                        <p>请选择合适区域</p>
+                        <img id="preview" style="diplay:none"/>
+                    </div>
+                    <div class='changesize'>
+                        <div class='twig'>
+                            <span><i></i></span>
+                        </div>
+                        <p><span>&Theta;</span><span class='center'>&nbsp;</span><span>&oplus;</span></p>
+                    </div>
+                    <span class='btn'>上传</span>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src='/home/js/user/uploadavatar.js'></script>
+    <script type="text/javascript" src='/home/js/user/msgnav.js'></script>
+    </div>
+</div>
+{% end %}
+
