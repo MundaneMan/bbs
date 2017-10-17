@@ -1,5 +1,5 @@
 1.PC端安装vmware以及vmware-tools
-2.PC端安装python 和pycharm
+2.PC端安装python2.7版 和pycharm
 3.在PC端某个文件夹(例如d:code)下克隆工程 git clone https://github.com/libinghope/bbs.git
 4.在虚拟机中安装ubuntu-server(最好设置国内的源)
 5.设置vmware和主机的共享目录，为刚才的代码路径(d:code)
