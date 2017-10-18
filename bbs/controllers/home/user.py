@@ -216,6 +216,20 @@ class UserRealInfoVerifyHandler(UserBaseHandler):
     def get(self, *args, **kwargs):
         self.render("real_info_verify.html")
 
+
+class UserPostsCollectedHandler(UserBaseHandler):
+    operation = u"用户收藏的帖子"
+
+    def get(self, *args, **kwargs):
+        self.render("posts_collected.html")
+
+
+class UserModuleFollowedHandler(UserBaseHandler):
+    operation = u"用户收藏的帖子"
+
+    def get(self, *args, **kwargs):
+        self.render("plate_followed.html")
+
 urls = [
     (r"/user/login/?", UserLoginHandler),
     (r"/user/logout/?", UserLogoutHandler),
@@ -225,4 +239,6 @@ urls = [
     (r"/user/info/?", UserInfoHandler),
     (r"/user/upload_avatar/?", UserUploadAvatarHandler),
     (r"/real_info/verify/?", UserRealInfoVerifyHandler),
+    (r"/user/posts_collected/?", UserPostsCollectedHandler),
+    (r"/user/module_followed/?", UserModuleFollowedHandler),
     ]

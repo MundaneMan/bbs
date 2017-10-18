@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block title %}修改个人资料 - AI爱好者官方论坛{% end %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href='/home/css/user/collectplate.css?v=7'>
+<script type="text/javascript" src='/home/js/user/msgnav.js'></script>
+{% end %}
+{% block content %}
+<div class='container_wrap wrap_990 clearfix'>
+    <div class='container_wrap wrap_990 clearfix'>
+        <div class='collect_wrap clearfix'>
+            <div class='contain_left'>
+                <div class='left_wrap'>
+                    <div class="nav_menu">
+                        <h4>收藏</h4>
+                        <div class="nav_label"><span></span></div>
+                        <ul class="menu">
+                            <li class="menu_item"><a href="/user/posts_collected/">收藏的帖子</a></li>
+                            <li class="menu_item current"><a href="/user/module_followed/">关注的版块</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class='contain_right'>
+                <div class='session'>
+                    <div class='theme'>
+                        <div class='theme_con'>
+                            <div class='theme_nav'>
+                                关注版块 <span class='num'>1</span>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="/forum/detail/fid/389" class='imgwrap'><img
+                                            src="http://img08.mifile.cn/v1/MI_1031495CC30DA4/T1Ytd_B7LT1R4cSCrK.png"/></a>
+                                    <a href="/forum/detail/fid/389" class='name'>米粉杂谈</a>
+                                    <span>今日：0</span>
+                                    <span class='btn' fid='389'>取消关注</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src='/home/css/user/collectplate.js'></script>
+</div>
+{% end %}
+

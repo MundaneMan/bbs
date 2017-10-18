@@ -4,22 +4,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <meta name="viewport" content="width=device-width"/>
-    <title>{% block title %}{% end %}</title>
-    <meta name="description" content="AI爱好者官方论坛是Ai爱好者的大本营，在这里交流AI学习心得，了解AI最新动态，参与活动互动，为AI粉打造一个良好的互动交流平台。"/>
-    <meta name="keywords" content="AI论坛,AI爱好者社区,AI爱好者官方论坛"/>
-    <!--<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css">-->
+
+
+    <title>我的收藏 - 小米社区官方论坛</title>
+
+    <link rel="stylesheet" type="text/css" href='http://s1.bbs.xiaomi.cn/statics/css/zh-cn/index.css?v=1496318117'>
+    <link rel="stylesheet" type="text/css" href='http://s1.bbs.xiaomi.cn/statics/css/zh-cn/datePicker.css?v=1496318116'>
+    <link rel="stylesheet" type="text/css"
+          href='http://s1.bbs.xiaomi.cn/statics/css/zh-cn/collectplate.css?v=1496318117'>
+
     <!--[if lt IE 9]>
 			<link rel="stylesheet" type="text/css" href="http://s1.bbs.xiaomi.cn/statics/css/zh-cn/ie8-header.css">
 		<![endif]-->
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="bookmark" href="/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href='/home/css/index.css?v=1496318117'>
-    <script type="text/javascript" src='/home/js/jquery.min.js'></script>
-    <script type="text/javascript" src='/home/js/base.js'></script>
-    {% block head %}{% end %}
+    <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/lang/zh-cn.js'></script>
+    <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/lib/jquery.min.js'></script>
+    <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/base/base.js'></script>
+    <!--小米社区寻找android、iOS工程师，亲们简历砸过来 jiangming@xiaomi.com-->
 </head>
-
 <body>
+<script>switchMobile.init()</script>
 <div class="main">
     <style>
         .xmcomm_header_wrap {
@@ -41,13 +44,11 @@
             width: 150px;
             height: 50px;
             margin-left: 5px;
-            text-indent: 60px;
-            line-height: 50px;
+            text-indent: -99999px;
             display: inline-block;
             position: absolute;
             left: 0;
-            font-size: 17px;
-            background: url(/home/images/ai-login.png) 0 center no-repeat
+            background: url("//s1.bbs.xiaomi.cn/statics/images/logo_cn.png") 0 center no-repeat
         }
 
         .xmcomm_header .mobile_qr {
@@ -64,7 +65,7 @@
             display: block;
             line-height: 50px;
             padding-left: 14px;
-            background: url("/home/images/header_mobile.png") 0 center no-repeat;
+            background: url("//s1.bbs.xiaomi.cn/statics/images/header_mobile.png") 0 center no-repeat;
             color: #ff7e3e
         }
 
@@ -79,7 +80,7 @@
         .xmcomm_header .mobile_qr .qr span {
             display: block;
             height: 151px;
-            background: url("/home/images/header_qr.png") center no-repeat
+            background: url("//s1.bbs.xiaomi.cn/statics/images/header_qr.png") center no-repeat
         }
 
         .xmcomm_header .mobile_qr .qr strong {
@@ -98,7 +99,7 @@
             vertical-align: middle;
             text-indent: -9999px;
             display: inline-block;
-            background: url("/home/images/header_icon.png") no-repeat
+            background: url("//s1.bbs.xiaomi.cn/statics/images/header_icon.png") no-repeat
         }
 
         .xmcomm_header .header_icon.header_revise {
@@ -243,7 +244,7 @@
 
         .xmcomm_header .header_more_list {
             position: absolute;
-            left: 180px;
+            left: 544px;
             width: 182px;
             padding: 35px 0;
             background: #fff;
@@ -354,29 +355,29 @@
     </style>
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
-            <a href="/" style="color: white" class="logo">AI爱好者</a>
+            <a href="http://www.xiaomi.cn/index.html" class="logo">小米社区</a>
             <div class="mobile_qr">
-                <a href="#" target="_blank" class="mobile">客户端</a>
+                <a href="//bbs.xiaomi.cn/app/download" target="_blank" class="mobile">客户端</a>
                 <div class="qr">
                     <span></span>
-                    <strong>扫码下载AI爱好者社区APP</strong>
+                    <strong>扫码下载小米社区APP</strong>
                 </div>
             </div>
             <ul class="header_menu">
                 <li><a href="http://www.xiaomi.cn/index.html">资讯</a></li>
-                <li><a href="/">论坛</a></li>
+                <li><a href="http://bbs.xiaomi.cn">论坛</a></li>
                 <li>
                     <span>版块</span>
                     <div class="header_menu_list">
                         <dl>
-                            <dt>AI手机 &gt;</dt>
+                            <dt>小米手机 &gt;</dt>
                             <dd>
                                 <ul style="padding-left:20px;">
-                                    <li><a href="http://bbs.xiaomi.cn/f-487">AI6</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-451">AI5/5X/5c/5s</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-385">AINote 3</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-475">AIMIX 2</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-458">AIMax 2</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-487">小米6</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-451">小米5/5X/5c/5s</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-385">小米Note 3</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-475">小米MIX 2</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-458">小米Max 2</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -394,13 +395,13 @@
                             <dt>电视盒子 &gt;</dt>
                             <dd>
                                 <ul style="padding-left:20px;">
-                                    <li><a href="http://bbs.xiaomi.cn/f-9">AI电视</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-364">AI盒子</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-480">AI音箱</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-354">AI路由器</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-358">AI平板</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-450">AI笔记本</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-459">AIVR</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-9">小米电视</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-364">小米盒子</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-480">小米音箱</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-354">小米路由器</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-358">小米平板</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-450">小米笔记本</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-459">小米VR</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -408,8 +409,8 @@
                             <dt>智能硬件 &gt;</dt>
                             <dd>
                                 <ul style="padding-left:20px;">
-                                    <li><a href="http://bbs.xiaomi.cn/f-362">AI手环</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-452">AI出行</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-362">小米手环</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-452">小米出行</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-456">小方智能摄像机</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-479">米兔积木机器人</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-368">移动电源</a></li>
@@ -422,7 +423,7 @@
                                     <li><a href="http://bbs.xiaomi.cn/f-10">空气净化器</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-454">米兔儿童手表</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-485">米家智能摄像机</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-367">AI耳机</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-367">小米耳机</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-469">扫地机器人</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-457">电饭煲</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-461">小白/云台版摄像机</a></li>
@@ -448,8 +449,8 @@
                                     <li><a href="http://hd.xiaomi.cn/mipop/2016hz/">爆米花</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-382">同城会</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-410">校园俱乐部</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-393">摄影馆</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-392">AI众测</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-393">小米摄影馆</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-392">小米众测</a></li>
                                 </ul>
                             </dd>
                         </dl>
@@ -458,10 +459,10 @@
                             <dd>
                                 <ul style="padding-left:20px;">
                                     <li><a href="http://bbs.xiaomi.cn/f-465">剑侠世界</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-464">AI超神</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-472">AI角斗冠军</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-463">AI枪战</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-481">AI赛车</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-464">小米超神</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-472">小米角斗冠军</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-463">小米枪战</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-481">小米赛车</a></li>
 
                                 </ul>
                             </dd>
@@ -470,139 +471,192 @@
                             <dt>综合 &gt;</dt>
                             <dd>
                                 <ul style="padding-left:20px;">
-                                    <li><a href="http://bbs.xiaomi.cn/f-6">AI动态</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-6">小米动态</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-389">米粉杂谈</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-397">米粉达人</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-419">积分商城</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-17">问题反馈</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-482">有品</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-494">米车生活</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-489">AI大脑</a></li>
-                                    <li><a href="http://bbs.xiaomi.cn/f-493">AI探索实验室</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-489">小米大脑</a></li>
+                                    <li><a href="http://bbs.xiaomi.cn/f-493">小米探索实验室</a></li>
                                     <li><a href="http://bbs.xiaomi.cn/f-400">申请特殊组</a></li>
                                 </ul>
                             </dd>
                         </dl>
                     </div>
                 </li>
-
-                <li><a href="http://hd.xiaomi.cn/mipop/2016hz/" target="_blank">AI教程</a></li>
-                {#                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"#}
-                {#                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>#}
+                <li><a href="http://wan.xiaomi.cn/" target="_blank" onclick="_hmt.push(['_trackEvent','bbs导航','酷玩帮']);">酷玩帮</a>
+                </li>
+                <li><a href="http://pai.xiaomi.cn/" target="_blank" onclick="_hmt.push(['_trackEvent','bbs导航','随手拍']);">摄影馆</a>
+                </li>
+                <li><a href="http://hd.xiaomi.cn/mipop/2016hz/" target="_blank"
+                       onclick="_hmt.push(['_trackEvent','bbs导航','爆米花']);">爆米花</a></li>
+                <li><a href="http://city.xiaomi.cn/" target="_blank"
+                       onclick="_hmt.push(['_trackEvent','bbs导航','同城会']);">同城会</a></li>
+                <li class="hidden"><a href="http://bbs.xiaomi.cn/task/list" target="_blank"
+                                      onclick="_hmt.push(['_trackEvent','bbs导航','任务']);">任务</a></li>
+                <li class="hidden"><a href="http://rom.xiaomi.cn/" target="_blank"
+                                      onclick="_hmt.push(['_trackEvent','bbs导航','ROM']);">ROM</a></li>
+                <li><a href="http://www.mi.com" target="_blank"
+                       onclick="_hmt.push(['_trackEvent','bbs导航','商城']);">小米商城</a></li>
                 <li>
                     <span>更多<i class="header_icon"></i></span>
                     <div class="header_more_list">
                         <ul>
                             <li class="hide"><a href="http://bbs.xiaomi.cn/f-410" target="_blank">校园俱乐部</a></li>
                             <li class="hide"><a href="http://bbs.xiaomi.cn/task/list" target="_blank">任务</a></li>
-                            <li><a href="http://so.bbs.xiaomi.cn" target="_blank">搜索</a></li>
+                            <li class="hide"><a href="http://rom.xiaomi.cn/" target="_blank">ROM</a></li>
+                            <li><a href="http://so.bbs.xiaomi.cn" target="_blank"
+                                   onclick="_hmt.push(['_trackEvent','bbs导航','搜索']);">搜索</a></li>
                             <li><a href="http://www.xiaomi.cn/html/special/zhuanti/" target="_blank">精彩活动</a></li>
                             <li><a href="http://uvip.xiaomi.cn/" target="_blank">VIP认证</a></li>
                             <li><a href="http://xue.xiaomi.cn/" target="_blank">学院</a></li>
+                            <li><a href="http://www.xiaomi.cn/list-19-1.html" target="_blank">刷机频道</a></li>
+                            <li><a href="http://www.mi.com/service/" target="_blank">售后服务</a></li>
                             <li><a href="http://www.xiaomi.cn/html/special/wangzhandaohang/?pc_hash=YaB1OV"
                                    target="_blank">网站导航</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="http://so.bbs.xiaomi.cn/" target="_blank" class="hidden header_icon header_search">搜索</a>
-                    <a href="/article/edit/" target="_blank" class="header_icon header_revise">发帖</a>
+                    <a href="http://so.bbs.xiaomi.cn/" target="_blank" class="hidden header_icon header_search"
+                       onclick="_hmt.push(['_trackEvent','bbs导航','搜索']);">搜索</a>
+                    <a href="http://bbs.xiaomi.cn/thread/add" target="_blank" class="header_icon header_revise">发帖</a>
                 </li>
             </ul>
         </div>
     </div>
-    {#    登录注册   #}
     <div class="head_wrap">
         <div class="header wrap_990">
             <div class='user_wrap'>
                 <div class="topbar-info J_userInfo " id='login'>
-                    {% if not handler.current_user %}
-                    <a class='loginbtn' href="/user/login/">登录</a>
-                    <a href="/user/register/" class='registerbtn'>注册</a>
-                    {% else %}
                     <a href="http://bbs.xiaomi.cn/message/private" class='header_msg_wrap clearfix'>
                         <span class="headerbtn header_msg">消息</span>
-                        <span class='msgnum'>(3)</span>
+                        <span class='msgnum'></span>
                     </a>
-                    <a href="/" class='user clearfix'>
-                        <img src="?&_t=1507642640"
-                             onerror="javascript:this.src='/home/images/noavatar_small.gif';"/>
-                        <span class='user_name'>libing</span>
+                    <a href="http://bbs.xiaomi.cn/u-detail-88205570" class='user clearfix'>
+                        <img src="http://cdn.fds.api.xiaomi.com/b2c-bbs/cn/88205570/avatar.jpg?_v=1508069745?&_t=1508337395"
+                             onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';"/>
+                        <span class='user_name'>adfasfsadfsf</span>
                     </a>
                     <div class='user_con'>
                         <p>
-                            积分：212</br>
+                            积分：227</br>
                             用户组：<span class='uname'>高级手机控</span></p>
                         <div>
-                            <a href='/user/info'>设置</a>
-                            <a style="color:red;" href="/message/private">消息(3)</a>
+                            <a href='/user/edit'>设置</a>
+                            <a href="/message/private">消息</a>
                             <a href='/friend/list'>好友</a>
                             <a href='/task/list'>任务</a>
                             <!-- <a href='http://bbs.xiaomi.cn/qiandao/'>签到</a> -->
                             <a href='/medal/list'>勋章</a>
-                            <a href='/user/posts_collected/'>收藏</a>
-                            <a href='/user/logout/'>退出</a>
+                            <a href='/favorites/list'>收藏</a>
+                            <a href='/site/logout?token=39814225'>退出</a>
                         </div>
                     </div>
-                    {% end %}
                 </div>
             </div>
         </div>
     </div>
-    {#   登录注册结束   #}
-    {% block content %}
-    {% end %}
-
+    <!-- <div class="bannerTop">
+        <a href="http://hd.xiaomi.cn/mipop/2016dl/" target="_blank" rel="noopener noreferrer" class="download_pc"><img src="http://cdn.fds.api.xiaomi.com/b2c-bbs-cms/2016/0819/20160819070742289.jpg"></a>
+    </div> -->
+    <div class='container_wrap wrap_990 clearfix'>
+        <div class='container_wrap wrap_990 clearfix'>
+            <div class='collect_wrap clearfix'>
+                <div class='contain_left'>
+                    <div class='left_wrap'>
+                        <div class="nav_menu">
+                            <h4>收藏</h4>
+                            <div class="nav_label"><span></span></div>
+                            <ul class="menu">
+                                <li class="menu_item"><a href="/favorites/list">收藏的帖子</a></li>
+                                <li class="menu_item current"><a href="/favorites/forumlist">关注的版块</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class='contain_right'>
+                    <div class='session'>
+                        <div class='theme'>
+                            <div class='theme_con'>
+                                <div class='theme_nav'>
+                                    关注版块 <span class='num'>1</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="/forum/detail/fid/389" class='imgwrap'><img
+                                                src="http://img08.mifile.cn/v1/MI_1031495CC30DA4/T1Ytd_B7LT1R4cSCrK.png"/></a>
+                                        <a href="/forum/detail/fid/389" class='name'>米粉杂谈</a>
+                                        <span>今日：0</span>
+                                        <span class='btn' fid='389'>取消关注</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/zh-cn/collectplate.js'></script>
+        <script type="text/javascript" src='http://s1.bbs.xiaomi.cn/statics/js/base/msgnav.js'></script>
+    </div>
+    <div class="bannerBottom">
+        <a href="http://bbs.xiaomi.cn/app/download" target="_blank" rel="noopener noreferrer" class="download_m"><img
+                src="http://s1.bbs.xiaomi.cn/statics/images/banner_bottom_m.png"></a>
+    </div>
 </div>
-<div class='footer'>
+<div class='footer brief'>
     <div class="mobile_switch">
         <a class="switch_desktop" id="J_switchDesktop" href="#">电脑版</a>
         <a class="switch_mobile" id="J_switchMobile" href="#">手机版</a>
         <a class="switch_app download_m" href="#">客户端<i>new</i></a>
     </div>
-    <div class='footertop'>
-        <div class='wrap_990'>
-            <div class='footertop_con'>
-                <dl>
-                    <dd><a href="http://www.cnmo.com/" target="_blank" rel="noopener noreferrer">手机中国</a></dd>
-                    <dd><a href="http://bbs.kupan.cn/" target="_blank" rel="noopener noreferrer">金山快盘</a></dd>
-                </dl>
-                <dl>
-                    <dd><a href="http://www.leiphone.com/" target="_blank" rel="noopener noreferrer">雷锋网</a></dd>
-                    <dd><a href="http://www.chinaz.com/" target="_blank" rel="noopener noreferrer">站长之家</a></dd>
-                </dl>
-                <dl>
-                    <dd><a href="http://www.mydrivers.com/" target="_blank" rel="noopener noreferrer">驱动之家</a></dd>
-                    <dd><a href="http://bbs.feng.com/" target="_blank" rel="noopener noreferrer">威锋论坛</a></dd>
-                </dl>
-                <dl>
-                    <dd><a href="http://mobile.zol.com.cn/" target="_blank" rel="noopener noreferrer">ZOL手机频道</a></dd>
-                    <dd><a href="http://bbs.zhiyoo.com/" target="_blank" rel="noopener noreferrer">安卓网</a></dd>
-                </dl>
-                <dl>
-                    <dd><a href="http://bbs.mumayi.com/" target="_blank" rel="noopener noreferrer">安卓论坛</a></dd>
-                    <dd><a href="http://www.znds.com/" target="_blank" rel="noopener noreferrer">智能电视网</a></dd>
-                </dl>
-                <dl>
-                    <dd><a href="http://www.igao7.com/" target="_blank" rel="noopener noreferrer">爱搞机</a></dd>
-                    <dd><a href="http://www.tvhome.com/" target="_blank" rel="noopener noreferrer">电视之家</a></dd>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <div class='footerdown'>
-        <div class='wrap_990'>
-            <a href="http://bbs.xiaomi.cn" class='milogo'>AI</a>
-            <a href="http://{{ handler.settings['admin_domain'] }}" class='link'>{{ handler.settings['admin_domain'] }}</a>
-            <span>京ICP证110507号 京ICP备10046444号 <a target="_blank" rel="noopener noreferrer"
-                                                 href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"
-                                                 style="cursor:pointer;color: white;">京公网安备11010802020134号</a></span>
-        </div>
+    <div class='wrap_990'>
+        <a href="http://bbs.xiaomi.cn" class='link'>bbs.xiaomi.cn</a>
+        <span>京ICP证110507号 京ICP备10046444号 <a target="_blank" rel="noopener noreferrer"
+                                             href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"
+                                             style="cursor:pointer;color: white;">京公网安备11010802020134号</a></span>
     </div>
 </div>
 </body>
-{% block footer %}{% end %}
-{% block foot_script %}
-
-{% end %}
+<!-- 统计代码 -->
+<script>
+    var _msq = _msq || [];
+    _msq.push(['setDomainId', 112]);
+    _msq.push(['trackPageView']);
+    (function () {
+        var ms = document.createElement('script');
+        ms.type = 'text/javascript';
+        ms.async = true;
+        ms.src = ' http://s1.mi.com/js/xmst.js ';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ms, s);
+    })();
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?71558e7b4aa822e282e758f8dc0b88b0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+<script src="//s1.bbs.xiaomi.cn/statics/js/base/autologin.js"></script>
 </html>
