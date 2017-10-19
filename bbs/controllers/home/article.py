@@ -4,6 +4,7 @@
 from bbs.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
 from bbs.libs.captcha import Captcha
 import bbs.models.article_model as article_model
+import bbs.models.images_model as images_model
 import bbs.libs.photo as photo_tools
 import time
 import string
@@ -50,6 +51,8 @@ class ArticleViewHandler(ArticleBaseHandler):
     def get(self, article_id):
         # print article_id
         article = article_model.load_article_by_id(article_id)
+        if "main_pic" in article and article["main_pic"]:
+            article["main_pic"] = self.build_photo_url(article["main_pic"], "title")
         if article:
             self.render("view.html", article=article)
         else:
@@ -74,6 +77,7 @@ class ArticleUploadImgHandler(ArticleBaseHandler):
             self.write(self.data)
             return
         photo_info_dict = photo_tools.save_upload_photo(photo["body"], self.settings["static_path"])
+        images_model.insert_image({"image_id": photo_info_dict["id"]})
         file_name = self.build_photo_url(photo_info_dict["id"])
 
         # self.write({

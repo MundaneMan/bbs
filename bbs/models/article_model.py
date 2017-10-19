@@ -52,9 +52,12 @@ def is_field_data_exist(field, data):
     return False
 
 
-def format_article(article_obj, ftype=""):
-    if "_id" in article_obj:
-        article_obj["article_id"] = str(article_obj["_id"])
+def format_article(_obj, t_format='%Y-%m-%d %H:%M:%S'):
+    if "create_at" in _obj:
+        _obj["create_at"] = time.strftime(t_format,
+                                          time.localtime(_obj["create_at"]))
+    if "_id" in _obj:
+        _obj["_id"] = str(_obj["_id"])
 
-    return article_obj
+    return _obj
 
