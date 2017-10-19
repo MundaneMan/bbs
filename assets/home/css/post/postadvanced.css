@@ -544,8 +544,15 @@ nav ul, nav ol {
     list-style-image: none
 }
 
-img {
-    border: 0;
+.main_pic{
+    border: solid 1px;
+    width: 928px;
+    height: 300px;
+}
+
+.main_pic img{
+    width: 927px;
+    height: 299px;
     -ms-interpolation-mode: bicubic
 }
 
@@ -1179,7 +1186,7 @@ nav ul, nav ol {
 }
 
 img {
-    border: 0;
+    /*border: 0;*/
     -ms-interpolation-mode: bicubic
 }
 
