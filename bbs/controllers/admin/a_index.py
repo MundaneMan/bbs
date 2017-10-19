@@ -32,12 +32,6 @@ class AdminMenuModule(tornado.web.UIModule):
     def render(self, module_name="index", tpl="admin/left.html"):
         return self.render_string(tpl, module_name=module_name)
 
-
-class AdminPageModule(tornado.web.UIModule):
-    def render(self, baseurl, start, count, perpage, tpl="admin/a_m_page.html"):
-        return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
-
 ui_modules = {
-    "AdminMenuModule": AdminMenuModule,
-    "AdminPageModule": AdminPageModule,
+    "AdminMenuModule": AdminMenuModule
 }

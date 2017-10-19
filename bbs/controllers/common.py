@@ -24,9 +24,9 @@ urls = [
 
 
 class CommonPageModule(tornado.web.UIModule):
-    def render(self, baseurl, start, count, perpage, tpl="admin/paged.html"):
-        return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
+    def render(self, base_url, start, count, per_page, tpl="m_page.html"):
+        return self.render_string(tpl, baseurl=base_url, start=start, count=count, perpage=per_page)
 
 ui_modules = {
-    "HomePageModule": CommonPageModule
+    "CommonPageModule": CommonPageModule
 }

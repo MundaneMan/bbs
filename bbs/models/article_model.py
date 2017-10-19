@@ -7,57 +7,86 @@ from bbs.models import build_obj_id, build_id_time_str
 from config_web import db
 
 
-# --- article --- #
-
 def load_article_by_id(article_id):
     article_obj_id = build_obj_id(article_id)
     return load_article_by_obj_id(article_obj_id)
 
 
-def load_article_by_obj_id(article_obj_id):
-    return db.articles.find_one({"_id": article_obj_id, "status": "normal"})
+def load_article_by_obj_id(article_obj_id, status="normal"):
+    if not article_obj_id:
+        return None
+    return db.articles.find_one({"_id": article_obj_id, "status": status})
 
 
-def list_article_by_obj_ids(obj_ids):
-    r_obj_ids = list(set(obj_ids))
-    articles = db.articles.find({"_id": {"$in": r_obj_ids}})
-    return articles
+def load_article_by_cond(cond):
+    if "status" not in cond:
+        cond['status'] = 'normal'
+    return db.articles.find_one(cond)
 
 
-def list_articles_by_cond(m_cond, sort=[('create_at', -1)], start=0, limit=30, is_count=False):
-    if is_count:
-        return db.articles.count(m_cond)
+def distinct_article_id(cond=None, is_obj_id=False):
+    if cond and not isinstance(cond, dict):
+        raise ValueError('cond should be dict')
+    c = cond or {}
+    if 'status' not in c:
+        c['status'] = 'normal'
 
-    return list(db.articles.find(m_cond, sort=sort, skip=start, limit=limit))
+    obj_id_list = db.articles.distinct('_id', c)
+    if is_obj_id:
+        return obj_id_list
+    return [str(i) for i in obj_id_list]
+
+
+def list_articles_by_cond(cond, sort=[('create_at', -1)], start=0, limit=30, _is_count=False):
+    if ('status' not in cond) and isinstance(cond, dict):
+        cond['status'] = 'normal'
+    if _is_count:
+        return db.articles.find(cond).count()
+    if limit is None:
+        fp_article_cursor = db.articles.find(cond)
+    else:
+        fp_article_cursor = db.articles.find(
+            cond, sort=sort, skip=start, limit=limit
+        )
+    return fp_article_cursor
 
 
 def insert_article(article_data):
     if "status" not in article_data:
         article_data["status"] = "normal"
-    article_data["created_at"] = int(time.time())
+    article_data['create_at'] = article_data['update_at'] = int(time.time())
     result = db.articles.insert_one(article_data)
     return result.inserted_id
 
 
-def update_article_by_obj_id(obj_id, article_data):
-    db.articles.update({"_id": obj_id}, {"$set": article_data})
+def update_article_by_id(article_id, article_data):
+    article_obj_id = build_obj_id(article_id)
+    conds = {"_id": article_obj_id}
+    article_data['update_at'] = int(time.time())
+    db.articles.update(conds, {"$set": article_data})
 
 
-def is_field_data_exist(field, data):
-    cond = {field: data}
-    print cond
-    count = db.articles.find(cond).count()
-    if count > 0:
-        return True
-    return False
+def delete_article_by_id(article_id):
+    update_article_by_id(article_id, {"status": "deleted"})
+
+
+def distinct_article_field(field, cond=None, _is_count=False):
+    if not cond:
+        cond = dict()
+    if "status" not in cond:
+        cond["status"] = "normal"
+    if field:
+        if _is_count:
+            return len(db.articles.distinct(field, cond))
+        return db.articles.distinct(field, cond)
+    return None
 
 
 def format_article(_obj, t_format='%Y-%m-%d %H:%M:%S'):
-    if "create_at" in _obj:
-        _obj["create_at"] = time.strftime(t_format,
-                                          time.localtime(_obj["create_at"]))
+    if "created_at" in _obj:
+        _obj["created_at"] = time.strftime(t_format,
+                                          time.localtime(_obj["created_at"]))
     if "_id" in _obj:
         _obj["_id"] = str(_obj["_id"])
 
     return _obj
-
