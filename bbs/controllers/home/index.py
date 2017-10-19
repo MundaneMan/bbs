@@ -22,18 +22,18 @@ class Error404Handler(HomeBaseHandler):
         self.render('error_404.html')
 
 
+class InformationHandler(HomeBaseHandler):
+    operation = "请求资讯页面"
+
+    def get(self):
+        self.render('information.html')
+
+
 urls = [
     (r"/", IndexHandler),
     (r"/index/?", IndexHandler),
     (r"/contact/?", ContactHandler),
     (r"/error/404/?", Error404Handler),
+    (r"/information/?", InformationHandler),
     ]
 
-
-class HomePageModule(tornado.web.UIModule):
-    def render(self, baseurl, start, count, perpage, tpl="admin/paged.html"):
-        return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
-
-ui_modules = {
-    "HomePageModule": HomePageModule
-}

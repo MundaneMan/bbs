@@ -16,7 +16,7 @@
             <div class='title clearfix'>
                 <span>发表新主题</span>
             </div>
-            <form method="post" id="form_publish">
+            <form method="post" id="form_publish" enctype="multipart/form-data">
             <div class='importtopic clearfix'>
                 <span class='label'>还可输入 90 个字符</span>
                 <input type='text' name="f_title" placeholder='标题'/>
@@ -31,15 +31,7 @@
 {#                    <span value='0'>选择版块</span><i></i>#}
 
                 </div>
-{#                <div class='selectPlatelist'>#}
-{#                    <ul class='clearfix'>#}
-{#                        <li value='487'>AI学习</li>#}
-{#                        <li value='475'>AI前沿</li>#}
-{#                        <li value='385'>AI笔记</li>#}
-{#                        <li value='451'>AI新闻</li>#}
-{#                        <li value='382'>AI技术</li>#}
-{#                    </ul>#}
-{#                </div>#}
+
                 <div class="dropdown_text_middle selectclassify">
 {#                    <span value='0'>选择主题分类</span><i></i>#}
 {#                    <ul class='selectlist'>#}
@@ -53,8 +45,18 @@
                     </select>
                 </div>
             </div>
+            <div>
+                <input type="file" name="main_pic" id="imgOne" onchange="preImg(this.id,'main_photo');" />
+                    <br />
+                    <br />
+                <div class="main_pic">
+                    <img id="main_photo" src="/home/images/choose_main_pic.png" />
+                </div>
+            </div>
+                <br>
+            <textarea name="f_content" id="ckeditor"></textarea>
+                <div><label id="canwrite">您还可以输入10000个字</label></div>
 
-            <textarea name="f_content" class="ckeditor" id="editor"></textarea>
             <div class='session2 clearfix'>
                 <ul class='title clearfix'>
                     <li>附加选项</li>
@@ -75,11 +77,7 @@
             <div class='session3'>
                 <span id="btn_publish" class='btn J_sendInvitation'>发表帖子</span>
                 <span class='btn btn-light' id="save">临时保存</span>
-{#                <div class="dropdown_text_middle selectgenre"><span value='1'>普通</span><i></i>#}
-{#                    <ul class='selectlist' type="forum">#}
-{#                        <li value='1'>普通</li>#}
-{#                    </ul>#}
-{#                </div>#}
+
             </div>
             </form>
         </div>
@@ -87,32 +85,6 @@
 </div>
 {% end %}
 
-{% block footer %}
-<script type="text/javascript">
-   $("#btn_publish").click(function () {
-       $("#form_publish").submit();
-   }) ;
-   var editor = CKEDITOR.replace('editor');
-   $(function () {
-       if(window.localStorage){
-        storage_name = "article_tmp";
-        $("#save").click(function(){
-            var text = editor.getData();
-            window.localStorage.setItem(storage_name, text);
-        });
-        var text = window.localStorage.getItem(storage_name);
-        if(text){
-            editor.setData(text);
-        }
-        setInterval(function(){
-            $("#save").click();
-        }, 10000);
-    }else{
-        $("#save").click(function(){
-            alert("你的浏览器不支持临时存储");
-        });
-    }
-   });
-</script>
-
+{% block footer_script %}
+<script type="text/javascript" src="/home/js/post/postadvanced.js"></script>
 {% end %}

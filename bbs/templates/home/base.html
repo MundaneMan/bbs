@@ -17,10 +17,6 @@
     <script type="text/javascript" src='/home/js/jquery.min.js'></script>
     <script type="text/javascript" src='/home/js/base.js'></script>
     {% block head %}{% end %}
-</head>
-
-<body>
-<div class="main">
     <style>
         .xmcomm_header_wrap {
             position: relative;
@@ -352,6 +348,10 @@
             }
         }
     </style>
+</head>
+
+<body>
+<div class="main">
     <div class="xmcomm_header_wrap">
         <div class="xmcomm_header">
             <a href="/" style="color: white" class="logo">AI爱好者</a>
@@ -363,7 +363,7 @@
                 </div>
             </div>
             <ul class="header_menu">
-                <li><a href="http://www.xiaomi.cn/index.html">资讯</a></li>
+                <li><a href="/information/">资讯</a></li>
                 <li><a href="/">论坛</a></li>
                 <li>
                     <span>版块</span>
@@ -593,7 +593,8 @@
     <div class='footerdown'>
         <div class='wrap_990'>
             <a href="http://bbs.xiaomi.cn" class='milogo'>AI</a>
-            <a href="http://{{ handler.settings['admin_domain'] }}" class='link'>{{ handler.settings['admin_domain'] }}</a>
+            <a href="http://{{ handler.settings['admin_domain'] }}"
+               class='link'>{{ handler.settings['admin_domain'] }}</a>
             <span>京ICP证110507号 京ICP备10046444号 <a target="_blank" rel="noopener noreferrer"
                                                  href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802020134"
                                                  style="cursor:pointer;color: white;">京公网安备11010802020134号</a></span>
@@ -602,7 +603,6 @@
 </div>
 </body>
 {% block footer %}{% end %}
-{% block foot_script %}
-
+{% block footer_script %}
 {% end %}
 </html>

@@ -412,11 +412,17 @@
                     <input type="text" id='J_scollReplytxt'/>
                     <span class='btn btnlineLight' id='J_scollReply'>回复</span>
                 </div>
-                <h1>
+                {% if "main_pic" in article and article["main_pic"] %}
+                <div class='invitation_content'>
+                    <img src="{{ article["main_pic"] }}" style="height: 250px; width: 655px">
+                </div>
+                {% end %}
+                <h1 style="text-align: center">
                     <span></span>
                     <span></span>
                     <span class='name'>{{ article['title'] }}</span>
                 </h1>
+
                 <p class='txt'>
                     <span class="user_msg_mobile"></span>
                     <span class='marktxt'>精华</span>
@@ -440,6 +446,7 @@
                     <a href='/thread/edit/tid/13797260/type/forum'>编辑</a>
                     {% end %}
                 </p>
+
                 <div class='invitation_content'>
                     {% raw article["content"] %}
                 </div>
@@ -449,14 +456,7 @@
                     {#                    <span>扫描二维码，手机查看本帖</span>#}
                 </div>
             </div>
-            <!-- <div class="recommend_item" id="recommendItem" isRecommend="2">
-<h3>楼主提到的商品</h3>
-<span class="arrow arrow_left"></span>
-<span class="arrow arrow_right"></span>
-<div class="item_list">
-<ul></ul>
-</div>
-</div> -->
+
             <div class='faster_reply'>
                 <a u-id="" u-name=""
                    post-manage="" post-rate="" post-comment="" href="http://bbs.xiaomi.cn/user/detail/miid/"
