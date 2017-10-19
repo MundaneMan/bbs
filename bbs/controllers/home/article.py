@@ -25,6 +25,10 @@ class ArticlePublishHandler(ArticleBaseHandler):
         if form_errors:
             self._render(form_data, form_errors)
             return
+        if "main_pic" in self.request.files:
+            main_pic = self.request.files["main_pic"][0]
+            main_pic_info_dict = photo_tools.save_upload_photo(main_pic["body"], self.settings["static_path"])
+            form_data["main_pic"] = main_pic_info_dict["id"]
         article_id = article_model.insert_article(form_data)
         self.redirect("/article/view/{}/".format(str(article_id)))
 
@@ -34,7 +38,7 @@ class ArticlePublishHandler(ArticleBaseHandler):
         )
 
     def _list_form_keys(self):
-        return ["title", "content"]
+        return ["title", "content", "main_pic"]
 
     def _list_required_form_keys(self):
         return ["title", "content"]
