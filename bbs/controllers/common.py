@@ -4,6 +4,7 @@
 from bbs.libs.captcha import Captcha
 from bbs.libs.handlers import BaseHandler
 from cStringIO import StringIO
+import tornado.web
 
 
 class VerifyCodeHandler(BaseHandler):
@@ -20,3 +21,12 @@ class VerifyCodeHandler(BaseHandler):
 urls = [
     (r"/verify_code.png/?", VerifyCodeHandler),
     ]
+
+
+class CommonPageModule(tornado.web.UIModule):
+    def render(self, baseurl, start, count, perpage, tpl="admin/paged.html"):
+        return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
+
+ui_modules = {
+    "HomePageModule": CommonPageModule
+}

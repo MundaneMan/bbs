@@ -1,0 +1,54 @@
+<script language="javascript">
+    function gopage() {
+        event.preventDefault()
+        pagenum = parseInt($("#pagenum").val());
+        if (isNaN(pagenum)) {
+            alert('请输入有效页码!');
+            return false;
+        }
+        if ((pagenum - 1) * {{ perpage }} >= {{ count }}) {
+            alert('页码超出最大范围!')
+            return false
+        }
+        var start = (pagenum - 1) * {{ perpage }};
+        if (start < 0) {
+            start = 0
+        }
+        window.location.href = "{{ baseurl }}start=" + start;
+    }
+</script>
+
+<div class="pagin">
+    <div class="message">
+          共<i class="blue">{{ count }}</i>
+        条 {% if (int)(count)%(int)(perpage)==0 %}
+            {{ (int)(count)/(int)(perpage) }}
+            {% else %}
+            {{ (int)(count)/(int)(perpage) + 1 }}
+            {% end %}页，当前显示第&nbsp;<i class="blue">{{ ((int)(start)/(int)(perpage)) + 1 }}&nbsp;</i>页</div>
+
+    <ul class="pagination pagination-sm no-margin pull-right">
+        <li class="paginItem"><a href="
+      {% if (int)(start) < (int)(perpage) %}javascript:void(0)
+      {% else %}{{ baseurl+ 'start=' + str((int)(start)-(int)(perpage)) }}{% end %}">&laquo;</a>
+        </li>
+
+        <li class="paginItem"><a href="javascript:void(0);">{{ ((int)(start)/(int)(perpage)) + 1 }}</a>
+        </li>
+
+        <li class="paginItem"><a href="
+      {% if ((int)(start)+(int)(perpage)) >= (int)(count) %}
+      javascript:void(0)
+      {% else %}
+      {{ baseurl+ 'start=' + str((int)(start)+(int)(perpage)) }}{% end %}">&raquo;</a>
+        </li>
+
+        <li class="paginItem" style="margin-left: 20px">转到
+            <input type="text" id="pagenum" style="width:50px; height: 30px;"
+                   onkeydown="if(event.keyCode==13) {gopage()}"> 页
+            <input type="button" onclick="gopage()" value="确定"
+                   style="border-radius: 0; background-color: white; margin-left: 15px; border: 1px solid #316CFF"
+                   class="btn btn-default btn-sm"></li>
+    </ul>
+</div>
+

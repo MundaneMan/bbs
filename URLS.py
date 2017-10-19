@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 
 import bbs.controllers.home.index as home_index
-import bbs.controllers.admin.index as admin_index
+import bbs.controllers.admin.a_index as admin_index
 import bbs.controllers.home.user as user_controller
 import bbs.controllers.common as common_handler
 import bbs.controllers.home.article as article_controller
+
+import bbs.controllers.admin.a_article as article_manage
 
 
 URLS = list()
@@ -14,6 +16,8 @@ URLS.extend(admin_index.urls)
 URLS.extend(user_controller.urls)
 URLS.extend(common_handler.urls)
 URLS.extend(article_controller.urls)
+
+URLS.extend(article_manage.urls)
 
 
 API_URLS = list()

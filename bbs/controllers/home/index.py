@@ -37,11 +37,3 @@ urls = [
     (r"/information/?", InformationHandler),
     ]
 
-
-class HomePageModule(tornado.web.UIModule):
-    def render(self, baseurl, start, count, perpage, tpl="admin/paged.html"):
-        return self.render_string(tpl, baseurl=baseurl, start=start, count=count, perpage=perpage)
-
-ui_modules = {
-    "HomePageModule": HomePageModule
-}
