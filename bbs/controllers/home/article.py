@@ -3,7 +3,7 @@
 
 from bbs.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
 import bbs.models.article_model as article_model
-import bbs.models.images_model as images_model
+import bbs.models.image_model as images_model
 import bbs.libs.photo as photo_tools
 
 
@@ -69,7 +69,6 @@ class ArticleUploadImgHandler(JsSiteBaseHandler):
             self.write(self.data)
             return
         photo_info_dict = photo_tools.save_upload_photo(photo["body"], self.settings["static_path"])
-        images_model.insert_image({"image_id": photo_info_dict["id"]})
         file_name = self.build_photo_url(photo_info_dict["id"])
 
         res_txt = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction("\

@@ -35,6 +35,14 @@ class BaseHandler(RedisSessionHandler):
             start = 0
         return start
 
+    @property
+    def limit(self):
+        limit = self.get_argument("perpage", "20")
+        limit = int(limit) if limit.isdigit() else 20
+        if limit < 0:
+            limit = 20
+        return limit
+
     def prepare_remote_ip(self):
         raw_ip = self.request.headers.get("X-Forwarded-For", self.request.remote_ip)
         raw_ip = raw_ip.split(',')[-1].strip()

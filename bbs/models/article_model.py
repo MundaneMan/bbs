@@ -48,7 +48,7 @@ def list_articles_by_cond(cond, sort=[('create_at', -1)], start=0, limit=30, _is
         fp_article_cursor = db.articles.find(
             cond, sort=sort, skip=start, limit=limit
         )
-    return fp_article_cursor
+    return list(fp_article_cursor)
 
 
 def insert_article(article_data):
@@ -83,9 +83,9 @@ def distinct_article_field(field, cond=None, _is_count=False):
 
 
 def format_article(_obj, t_format='%Y-%m-%d %H:%M:%S'):
-    if "created_at" in _obj:
-        _obj["created_at"] = time.strftime(t_format,
-                                          time.localtime(_obj["created_at"]))
+    if "create_at" in _obj:
+        _obj["create_at"] = time.strftime(t_format,
+                                          time.localtime(_obj["create_at"]))
     if "_id" in _obj:
         _obj["_id"] = str(_obj["_id"])
 

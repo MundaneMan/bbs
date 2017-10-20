@@ -1,10 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link href="../../../assets/admin/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../../../assets/admin/js/jquery.js"></script>
+{% extends 'a_base.html' %}
+
+{% block title %}我的电脑   后台{% end %}
+{% block head %}
 
 <script language="javascript">
 $(function(){	
@@ -16,10 +13,15 @@ $(function(){
 })	
 </script>
 
-</head>
+{% end %}
 
 
-<body>
+{% block left %}
+{% module AdminMenuModule("computer") %}
+{% end %}
+
+{% block content %}
+<div class="right_content">
 
 	<div class="place">
     <span>位置：</span>
@@ -30,7 +32,7 @@ $(function(){
     </div>
     
     <div class="comtitle">
-    <span><img src="../../../assets/admin/images/clist.png" /></span>
+    <span><img src="/admin/images/clist.png" /></span>
     <h2>资料(5)</h2>
     <div class="rline"></div>
     </div>
@@ -39,7 +41,7 @@ $(function(){
     <ul class="disklist">
     
     <li>
-    <a href="filelist.html">
+    <a href="/admin/files/">
     <div class="dleft1"></div>    
     <div class="dright">
     <h2>信息文档(25)</h2>
@@ -100,7 +102,7 @@ $(function(){
     
     
     <div class="comtitle">
-    <span><img src="../../../assets/admin/images/clist.png" /></span>
+    <span><img src="/admin/images/clist.png" /></span>
     <h2>其他(1)</h2>
     <div class="rline"></div>
     </div>
@@ -115,5 +117,5 @@ $(function(){
     </div>
     </li>  
     </ul>
-</body>
-</html>
+</div>
+{% end %}
