@@ -44,6 +44,16 @@ class TabHandler(AdminBaseHandler):
     def get(self):
         self.render('tab.html')
 
+
+class WorkbenchHandler(AdminBaseHandler):
+    def get(self):
+        self.render('default.html')
+
+
+class ComputerHandler(AdminBaseHandler):
+    def get(self):
+        self.render('computer.html')
+
 urls = [
     (r"/admin/?", IndexHandler),
     (r"/admin/index/?", IndexHandler),
@@ -53,7 +63,9 @@ urls = [
     (r"/admin/self_def/?", SelfDefHandler),
     (r"/admin/tools/?", ToolsHandler),
     (r"/admin/files/?", FilesHandler),
-    (r"/admin/tab/?", TabHandler)
+    (r"/admin/tab/?", TabHandler),
+    (r"/admin/workbench/?", WorkbenchHandler),
+    (r"/admin/computer/?", ComputerHandler)
     ]
 
 

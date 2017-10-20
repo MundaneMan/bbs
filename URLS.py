@@ -7,8 +7,10 @@ import bbs.controllers.home.user as user
 import bbs.controllers.common as common
 import bbs.controllers.home.article as article
 
-import bbs.controllers.admin.a_article as a_article
+import bbs.controllers.admin.a_articles as a_article
 import bbs.controllers.admin.a_images as a_images
+import bbs.controllers.admin.a_users as a_users
+import bbs.controllers.admin.a_plates as a_plates
 
 
 URLS = list()
@@ -20,6 +22,8 @@ URLS.extend(article.urls)
 URLS.extend(a_index.urls)
 URLS.extend(a_article.urls)
 URLS.extend(a_images.urls)
+URLS.extend(a_users.urls)
+URLS.extend(a_plates.urls)
 
 
 API_URLS = list()

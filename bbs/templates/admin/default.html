@@ -1,14 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
-<link href="../../../assets/admin/css/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../../../assets/admin/js/jquery.js"></script>
-<script type="text/javascript" src="../../../assets/admin/js/jsapi.js"></script>
-<script type="text/javascript" src="../../../assets/admin/js/format+zh_CN,default,corechart.I.js"></script>
-<script type="text/javascript" src="../../../assets/admin/js/jquery.gvChart-1.0.1.min.js"></script>
-<script type="text/javascript" src="../../../assets/admin/js/jquery.ba-resize.min.js"></script>
+{% extends 'a_base.html' %}
+
+{% block title %}工作台   后台{% end %}
+{% block head %}
+<script type="text/javascript" src="/admin/js/jsapi.js"></script>
+<script type="text/javascript" src="/admin/js/format+zh_CN,default,corechart.I.js"></script>
+<script type="text/javascript" src="/admin/js/jquery.gvChart-1.0.1.min.js"></script>
+<script type="text/javascript" src="/admin/js/jquery.ba-resize.min.js"></script>
 
 <script type="text/javascript">
 		gvChartInit();
@@ -25,10 +22,15 @@
 			});
 		});
 		</script>
-</head>
+{% end %}
 
 
-<body>
+{% block left %}
+{% module AdminMenuModule("workbench") %}
+{% end %}
+
+{% block content %}
+<div class="right_content">
 
 	<div class="place">
     <span>位置：</span>
@@ -114,13 +116,13 @@
     <div class="listtitle"><a href="#" class="more1">添加</a>常用工具</div>
     
     <ul class="tooli">
-    <li><span><img src="../../../assets/admin/images/d01.png" /></span><p><a href="#">信息资料</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d02.png" /></span><p><a href="#">编辑</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d03.png" /></span><p><a href="#">记事本</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d04.png" /></span><p><a href="#">任务日历</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d05.png" /></span><p><a href="#">图片管理</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d06.png" /></span><p><a href="#">交易</a></p></li>
-    <li><span><img src="../../../assets/admin/images/d07.png" /></span><p><a href="#">档案袋</a></p></li>
+    <li><span><img src="/admin/images/d01.png" /></span><p><a href="#">信息资料</a></p></li>
+    <li><span><img src="/admin/images/d02.png" /></span><p><a href="#">编辑</a></p></li>
+    <li><span><img src="/admin/images/d03.png" /></span><p><a href="#">记事本</a></p></li>
+    <li><span><img src="/admin/images/d04.png" /></span><p><a href="#">任务日历</a></p></li>
+    <li><span><img src="/admin/images/d05.png" /></span><p><a href="#">图片管理</a></p></li>
+    <li><span><img src="/admin/images/d06.png" /></span><p><a href="#">交易</a></p></li>
+    <li><span><img src="/admin/images/d07.png" /></span><p><a href="#">档案袋</a></p></li>
     </ul>
     
     </div>
@@ -155,27 +157,22 @@
     <div class="dflist1">
     <div class="listtitle"><a href="#" class="more1">更多</a>信息统计</div>    
     <ul class="newlist">
-    <li><i>会员数：</a></i>2535462</li>
-    <li><i>文档数：</a></i>5546</li>
-    <li><i>普通文章：</a></i>2315</li>
-    <li><i>软件：</a></i>1585</li>
-    <li><i>评论数：</a></i>5342</li>    
+    <li><i>会员数：</i>2535462</li>
+    <li><i>文档数：</i>5546</li>
+    <li><i>普通文章：</i>2315</li>
+    <li><i>软件：</i>1585</li>
+    <li><i>评论数：</i>5342</li>
     </ul>        
     </div>
     
-    
 
-    
-    
     </div>
     <!--mainright end-->
-    
-    
     </div>
 
-
-
-</body>
+</div>
+{% end %}
+{% block footer_script %}
 <script type="text/javascript">
 	setWidth();
 	$(window).resize(function(){
@@ -186,4 +183,5 @@
 		$('.infoleft,.inforight').width(width);
 	}
 </script>
-</html>
+{% end %}
+

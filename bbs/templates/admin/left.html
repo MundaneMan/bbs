@@ -9,7 +9,9 @@
                 </div>
                 <ul class="menuson">
                     <li {% if module_name=="index" %}class="active"{% end %}><cite></cite><a href="/admin/index/" >首页模版</a><i></i></li>
+                    <li {% if module_name=="users" %}class="active"{% end %}><cite></cite><a href="/admin/users/manage/" >用户管理</a><i></i></li>
                     <li {% if module_name=="posts" %}class="active"{% end %}><cite></cite><a href="/admin/posts/manage/" >帖子管理</a><i></i></li>
+                    <li {% if module_name=="plates" %}class="active"{% end %}><cite></cite><a href="/admin/plates/manage/" >版块管理</a><i></i></li>
                     <li {% if module_name=="img_table" %}class="active"{% end %}><cite></cite><a href="/admin/images/manage/" >图片管理</a><i></i></li>
                     <li {% if module_name=="form" %}class="active"{% end %}><cite></cite><a href="/admin/form/" >添加编辑</a><i></i></li>
                     <li {% if module_name=="img_list" %}class="active"{% end %}><cite></cite><a href="/admin/imagelist/" >图片列表</a><i></i></li>
@@ -17,6 +19,8 @@
                     <li {% if module_name=="tools" %}class="active"{% end %}><cite></cite><a href="/admin/tools/" >常用工具</a><i></i></li>
                     <li {% if module_name=="files" %}class="active"{% end %}><cite></cite><a href="/admin/files/" >文件管理</a><i></i></li>
                     <li {% if module_name=="tab" %}class="active"{% end %}><cite></cite><a href="/admin/tab/" >Tab页</a><i></i></li>
+                    <li {% if module_name=="workbench" %}class="active"{% end %}><cite></cite><a href="/admin/workbench/" >工作台</a><i></i></li>
+                    <li {% if module_name=="computer" %}class="active"{% end %}><cite></cite><a href="/admin/computer/" >我的电脑</a><i></i></li>
                     <li {% if module_name=="page_404" %}class="active"{% end %}><cite></cite><a href="/admin/error_page/" >404页面</a><i></i></li>
                 </ul>
             </dd>

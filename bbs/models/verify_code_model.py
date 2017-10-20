@@ -4,8 +4,8 @@
 Common module
 """
 
-from bbs.models import build_obj_id, filter_obj_id
 from config_web import db
+import time
 
 
 
@@ -25,4 +25,5 @@ def update_code_by_obj_id(code_obj_id, code_data):
 def insert_code(code_data):
     if not code_data.has_key("status"):
         code_data["status"] = "normal"
+    code_data["create_at"] = int(time.time())
     db.app_codes.insert_one(code_data)

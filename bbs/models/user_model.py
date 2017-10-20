@@ -36,8 +36,8 @@ def list_user_by_obj_ids(obj_ids):
     return users
 
 
-def list_users_by_cond(m_cond, sort=None, start=0, limit=30, is_count=False):
-    if is_count:
+def list_users_by_cond(m_cond, sort=None, start=0, limit=30, _is_count=False):
+    if _is_count:
         return db.users.count(m_cond)
 
     return db.users.find(m_cond, sort=sort, skip=start, limit=limit)
@@ -46,7 +46,7 @@ def list_users_by_cond(m_cond, sort=None, start=0, limit=30, is_count=False):
 def insert_user(user_data):
     if "status" in user_data:
         user_data["status"] = "normal"
-    user_data["created_at"] = int(time.time())
+    user_data["create_at"] = int(time.time())
     result = db.users.insert_one(user_data)
     return result.inserted_id
 
@@ -76,9 +76,9 @@ def format_user(user_obj, ftype=""):
         user_obj["user_id"] = str(user_obj["_id"])
 
     if ftype == "admin_normal":
-        user_obj["created_at"] = build_id_time_str(user_obj["_id"])
+        user_obj["create_at"] = build_id_time_str(user_obj["_id"])
 
-    for key in ("_id", "password", 'coordinates', "favorite_shops", "sessions"):
+    for key in ("password", 'coordinates', "favorite_shops", "sessions"):
         user_obj.pop(key, None)
 
     return user_obj

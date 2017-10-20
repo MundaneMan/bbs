@@ -20,11 +20,11 @@ class ArticleManageHandler(AdminBaseHandler):
 
     def _render(self, form_data=None, form_errors=None, **kwargs):
         self.render(
-            "posts_manage.html", form_data=form_data, form_errors=form_errors, **kwargs
+            "a_m_posts.html", form_data=form_data, form_errors=form_errors, **kwargs
         )
 
 
-class ArticleDeletehHandler(JsSiteBaseHandler):
+class ArticleDeleteHandler(JsSiteBaseHandler):
     operation = "删除帖子"
 
     def post(self, *args, **kwargs):
@@ -32,5 +32,5 @@ class ArticleDeletehHandler(JsSiteBaseHandler):
 
 urls = [
     (r"/admin/posts/manage/?", ArticleManageHandler),
-    (r"/admin/posts/delete/?", ArticleDeletehHandler),
+    (r"/admin/posts/delete/?", ArticleDeleteHandler),
 ]

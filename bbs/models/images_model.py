@@ -30,7 +30,7 @@ def list_images_by_cond(m_cond, sort=[('create_at', -1)], start=0, limit=30, _is
 def insert_image(image_data):
     if "status" not in image_data:
         image_data["status"] = "normal"
-    image_data["created_at"] = int(time.time())
+    image_data["create_at"] = int(time.time())
     result = db.images.insert_one(image_data)
     return result.inserted_id
 
