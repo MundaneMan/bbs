@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from bbs.libs.handlers import AdminBaseHandler, JsSiteBaseHandler
-import bbs.models.images_model as images_model
+import bbs.models.image_model as images_model
 
 
 class ImagesManageHandler(AdminBaseHandler):

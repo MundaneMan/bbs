@@ -19,10 +19,6 @@
         padding-left: 115px;
     }
 
-    .order {
-        width: 50px;
-    }
-
     input {
         padding: 2px;
         border: 1px solid;
@@ -37,6 +33,9 @@
         height: 26px;
     }
 
+    .row {
+        display: inline-block;
+    }
 </style>
 
 {% end %}
@@ -52,7 +51,7 @@
         <ul class="placeul">
             <li><a href="/admin/">后台首页</a></li>
             <li><a href="#">内容管理</a></li>
-            <li><a href="#">用户管理</a></li>
+            <li><a href="#">版块管理</a></li>
         </ul>
     </div>
 
@@ -67,10 +66,9 @@
                     </div>
                     <div class="row">
                         <div>
-                            {#                    <input readonly class='order' type="text" name="order[1]" value="0"/>#}
                             <input type="text" readonly value="所有版块" class="txt"/>
                             <select id="sel_main_category" class="sel_category">
-                                <option value="add">-- 添加主题 --</option>
+                                <option value="add">-- 添加版块 --</option>
                                 {% if categories and len(categories) > 0 %}
                                 {% for category in categories %}
                                 <option value="{{ category["_id"] }}"
@@ -83,7 +81,26 @@
                             </select>
                         </div>
                     </div>
+                    {#----------------------------------------------#}
+                    <div id="categories">
 
+                        <div class="row">
+                            <span class="category">
+                                <input type="hidden" name="main_category_id" value="3465"/>
+                                <input name="main_category_name" value="版块暗暗暗暗"/>
+                                <a href="###" onclick='add_sub_category(this)' class="add_sub_category">添加主题</a>
+                            </span>&nbsp;&nbsp;
+                            <a onclick="del_category(this)" href="##">删除</a>
+                        </div><br>
+                        <div class="row">
+                            <span class="sub_category">
+                                <input name="sub_5365343"
+                                       value="主题哈哈哈哈哈"/>
+                            </span>
+                            <span align="right"><a onclick="del_category(this,true)" href="##">删除</a></span>
+                        </div>
+                    </div>
+                    {#----------------------------------------------#}
                     <div id="categories">
                         {% if cur_category %}
 
@@ -94,7 +111,7 @@
                                 <input name="main_category_name" value="{{ cur_category['category_name'] }}"/>
                                 <a href="###" onclick='add_sub_category(this)' class="add_sub_category">添加主题</a>
                             </span>&nbsp;&nbsp;
-                            <span align="right"><a onclick="del_category(this)" href="##">删除</a></span>
+                            <a onclick="del_category(this)" href="##">删除</a>
                         </div>
                         {% if "sub_categories" in cur_category %}
                         {% for sub_category in cur_category["sub_categories"] %}
@@ -111,7 +128,7 @@
                         {% end %}
                     </div>
                     {% if not cur_category %}
-                    <div id="add_main_category"><a href="#" class="add_category">添加版块</a></div>
+                    <div id="add_main_category"><a href="#" style="color: #0f74a8" class="add_category">+添加版块</a></div>
                     {% end %}
 
                     <div>
@@ -128,57 +145,57 @@
 {% end %}
 {% block footer_script %}
 <script type="text/javascript">
-$(function () {
-    $("#sel_main_category").change(function () {
-        category_id = $(this).val();
-        if(category_id!="add"){
-            location.href = "/admin/article_category?category_id=" + category_id
+    $(function () {
+        $("#sel_main_category").change(function () {
+            category_id = $(this).val();
+            if (category_id != "add") {
+                location.href = "/admin/article_category?category_id=" + category_id
+            }
+            else {
+                location.href = "/admin/article_category?category_id=add"
+            }
+
+        });
+        $(".add_category").click(function () {
+            var category = $("#categories");
+            sub_category = "<div class='row'>\n" +
+                {#            "                        <input class='order' name='' value='0'/>\n" +#}
+                "                        <span class='category'>\n" +
+                "                          <input name='main_category_name' value='新建版块' />\n" +
+                "                          <a href='###' onclick='add_sub_category(this)' class='add_sub_category'>添加主题</a>\n" +
+                "                        </span>\n&nbsp;&nbsp;" +
+                "                        <span align='right'><a onclick='del_category(this)' href='##'>删除</a></span>\n" +
+                "                    </div>";
+
+            category.append(sub_category);
+            $("#add_main_category").hide()
+        });
+
+    })
+
+    function add_sub_category(t) {
+        var category = $(t.parentNode.parentNode.parentNode);
+        {#    alert(category.html());#}
+        sub_category = "                        <div class='row'>\n" +
+            {#        "                        <input class='order' name='order' value='0'/>\n" +#}
+            "                        <span class='sub_category'>\n" +
+            "                          <input name='new_sub_categories' value='新建主题' />\n" +
+            "                        </span>\n" +
+            "                        <span align='right'><a onclick='del_category(this,true)' href='##'>删除</a></span>\n" +
+            "                        </div>";
+
+        category.append(sub_category)
+    }
+
+    function del_category(t, sub) {
+        {#    alert($("#categories").children().length);#}
+        if (!sub && $("#categories").children().length > 1) {
+            alert("请先删除版块中的主题！");
         }
         else {
-            location.href = "/admin/article_category?category_id=add"
+            $(t.parentNode.parentNode).remove()
         }
-
-    });
-    $(".add_category").click(function () {
-        var category = $("#categories");
-        sub_category = "<div class='row'>\n" +
-{#            "                        <input class='order' name='' value='0'/>\n" +#}
-            "                        <span class='category'>\n" +
-            "                          <input name='main_category_name' value='新建版块' />\n" +
-            "                          <a href='###' onclick='add_sub_category(this)' class='add_sub_category'>添加主题</a>\n" +
-            "                        </span>\n&nbsp;&nbsp;" +
-            "                        <span align='right'><a onclick='del_category(this)' href='##'>删除</a></span>\n" +
-            "                    </div>";
-
-        category.append(sub_category);
-        $("#add_main_category").hide()
-    });
-
-})
-
-function add_sub_category(t) {
-    var category = $(t.parentNode.parentNode.parentNode);
-{#    alert(category.html());#}
-    sub_category = "                        <div class='row'>\n" +
-{#        "                        <input class='order' name='order' value='0'/>\n" +#}
-        "                        <span class='sub_category'>\n" +
-        "                          <input name='new_sub_categories' value='新建主题' />\n" +
-        "                        </span>\n" +
-        "                        <span align='right'><a onclick='del_category(this,true)' href='##'>删除</a></span>\n" +
-        "                        </div>";
-
-    category.append(sub_category)
-}
-
-function del_category(t,sub){
-{#    alert($("#categories").children().length);#}
-    if(!sub && $("#categories").children().length > 1){
-        alert("请先删除版块中的主题！");
     }
-    else{
-        $(t.parentNode.parentNode).remove()
-    }
-}
 
 </script>
 {% end %}

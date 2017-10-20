@@ -3,7 +3,7 @@
 
 from bbs.libs.handlers import HomeBaseHandler, JsSiteBaseHandler
 import bbs.models.article_model as article_model
-import bbs.models.images_model as images_model
+import bbs.models.image_model as images_model
 import bbs.libs.photo as photo_tools
 
 

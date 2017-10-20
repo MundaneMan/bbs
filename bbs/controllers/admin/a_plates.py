@@ -19,7 +19,7 @@ class PlatesManageHandler(AdminBaseHandler):
             if cur_category:
                 self._get_one_level_sub_categories(cur_category)
             else:
-                self.redirect("/admin/article_category?category_id=add")
+                self.redirect("/admin/plates/manage?category_id=add")
                 return
         else:
             cur_category = None
