@@ -33,8 +33,13 @@
         height: 26px;
     }
 
-    .row {
+    .row span{
         display: inline-block;
+    }
+    .main_content{
+        margin-left: 20px;
+        margin-top: 20px;
+        border: 1px;
     }
 </style>
 
@@ -56,7 +61,7 @@
     </div>
 
     <div class="rightinfo">
-        <div>
+        <div class="main_content">
 
             <form name="cpform" method="post" autocomplete="off" action="" id="cpform">
                 <div style="margin-left:30px;">
@@ -81,26 +86,6 @@
                             </select>
                         </div>
                     </div>
-                    {#----------------------------------------------#}
-                    <div id="categories">
-
-                        <div class="row">
-                            <span class="category">
-                                <input type="hidden" name="main_category_id" value="3465"/>
-                                <input name="main_category_name" value="版块暗暗暗暗"/>
-                                <a href="###" onclick='add_sub_category(this)' class="add_sub_category">添加主题</a>
-                            </span>&nbsp;&nbsp;
-                            <a onclick="del_category(this)" href="##">删除</a>
-                        </div><br>
-                        <div class="row">
-                            <span class="sub_category">
-                                <input name="sub_5365343"
-                                       value="主题哈哈哈哈哈"/>
-                            </span>
-                            <span align="right"><a onclick="del_category(this,true)" href="##">删除</a></span>
-                        </div>
-                    </div>
-                    {#----------------------------------------------#}
                     <div id="categories">
                         {% if cur_category %}
 

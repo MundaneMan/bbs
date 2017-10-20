@@ -71,12 +71,13 @@ def is_field_data_exist(field, data):
     return False
 
 
-def format_user(user_obj, ftype=""):
+def format_user(user_obj, t_format='%Y-%m-%d %H:%M:%S'):
     if "_id" in user_obj:
         user_obj["user_id"] = str(user_obj["_id"])
 
-    if ftype == "admin_normal":
-        user_obj["create_at"] = build_id_time_str(user_obj["_id"])
+    if "create_at" in user_obj:
+        user_obj["create_at"] = time.strftime(t_format,
+                                              time.localtime(user_obj["create_at"]))
 
     for key in ("password", 'coordinates', "favorite_shops", "sessions"):
         user_obj.pop(key, None)
