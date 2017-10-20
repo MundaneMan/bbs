@@ -8,16 +8,18 @@ import bbs.controllers.common as common
 import bbs.controllers.home.article as article
 
 import bbs.controllers.admin.a_article as a_article
+import bbs.controllers.admin.a_images as a_images
 
 
 URLS = list()
 URLS.extend(index.urls)
-URLS.extend(a_index.urls)
 URLS.extend(user.urls)
 URLS.extend(common.urls)
 URLS.extend(article.urls)
 
+URLS.extend(a_index.urls)
 URLS.extend(a_article.urls)
+URLS.extend(a_images.urls)
 
 
 API_URLS = list()

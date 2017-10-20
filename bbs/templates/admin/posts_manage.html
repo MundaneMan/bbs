@@ -1,6 +1,6 @@
 {% extends 'a_base.html' %}
 
-{% block title %}{% end %}
+{% block title %}帖子管理   后台{% end %}
 
 {% block head %}
 <script type="text/javascript">
@@ -34,7 +34,7 @@
     <div class="place">
         <span>位置：</span>
         <ul class="placeul">
-            <li><a href="#">首页</a></li>
+            <li><a href="/admin/">后台首页</a></li>
             <li><a href="#">内容管理</a></li>
             <li><a href="#">帖子管理</a></li>
         </ul>
@@ -79,10 +79,10 @@
                 <td><input name="" type="checkbox" value=""/></td>
                 <td>{{ idx + 1 }}</td>
                 <td>{{ article['title'] }}</td>
-                <td>{{ article['title'] if'title' in article else '-'  }}</td>
+                <td>{{ article['author'] if'author' in article else '-'  }}</td>
                 <td>AI学习</td>
                 <td>tensorflow</td>
-                <td>{{ article['created_at'] }}</td>
+                <td>{{ article['create_at'] }}</td>
                 <td>已审核</td>
                 <td><a href="#" class="tablelink">查看</a> <a href="#" class="tablelink"> 删除</a></td>
             </tr>

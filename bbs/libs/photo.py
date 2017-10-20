@@ -5,6 +5,7 @@ import os
 import uuid
 
 from PIL import Image
+from bbs.models import images_model
 
 
 photo_specs = [
@@ -149,4 +150,5 @@ def save_upload_photo(photo_file, base_static_path, photo_type="photo"):
         f.write(photo_file)
 
     photo_info_dict = convert_photo(photo_id, base_static_path, photo_type=photo_type)
+    images_model.insert_image({"image_id": photo_info_dict["id"]})
     return photo_info_dict

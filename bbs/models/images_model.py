@@ -20,8 +20,8 @@ def list_image_by_obj_ids(obj_ids):
     return images
 
 
-def list_images_by_cond(m_cond, sort=[('create_at', -1)], start=0, limit=30, is_count=False):
-    if is_count:
+def list_images_by_cond(m_cond, sort=[('create_at', -1)], start=0, limit=30, _is_count=False):
+    if _is_count:
         return db.images.count(m_cond)
 
     return list(db.images.find(m_cond, sort=sort, skip=start, limit=limit))

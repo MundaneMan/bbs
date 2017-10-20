@@ -69,7 +69,6 @@ class ArticleUploadImgHandler(JsSiteBaseHandler):
             self.write(self.data)
             return
         photo_info_dict = photo_tools.save_upload_photo(photo["body"], self.settings["static_path"])
-        images_model.insert_image({"image_id": photo_info_dict["id"]})
         file_name = self.build_photo_url(photo_info_dict["id"])
 
         res_txt = "<script type='text/javascript'> window.parent.CKEDITOR.tools.callFunction("\
