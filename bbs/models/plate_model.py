@@ -39,7 +39,7 @@ def list_categories_by_cond(cond, sort=None, start=0, limit=None, _is_count=Fals
 
 def insert_category(category_data):
     # 判断是否已经存在相同分类名
-    c = load_category_by_cond({"status": "normal", "category_name": category_data["category_name"]})
+    c = load_category_by_cond({"status": "normal", "name": category_data["name"]})
     if c:
         return False
     if "status" not in category_data:
@@ -48,6 +48,7 @@ def insert_category(category_data):
     result = db.plates.insert_one(category_data)
     return result.inserted_id
 
+
 def update_category_by_id(category_id, category_data):
     category_obj_id = build_obj_id(category_id)
     conds = {"_id": category_obj_id}
@@ -55,9 +56,9 @@ def update_category_by_id(category_id, category_data):
     db.plates.update(conds, {"$set": category_data})
 
 
-def update_category_name_by_id(category_id, category_data):
+def update_name_by_id(category_id, category_data):
     # 判断是否已经存在相同分类名
-    c = load_category_by_cond({"status": "normal", "category_name": category_data["category_name"]})
+    c = load_category_by_cond({"status": "normal", "name": category_data["name"]})
     if c and (str(c['_id']) != category_id):
         return False
     category_obj_id = build_obj_id(category_id)
@@ -93,13 +94,13 @@ def distinct_category_field(field, cond=None, _is_count=False):
     return None
 
 
-def list_sub_categories_by_name(category_name, count):
+def list_sub_categories_by_name(name, count):
     cond = dict()
-    cond["category_name"] = category_name
+    cond["name"] = name
     cond['status'] = 'normal'
     category = db.plates.find_one(cond)
     if category:
-        return list_categories_by_cond({"status": "normal", "category_parent": str(category["_id"])}, limit=count)
+        return list_categories_by_cond({"status": "normal", "parent": str(category["_id"])}, limit=count)
 
 
 def list_all_sub_categories_by_name():

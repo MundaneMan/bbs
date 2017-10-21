@@ -70,7 +70,7 @@ urls = [
 
 
 class AdminMenuModule(tornado.web.UIModule):
-    def render(self, module_name="index", tpl="admin/left.html"):
+    def render(self, module_name="index", tpl="admin/a_m_left.html"):
         return self.render_string(tpl, module_name=module_name)
 
 ui_modules = {

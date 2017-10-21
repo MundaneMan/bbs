@@ -30,6 +30,6 @@ class ImagesDeletehHandler(JsSiteBaseHandler):
         pass
 
 urls = [
-    (r"/admin/images/manage/?", ImagesManageHandler),
+    (r"/admin/images/?", ImagesManageHandler),
     (r"/admin/images/delete/?", ImagesDeletehHandler),
 ]
