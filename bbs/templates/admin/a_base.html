@@ -7,30 +7,30 @@
     <link href="/admin/css/style.css" rel="stylesheet" type="text/css"/>
     <script language="JavaScript" src="/admin/js/jquery.js"></script>
     {% block head %}{% end %}
-{#    <script type="text/javascript">#}
-{#        $(function () {#}
-{#            //顶部导航切换#}
-{#            $(".nav li a").click(function () {#}
-{#                $(".nav li a.selected").removeClass("selected")#}
-{#                $(this).addClass("selected");#}
-{#            });#}
-{#            //导航切换#}
-{#            $(".menuson li").click(function () {#}
-{#                $(".menuson li.active").removeClass("active")#}
-{#                $(this).addClass("active");#}
-{#            });#}
-{##}
-{#            $('.title').click(function () {#}
-{#                var $ul = $(this).next('ul');#}
-{#                $('dd').find('ul').slideUp();#}
-{#                if ($ul.is(':visible')) {#}
-{#                    $(this).next('ul').slideUp();#}
-{#                } else {#}
-{#                    $(this).next('ul').slideDown();#}
-{#                }#}
-{#            })#}
-{#        })#}
-{#    </script>#}
+    <script type="text/javascript">
+        $(function () {
+            //顶部导航切换
+            $(".nav li a").click(function () {
+                $(".nav li a.selected").removeClass("selected")
+                $(this).addClass("selected");
+            });
+            //导航切换
+            $(".menuson li").click(function () {
+                $(".menuson li.active").removeClass("active")
+                $(this).addClass("active");
+            });
+
+            $('.title').click(function () {
+                var $ul = $(this).next('ul');
+                $('dd').find('ul').slideUp();
+                if ($ul.is(':visible')) {
+                    $(this).next('ul').slideUp();
+                } else {
+                    $(this).next('ul').slideDown();
+                }
+            })
+        })
+    </script>
 
 </head>
 <body>
@@ -63,7 +63,7 @@
             <li><span><img src="/admin/images/help.png" title="帮助" class="helpimg"/></span><a
                     href="#">帮助</a></li>
             <li><a href="#">关于</a></li>
-            <li><a href="login.html" target="_parent">退出</a></li>
+            <li><a href="/" target="_parent">返回前台</a></li>
         </ul>
 
         <div class="user">

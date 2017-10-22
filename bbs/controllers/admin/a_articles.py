@@ -20,7 +20,7 @@ class ArticleManageHandler(AdminBaseHandler):
 
     def _render(self, form_data=None, form_errors=None, **kwargs):
         self.render(
-            "a_m_posts.html", form_data=form_data, form_errors=form_errors, **kwargs
+            "a_posts.html", form_data=form_data, form_errors=form_errors, **kwargs
         )
 
 
@@ -31,6 +31,6 @@ class ArticleDeleteHandler(JsSiteBaseHandler):
         pass
 
 urls = [
-    (r"/admin/posts/manage/?", ArticleManageHandler),
+    (r"/admin/posts/?", ArticleManageHandler),
     (r"/admin/posts/delete/?", ArticleDeleteHandler),
 ]

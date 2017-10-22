@@ -36,10 +36,18 @@
     .row span{
         display: inline-block;
     }
+    .row a{
+        color: #1155cc;
+    }
+    .row input{
+        height: 20px;
+    }
     .main_content{
         margin-left: 20px;
         margin-top: 20px;
         border: 1px;
+        width: 520px;
+        float: left;
     }
 </style>
 
@@ -66,12 +74,13 @@
             <form name="cpform" method="post" autocomplete="off" action="" id="cpform">
                 <div style="margin-left:30px;">
                     <div>
-                        <span>选择版块</span>
+                        <span style="margin-left: 5px">版块管理&nbsp;&nbsp;&nbsp;&nbsp;(规则：版块名称不能重复.
+                  同一版块内的模块名不能重复.)</span>
 
                     </div>
                     <div class="row">
                         <div>
-                            <input type="text" readonly value="所有版块" class="txt"/>
+                            选择版块&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" readonly value="所有版块" class="txt"/>
                             <select id="sel_main_category" class="sel_category">
                                 <option value="add">-- 添加版块 --</option>
                                 {% if categories and len(categories) > 0 %}
@@ -80,7 +89,7 @@
                                         {% if cur_category and str(category["_id"]) == str(cur_category['_id']) %}
                                         selected
                                         {% end %}
-                                >{{ category["category_name"] }}</option>
+                                >{{ category["name"] }}</option>
                                 {% end %}
                                 {% end %}
                             </select>
@@ -91,9 +100,9 @@
 
                         <div class="row">
                             {#                            <input class="order" value="0"/>#}
-                            <span class="category">
+                            版块名称&nbsp;&nbsp;&nbsp;&nbsp;<span class="category">
                                 <input type="hidden" name="main_category_id" value="{{ str(cur_category['_id']) }}"/>
-                                <input name="main_category_name" value="{{ cur_category['category_name'] }}"/>
+                                <input name="main_name" value="{{ cur_category['name'] }}"/>
                                 <a href="###" onclick='add_sub_category(this)' class="add_sub_category">添加主题</a>
                             </span>&nbsp;&nbsp;
                             <a onclick="del_category(this)" href="##">删除</a>
@@ -102,11 +111,11 @@
                         {% for sub_category in cur_category["sub_categories"] %}
                         <div class="row">
                             {#                            <input class="order" name="order" value="0"/>#}
-                            <span class="sub_category">
+                            主题名称&nbsp;&nbsp;&nbsp;&nbsp;<span class="sub_category">
                                 <input name="sub_{{ sub_category['_id'] }}"
-                                       value="{{ sub_category['category_name'] }}"/>
+                                       value="{{ sub_category['name'] }}"/>
                             </span>
-                            <span align="right"><a onclick="del_category(this,true)" href="##">删除</a></span>
+                            <span align="right"><a onclick="del_category(this,true)" href="##">&nbsp;删除</a></span>
                         </div>
                         {% end %}
                         {% end %}
@@ -134,10 +143,10 @@
         $("#sel_main_category").change(function () {
             category_id = $(this).val();
             if (category_id != "add") {
-                location.href = "/admin/article_category?category_id=" + category_id
+                location.href = "/admin/plates?category_id=" + category_id
             }
             else {
-                location.href = "/admin/article_category?category_id=add"
+                location.href = "/admin/plates?category_id=add"
             }
 
         });
@@ -145,8 +154,8 @@
             var category = $("#categories");
             sub_category = "<div class='row'>\n" +
                 {#            "                        <input class='order' name='' value='0'/>\n" +#}
-                "                        <span class='category'>\n" +
-                "                          <input name='main_category_name' value='新建版块' />\n" +
+                "                        版块名称&nbsp;&nbsp;&nbsp;&nbsp;<span class='category'>\n" +
+                "                          <input name='main_name' value='新建版块' />\n" +
                 "                          <a href='###' onclick='add_sub_category(this)' class='add_sub_category'>添加主题</a>\n" +
                 "                        </span>\n&nbsp;&nbsp;" +
                 "                        <span align='right'><a onclick='del_category(this)' href='##'>删除</a></span>\n" +
@@ -163,10 +172,10 @@
         {#    alert(category.html());#}
         sub_category = "                        <div class='row'>\n" +
             {#        "                        <input class='order' name='order' value='0'/>\n" +#}
-            "                        <span class='sub_category'>\n" +
+            "                        主题名称&nbsp;&nbsp;&nbsp;&nbsp;<span class='sub_category'>\n" +
             "                          <input name='new_sub_categories' value='新建主题' />\n" +
             "                        </span>\n" +
-            "                        <span align='right'><a onclick='del_category(this,true)' href='##'>删除</a></span>\n" +
+            "                        <span align='right'><a onclick='del_category(this,true)' href='##'>&nbsp;删除</a></span>\n" +
             "                        </div>";
 
         category.append(sub_category)

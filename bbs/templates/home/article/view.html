@@ -412,11 +412,6 @@
                     <input type="text" id='J_scollReplytxt'/>
                     <span class='btn btnlineLight' id='J_scollReply'>回复</span>
                 </div>
-                {% if "main_pic" in article and article["main_pic"] %}
-                <div class='invitation_content'>
-                    <img src="{{ article["main_pic"] }}" style="height: 250px; width: 655px">
-                </div>
-                {% end %}
                 <h1 style="text-align: center">
                     <span></span>
                     <span></span>
@@ -446,7 +441,11 @@
                     <a href='/thread/edit/tid/13797260/type/forum'>编辑</a>
                     {% end %}
                 </p>
-
+                {% if "main_pic" in article and article["main_pic"] %}
+                <div class='invitation_content'>
+                    <img src="{{ article["main_pic"] }}" style="height: 250px; width: 655px">
+                </div>
+                {% end %}
                 <div class='invitation_content'>
                     {% raw article["content"] %}
                 </div>

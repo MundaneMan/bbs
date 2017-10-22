@@ -19,7 +19,7 @@ class UsersManageHandler(AdminBaseHandler):
 
     def _render(self, form_data=None, form_errors=None, **kwargs):
         self.render(
-            "a_m_users.html", form_data=form_data, form_errors=form_errors, **kwargs
+            "a_users.html", form_data=form_data, form_errors=form_errors, **kwargs
         )
 
 
@@ -30,6 +30,6 @@ class UsersDeleteHandler(JsSiteBaseHandler):
         pass
 
 urls = [
-    (r"/admin/users/manage/?", UsersManageHandler),
+    (r"/admin/users/?", UsersManageHandler),
     (r"/admin/users/delete/?", UsersDeleteHandler),
 ]

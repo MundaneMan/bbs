@@ -23,14 +23,6 @@ h2{font-weight:normal;}
 .cloud {position:absolute;top:0px;left:0px;width:100%;height:100%;background:url(../images/cloud.png) no-repeat;z-index:1;opacity:0.5;}
 #cloud2 {z-index:2;}
 
-/*container*/
-.content_container{
-    position: relative;
-    left:0;
-    top:0;
-}
-
-
 /*login*/
 .logintop{height:47px; position:absolute; top:0; background:url(../images/loginbg1.png) repeat-x;z-index:100; width:100%;}
 .logintop span{color:#fff; line-height:47px; background:url(../images/loginsj.png) no-repeat 21px 18px; text-indent:44px; color:#afc5d2; float:left;}
@@ -104,7 +96,6 @@ h2{font-weight:normal;}
 .place span{line-height:40px; font-weight:bold;float:left; margin-left:12px;}
 .placeul li{float:left; line-height:40px; padding-left:7px; padding-right:12px; background:url(../images/rlist.gif) no-repeat right;}
 .placeul li:last-child{background:none;}
-.rightinfo{padding:8px;}
 .tools{clear:both; height:35px; margin-bottom:8px;}
 .toolbar{float:left;}
 .toolbar li{background:url(../images/toolbg.gif) repeat-x; line-height:33px; height:33px; border:solid 1px #d3dbde; float:left; padding-right:10px; margin-right:5px;border-radius: 3px; behavior:url(../js/pie.htc); cursor:pointer;}
@@ -286,5 +277,12 @@ h2{font-weight:normal;}
 .scinput{width:150px; height:32px; line-height:32px; border-top:solid 1px #a7b5bc; border-left:solid 1px #a7b5bc; border-right:solid 1px #ced9df; border-bottom:solid 1px #ced9df; background:url(../images/inputbg.gif) repeat-x; text-indent:10px;}
 .scbtn{width:85px;height:35px; background:url(../images/btnbg.png) no-repeat center; font-size:14px;font-weight:bold;color:#fff; cursor:pointer;border-radius:3px; behavior:url(../js/pie.htc);}
 
+/*container*/
+.content_container{
+    position: relative;
+    left:0;
+    top:0;
+}
 /*frame*/
 .right_content{padding-left: 187px;}
+.rightinfo{padding:8px;}
